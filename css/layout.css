@@ -1,0 +1,7 @@
+#wiki-article-menu ul li .wiki-article-menu-text {
+  display: none;
+}
+#wiki-article-menu ul li:hover .wiki-article-menu-text,
+#wiki-article-menu ul li.is-active .wiki-article-menu-text {
+  display: initial;
+}

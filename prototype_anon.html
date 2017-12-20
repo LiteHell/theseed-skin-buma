@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/fontawesome-all.js"></script>
+</head>
+
+<body>
+    <div class="nav navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">Wiki</a>
+            <button class="button navbar-burger" data-target="mainNavbar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="navbar-menu" id="mainNavbar">
+            <div class="navbar-start">
+                <a href="/RecentChanges" class="navbar-item">
+                    <span class="icon">
+                        <i class="fas fa-binoculars"></i>
+                    </span> 최근 변경</a>
+                <a href="/RecentDiscuss" class="navbar-item">
+                    <span class="icon">
+                        <i class="far fa-comments"></i>
+                    </span> 최근 토론</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="#" class="navbar-link">
+                        <span class="icon">
+                            <i class="fas fa-cogs"></i>
+                        </span> 도구</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/NeededPages">
+                            <span class="icon">
+                                <i class="fas fa-beer"></i>
+                            </span>
+                            작성이 필요한 문서
+                        </a>
+                        <a class="navbar-item" href="/OrphanedPages">
+                            <span class="icon">
+                                <i class="far fa-frown"></i>
+                            </span>
+                            고립된 문서
+                        </a>
+                        <a class="navbar-item" href="/UncategorizedPages">
+                            <span class="icon">
+                                <i class="far fa-question-circle"></i>
+                            </span>
+                            분류가 되지 않은 문서
+                        </a>
+                        <a class="navbar-item" href="/OldPages">
+                            <span class="icon">
+                                <i class="fas fa-pause"></i>
+                            </span>
+                            편집된 지 오래된 문서
+                        </a>
+                        <a class="navbar-item" href="/ShortestPages">
+                            <span class="icon">
+                                <i class="far fa-thumbs-down"></i>
+                            </span>
+                            내용이 짧은 문서
+                        </a>
+                        <a class="navbar-item" href="/LongestPages">
+                            <span class="icon">
+                                <i class="far fa-thumbs-up"></i>
+                            </span>
+                            내용이 긴 문서
+                        </a>
+                        <a class="navbar-item" href="/BlockHistory">
+                            <span class="icon">
+                                <i class="fas fa-ban"></i>
+                            </span>
+                            차단 내역
+                        </a>
+                        <a class="navbar-item" href="/RandomPage">
+                            <span class="icon">
+                                <i class="fas fa-random"></i>
+                            </span>
+                            RandomPage
+                        </a>
+                        <a class="navbar-item" href="/Upload">
+                            <span class="icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </span>
+                            파일 올리기
+                        </a>
+                        <a href="/License" class="navbar-item">
+                            <span class="icon">
+                                <i class="far fa-copyright"></i>
+                            </span> 라이선스</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="#" class="navbar-link">
+                        <span class="icon">
+                            <i class="fas fa-user-secret"></i>
+                        </span> 익명</a>
+                    <div class="navbar-dropdown is-right">
+                        <a href="/settings" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-wrench"></i>
+                            </span> 스킨 설정</a>
+                        <div class="navbar-divider"></div>
+                        <a href="/contribution/ip/127.0.0.1/document" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span> 내 문서 기여 목록</a>
+                        <a href="/contribution/ip/127.0.0.1/discuss" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </span> 내 토론 기여 목록</a>
+                        <div class="navbar-divider"></div>
+                        <a href="/logout" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </span> 로그인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hero is-primary" id="wiki-main-title">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Lorem ipsum
+                </h1>
+                <h2 class="subtitle">
+                    This is prototype of theseed-skin-buma.
+                </h2>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-left is-boxed" id="wiki-article-menu">
+                    <ul>
+                        <li class="is-active">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 읽기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="fas fa-edit"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 편집</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="fas fa-history"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 토론</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 이동</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="far fa-trash-alt"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 삭제</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="fas fa-random"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 역링크</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="fas fa-history"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 역사</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="icon">
+                                    <i class="fas fa-key"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> ACL</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="notification is-link">
+                <button class="delete"></button>
+                사용자 토론이 있습니다. 확인해주세요.
+            </div>
+            <div class="wiki-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ipsum iaculis, pulvinar quam sit amet, sagittis
+                    dui. Quisque cursus arcu a velit convallis iaculis. Phasellus facilisis ac ante at semper. Sed lobortis
+                    finibus consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti
+                    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec suscipit erat non enim
+                    congue, ac tincidunt nunc posuere. Praesent porta id urna et convallis. Cras lacinia pellentesque ipsum,
+                    ac cursus elit tempor a. Sed euismod auctor gravida. Morbi ornare suscipit arcu. </p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    theseed-skin-buma by LiteHell, the seed engine by theseed.io
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
