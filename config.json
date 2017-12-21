@@ -1,0 +1,47 @@
+{
+	"override_views": [
+	],
+	"static_files": [
+		"css/bulma.css",
+		"css/bulma.css.map",
+		"css/fa-svg-with-js.css",
+		"css/layout.css",
+		"js/jquery.min.js",
+		"js/layout.js",
+        "js/fontawesome-all.min.js",
+        "js/jquery-ui.min.js",
+        "css/jquery-ui.min.css",
+        "img/Loading.gif"
+	],
+	"auto_js_targets": {
+		"*": [
+			{
+				"path": "js/jquery.min.js"
+			},
+			{
+				"path": "js/jquery-ui.min.js"
+			},
+			{
+				"path": "js/layout.js"
+			},
+			{
+				"path": "js/fontawesome-all.min.js"
+			}
+		]
+	},
+	"auto_css_targets": {
+		"*": [
+            "css/bulma.css",
+            "css/bulma.css.map",
+            "css/jquery-ui.min.css",
+            "css/fa-svg-with-js.css",
+            "css/layout.css"
+		]
+	},
+	"manual_file_targets": {
+	},
+	"body_classes": [
+		"buma"
+	],
+	"additional_heads": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">"
+}

@@ -113,28 +113,50 @@
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a href="#" class="navbar-link">
+                        {% if member %}
                         <span class="icon">
-                            <i class="fas fa-user-secret"></i>
+                            <i class="fas fa-user"></i>
+                        </span> 홍길동</a>
+                        {% else %}
+                        <span class="icon">
+                            <i class="fas fa-user-secre"></i>
                         </span> 익명</a>
+                        {% endif %}
                     <div class="navbar-dropdown is-right">
                         <a href="/settings" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-wrench"></i>
                             </span> 스킨 설정</a>
                         <div class="navbar-divider"></div>
-                        <a href="/contribution/ip/127.0.0.1/document" class="navbar-item">
+                        {% if member %}
+                        <a href="/myinfo" class="navbar-item">
+                            <span class="icon">
+                                <i class="far fa-user-circle"></i>
+                            </span> 내정보</a>
+                        <a href="/w/{{ member.username | encode_userdoc }}" class="navbar-item">
+                            <span class="icon">
+                                <i class="far fa-sticky-note"></i>
+                            </span> 내 사용자 문서</a>
+                        <div class="navbar-divider"></div>
+                        <a href="/contribution/author/{{ member.username }}/document" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-chart-line"></i>
                             </span> 내 문서 기여 목록</a>
-                        <a href="/contribution/ip/127.0.0.1/discuss" class="navbar-item">
+                        <a href="/contribution/author/{{ member.username }}/discuss" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-chart-bar"></i>
                             </span> 내 토론 기여 목록</a>
                         <div class="navbar-divider"></div>
-                        <a href="/logout" class="navbar-item">
+                        <a href="/logout?redirect={{ url | url_encode }}" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span> 로그아웃</a>
+                        {% else %}
+                        <a href="/login?redirect={{ url | url_encode }}" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-sign-in-alt"></i>
                             </span> 로그인</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -144,10 +166,14 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Lorem ipsum
+                    {{ skinInfo.title }}
                 </h1>
                 <h2 class="subtitle">
-                    This is prototype of theseed-skin-buma.
+                    {% if skinInfo.viewName == 'wiki' and date %}
+                    {{ date | to_date | localdate('Y-m-d H:i:sO') }}에 마지막으로 수정됐습니다.
+                    {% else %}
+                    Powered by the seed engine
+                    {% endif %}
                 </h2>
             </div>
         </div>
@@ -155,6 +181,7 @@
             <div class="container">
                 <div class="tabs is-left is-boxed" id="wiki-article-menu">
                     <ul>
+                        {% if document %}
                         <li class="is-active">
                             <a href="#">
                                 <span class="icon">
@@ -219,6 +246,16 @@
                                 <span class="wiki-article-menu-text"> ACL</span>
                             </a>
                         </li>
+                        {% else %}
+                        <li class="is-active">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-cogs"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 특수문서</span>
+                            </a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -226,17 +263,14 @@
     </section>
     <section class="section">
         <div class="container">
-            <div class="notification is-link">
+            {% if user_document_discuss %}
+            <div class="notification is-link" data-id="{{ member.username }}-{{ user_document_discuss }}">
                 <button class="delete"></button>
                 사용자 토론이 있습니다. 확인해주세요.
             </div>
+            {% endif %}
             <div class="wiki-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ipsum iaculis, pulvinar quam sit amet, sagittis
-                    dui. Quisque cursus arcu a velit convallis iaculis. Phasellus facilisis ac ante at semper. Sed lobortis
-                    finibus consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti
-                    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec suscipit erat non enim
-                    congue, ac tincidunt nunc posuere. Praesent porta id urna et convallis. Cras lacinia pellentesque ipsum,
-                    ac cursus elit tempor a. Sed euismod auctor gravida. Morbi ornare suscipit arcu. </p>
+                {% block content %}{% endblock %}
             </div>
         </div>
     </section>
@@ -244,6 +278,7 @@
         <div class="container">
             <div class="content has-text-centered">
                 <p>
+                    Content is available under <a href="//creativecommons.org/licenses/by-nc-sa/2.0/kr/">CC BY-SA-NC 2.0 KR</a>.<br>
                     theseed-skin-buma by LiteHell, the seed engine by theseed.io
                 </p>
             </div>
