@@ -183,7 +183,7 @@
                                 <span class="wiki-article-menu-text"> 편집</span>
                             </a>
                         </li>
-                        <li {% if skinInfo.viewName == 'discuss' || skinInfo.viewName == 'thread' %} class="is-active" {% endif %}>
+                        <li {% if skinInfo.viewName == 'thread' || skinInfo.viewName == 'thread_list' || skinInfo.viewName == 'thread_list_close' %} class="is-active" {% endif %}>
                             <a href="/discuss/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-history"></i>
