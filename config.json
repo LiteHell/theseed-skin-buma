@@ -4,6 +4,8 @@
 	"static_files": [
 		"css/bulma.css",
 		"css/bulma.css.map",
+		"css/bootstrap-custom.css",
+		"css/bootstrap-custom.css.map",
 		"css/fa-svg-with-js.css",
 		"css/layout.css",
 		"js/jquery.min.js",
@@ -31,6 +33,7 @@
 	},
 	"auto_css_targets": {
 		"*": [
+			"css/bootstrap-custom.css",
             "css/bulma.css",
             "css/bulma.css.map",
             "css/jquery-ui.min.css",
