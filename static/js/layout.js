@@ -22,14 +22,18 @@ function processWikiImages(forceNoVideo) {
 	});
 }
 $(function(){
+	// notification delete button
     $(".notification .delete").click(function(){
         $(this).parent().remove();
-    })
-    $(".wiki-article-menu-text").addClass("is-hidden-touch");
+	})
+	// hide wiki menu text on mobile
+	$(".wiki-article-menu-text").addClass("is-hidden-touch");
+	// mobile burgder menu
     $(".navbar .navbar-burger").click(function(){
         var target = $(this).data("target");
         $("#" + target).toggleClass("is-active");
-    });
+	});
+	// wiki search
     $("#wikiSearch").keypress(function (evt) {
 		if (evt.key != "Enter") return;
 		evt.preventDefault();
@@ -58,6 +62,11 @@ $(function(){
 			}
 		}
 	});
+	// skin settings
+	$("#skin-settings").click(function (evt){
+		evt.preventDefault();
+		alert('아직 준비중입니다.');
+	})
 	/* expandable navbar-dropdown items */
 	/* from https://github.com/jgthms/bulma/issues/1218 */
 	function mobile_expandable_menu() {
