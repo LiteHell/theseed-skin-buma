@@ -167,64 +167,64 @@
                 <div class="tabs is-left is-boxed" id="wiki-article-menu">
                     <ul>
                         {% if document %}
-                        <li class="is-active">
-                            <a href="#">
+                        <li {% if skinInfo.viewName == 'wiki' %} class="is-active" {% endif %}>
+                            <a href="/w/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-eye"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 읽기</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'edit' %} class="is-active" {% endif %}>
+                            <a href="/edit/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-edit"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 편집</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'discuss' || skinInfo.viewName == 'thread' %} class="is-active" {% endif %}>
+                            <a href="/discuss/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-history"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 토론</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'move' %} class="is-active" {% endif %}>
+                            <a href="/move/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-arrow-right"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 이동</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'delete' %} class="is-active" {% endif %}>
+                            <a href="/delete/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="far fa-trash-alt"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 삭제</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'xref' %} class="is-active" {% endif %}>
+                            <a href="/xref/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-random"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 역링크</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'history' %} class="is-active" {% endif %}>
+                            <a href="/history/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-history"></i>
                                 </span>
                                 <span class="wiki-article-menu-text"> 역사</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li {% if skinInfo.viewName == 'acl' %} class="is-active" {% endif %}>
+                            <a href="/acl/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-key"></i>
                                 </span>
