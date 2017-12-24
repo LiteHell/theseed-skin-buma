@@ -29,3 +29,6 @@
   background: black;
   color: white;
 }
+textarea#textInput {
+  height: 500px;
+}
