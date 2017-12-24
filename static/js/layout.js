@@ -1,5 +1,6 @@
 // liberty skin 참고함.
-function processWikiImages(forceNoVideo) {
+var forceNoVideo = false;
+function processWikiImages() {
     var isVideoAvailable = (function(){
         if(forceNoVideo) return false;
 		var v = document.createElement('video');
@@ -20,6 +21,39 @@ function processWikiImages(forceNoVideo) {
 			img.attr('src', $(this).attr("data-src"));
 		}
 	});
+}
+function processSkinSettings() {
+	var style = document.createElement("style");
+	switch(localStorage.getItem('buma_hideDeletedOnWiki') || 'skinDefault') {
+		case 'hide':
+			style.innerHTML += ".wiki-content del {display: none;}";
+			break;
+		case 'undelete':
+			style.innerHTML += ".wiki-content del {text-decoration: none;}";
+			break;
+		case 'doNoting':
+		case 'skinDefault':
+		default:
+			break;
+	}
+	switch(localStorage.getItem('buma_noVideoForGif') || 'skinDefault') {
+		case 'yes':
+			forceNoVideo = true;
+		case 'no':
+		case 'skinDefault':
+		default:
+			break;
+	}
+	$(".settings-modal input").each(function(){
+		var input = $(this);
+		var settingVal = localStorage.getItem("buma_" + input.attr("name")) || 'skinDefault';
+		if (settingVal == input.val())
+			input.val(true);
+	})
+	$(".settings-modal .delete, .settings-modal .modal-background").click(function(evt){
+		$(".settings-modal").removeClass("is-active");
+	});
+	document.appendChild(style);
 }
 $(function(){
 	// notification delete button
@@ -63,9 +97,14 @@ $(function(){
 		}
 	});
 	// skin settings
+	processSkinSettings();
+	$(".settings-modal").on("change input", function(evt) {
+		var setting = evt.target;
+		localStorage.setItem("buma_" + setting.name, setting.value);
+	})
 	$("#skin-settings").click(function (evt){
 		evt.preventDefault();
-		alert('아직 준비중입니다.');
+		$(".settings-modal").toggleClass("is-active");
 	})
 	/* expandable navbar-dropdown items */
 	/* from https://github.com/jgthms/bulma/issues/1218 */
