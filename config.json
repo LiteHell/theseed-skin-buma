@@ -24,6 +24,9 @@
 				"path": "js/jquery-ui.min.js"
 			},
 			{
+				"path": "js/bootstrap.min.js"
+			},
+			{
 				"path": "js/layout.js"
 			},
 			{
