@@ -48,12 +48,12 @@ function processSkinSettings() {
 		var input = $(this);
 		var settingVal = localStorage.getItem("buma_" + input.attr("name")) || 'skinDefault';
 		if (settingVal == input.val())
-			input.val(true);
+			input.prop('checked', true);
 	})
 	$(".settings-modal .delete, .settings-modal .modal-background").click(function(evt){
 		$(".settings-modal").removeClass("is-active");
 	});
-	document.appendChild(style);
+	document.head.appendChild(style);
 }
 $(function(){
 	// notification delete button
@@ -98,7 +98,7 @@ $(function(){
 	});
 	// skin settings
 	processSkinSettings();
-	$(".settings-modal").on("change input", function(evt) {
+	$(".settings-modal input").on("change input", function(evt) {
 		var setting = evt.target;
 		localStorage.setItem("buma_" + setting.name, setting.value);
 	})
