@@ -116,7 +116,7 @@ $(function(){
 		if( $(window).width() < 768 ) {
 			$('.navbar-link').next('.navbar-dropdown').hide();
 			$('.navbar-link').on('click', function(){
-				$(this).next('.navbar-dropdown').slideToggle();
+				$(this).next('.navbar-dropdown').toggle();
 			});
 		} else {
 			$('.navbar-link').next('.navbar-dropdown').css('display','');
