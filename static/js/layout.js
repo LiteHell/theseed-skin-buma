@@ -76,7 +76,7 @@ $(function(){
 			location.href = "/go/" + encodeURIComponent(val);
         }
     });
-	$("#searchInput").autocomplete({
+	$("#wikiSearch").autocomplete({
 		delay: 100,
 		source: function(req, res) {
 			$.ajax({
