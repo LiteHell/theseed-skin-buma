@@ -22,9 +22,13 @@ function processWikiImages() {
 		}
 	});
 }
+var skinSettings = {
+	get: function(n, d) {return localStorage.getItem('buma_' + n) || (d ? d : 'skinDefault')},
+	set: function(n, v) {localStorage.setItem('buma_' + n, v);}
+}
 function processSkinSettings() {
 	var style = document.createElement("style");
-	switch(localStorage.getItem('buma_hideDeletedOnWiki') || 'skinDefault') {
+	switch(skinSettings.get('hideDeletedOnWiki')) {
 		case 'hide':
 			style.innerHTML += ".wiki-content del {display: none;}";
 			break;
@@ -36,7 +40,7 @@ function processSkinSettings() {
 		default:
 			break;
 	}
-	switch(localStorage.getItem('buma_noVideoForGif') || 'skinDefault') {
+	switch(skinSettings.get('buma_noVideoForGif')) {
 		case 'yes':
 			forceNoVideo = true;
 		case 'no':
@@ -46,7 +50,7 @@ function processSkinSettings() {
 	}
 	$(".settings-modal input").each(function(){
 		var input = $(this);
-		var settingVal = localStorage.getItem("buma_" + input.attr("name")) || 'skinDefault';
+		var settingVal = skinSettings.get(input.attr("name"));
 		if (settingVal == input.val())
 			input.prop('checked', true);
 	})
@@ -100,7 +104,7 @@ $(function(){
 	processSkinSettings();
 	$(".settings-modal input").on("change input", function(evt) {
 		var setting = evt.target;
-		localStorage.setItem("buma_" + setting.name, setting.value);
+		skinSettings.set(setting.name, setting.value);
 	})
 	$("#skin-settings").click(function (evt){
 		evt.preventDefault();
