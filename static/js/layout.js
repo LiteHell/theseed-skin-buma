@@ -1,4 +1,5 @@
 // liberty skin 참고함.
+
 var forceNoVideo = false;
 function processWikiImages() {
     var isVideoAvailable = (function(){
@@ -23,9 +24,9 @@ function processWikiImages() {
 	});
 }
 var skinSettings = {
-	get: function(n, d) {return localStorage.getItem('buma_' + n) || (d ? d : 'skinDefault')},
+	get: function(n, d) {return localStorage.getItem('buma_' + n) || (d ? d : 'skinDefault');},
 	set: function(n, v) {localStorage.setItem('buma_' + n, v);}
-}
+};
 function processSkinSettings() {
 	var style = document.createElement("style");
 	switch(skinSettings.get('hideDeletedOnWiki')) {
@@ -35,26 +36,27 @@ function processSkinSettings() {
 		case 'undelete':
 			style.innerHTML += ".wiki-content del {text-decoration: none;}";
 			break;
+		default:
 		case 'doNoting':
 		case 'skinDefault':
-		default:
 			break;
 	}
 	switch(skinSettings.get('noVideoForGif')) {
 		case 'yes':
 			forceNoVideo = true;
+			break;
+		default:
 		case 'no':
 		case 'skinDefault':
-		default:
 			break;
 	}
 	$(".settings-modal input").each(function(){
 		var input = $(this);
 		var settingVal = skinSettings.get(input.attr("name"));
-		if (settingVal == input.val())
+		if (settingVal === input.val())
 			input.prop('checked', true);
-	})
-	$(".settings-modal .delete, .settings-modal .modal-background").click(function(evt){
+	});
+	$(".settings-modal .delete, .settings-modal .modal-background").click(function(){
 		$(".settings-modal").removeClass("is-active");
 	});
 	document.head.appendChild(style);
@@ -63,7 +65,7 @@ $(function(){
 	// notification delete button
     $(".notification .delete").click(function(){
         $(this).parent().remove();
-	})
+	});
 	// hide wiki menu text on mobile
 	$(".wiki-article-menu-text").addClass("is-hidden-touch");
 	// mobile burgder menu
@@ -73,7 +75,7 @@ $(function(){
 	});
 	// wiki search
     $("#wikiSearch").keypress(function (evt) {
-		if (evt.key != "Enter") return;
+		if (evt.key !== "Enter") return;
 		evt.preventDefault();
 		var val = $(this).val();
 		if (val.length > 0) {
@@ -87,10 +89,10 @@ $(function(){
 				url: '/complete/' + encodeURIComponent(req.term),
 				dataType : 'json',
 				success: function(data) {
-					response(data);
+					res(data);
 				},
-				error: function(data) {
-					response([]);
+				error: function() {
+					res([]);
 				}
 			});
 		},
@@ -105,11 +107,11 @@ $(function(){
 	$(".settings-modal input").on("change input", function(evt) {
 		var setting = evt.target;
 		skinSettings.set(setting.name, setting.value);
-	})
+	});
 	$("#skin-settings").click(function (evt){
 		evt.preventDefault();
 		$(".settings-modal").toggleClass("is-active");
-	})
+	});
 	/* expandable navbar-dropdown items */
 	/* from https://github.com/jgthms/bulma/issues/1218 */
 	function mobile_expandable_menu() {
@@ -124,11 +126,11 @@ $(function(){
 		}
 	}
 	var screen_resize_timout;
-	$(window).on("resize", function (e) {
+	$(window).on("resize", function () {
 		clearTimeout(screen_resize_timout);
 		screen_resize_timout = setTimeout(mobile_expandable_menu, 500);
 	});
 	mobile_expandable_menu();
 	// process wiki images
     processWikiImages(false);
-})
+});
