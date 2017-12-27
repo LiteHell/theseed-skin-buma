@@ -8,12 +8,13 @@
 		"css/bootstrap-custom.css.map",
 		"css/fa-svg-with-js.css",
 		"css/layout.css",
+        "css/jquery-ui.min.css",
 		"js/jquery.min.js",
 		"js/layout.js",
         "js/fontawesome-all.min.js",
-        "js/jquery-ui.min.js",
-        "css/jquery-ui.min.css",
-        "img/Loading.gif"
+		"js/jquery-ui.min.js",
+		"js/bootstrap.min.js",
+		"img/Loading.gif"
 	],
 	"auto_js_targets": {
 		"*": [
