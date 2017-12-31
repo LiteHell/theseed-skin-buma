@@ -162,7 +162,7 @@ $(function(){
 	var screen_resize_timout;
 	$(window).on("resize", function () {
 		clearTimeout(screen_resize_timout);
-		screen_resize_timout = setTimeout(mobile_expandable_menu, 500);
+		screen_resize_timout = setTimeout(mobile_expandable_menu, 100);
 	});
 	mobile_expandable_menu();
 	// process wiki images
