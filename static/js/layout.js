@@ -68,7 +68,7 @@ function processSkinSettings() {
 					var heading = headingContent.prev('.wiki-heading')[0];
 					document.href = heading.querySelector('.wiki-edit-section a').href;
 				} else {
-					if($(".edit-length").length === 0) return;
+					if($(".edit-anchor").length === 0) return;
 					document.href = $(".edit-anchor")[0].href;
 				}
 			});
