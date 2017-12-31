@@ -175,7 +175,7 @@
                             </a>
                         </li>
                         <li {% if skinInfo.viewName == 'edit' %} class="is-active" {% endif %}>
-                            <a href="/edit/{{ document|encode_doc }}">
+                            <a href="/edit/{{ document|encode_doc }}" class="edit-anchor">
                                 <span class="icon">
                                     <i class="fas fa-edit"></i>
                                 </span>
@@ -215,7 +215,7 @@
                             </a>
                         </li>
                         <li {% if skinInfo.viewName == 'history' %} class="is-active" {% endif %}>
-                            <a href="/history/{{ document|encode_doc }}">
+                            <a href="/history/{{ document|encode_doc }}" class="history-anchor">
                                 <span class="icon">
                                     <i class="fas fa-history"></i>
                                 </span>
@@ -321,6 +321,24 @@
                             </label>
                             <label class="raido">
                                 <input type="radio" name="foldHeadingsByDefault" value="skinDefault"> 스킨 기본값
+                            </label>
+                        </div>
+                    </div>
+                <h2 class="title is-4">더블 클릭시 행동</h2>
+                <h2 class="subtitle is-6">더블 클릭시의 행동입니다.</h3>
+                    <div class="field">
+                        <div class="control">
+                            <label class="raido">
+                                <input type="radio" name="behaviorWhenDblClick" value="edit"> 편집
+                            </label>
+                            <label class="raido">
+                                <input type="radio" name="behaviorWhenDblClick" value="history"> 역사
+                            </label>
+                            <label class="raido">
+                                <input type="radio" name="behaviorWhenDblClick" value="doNothing"> 아무것도 하지 않음
+                            </label>
+                            <label class="raido">
+                                <input type="radio" name="behaviorWhenDblClick" value="skinDefault"> 스킨 기본값
                             </label>
                         </div>
                     </div>

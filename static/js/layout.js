@@ -54,7 +54,33 @@ function processSkinSettings() {
 		case 'yes':
 			$(".wiki-heading-content").hide();
 			break;
+		default:
 		case 'no':
+		case 'skinDefault':
+			break;
+	}
+	switch(skinSettings.get('behaviorWhenDblClick')) {
+		case 'edit':
+			$('.wiki-article').dblclick(function (evt) {
+				var topmost = $(evt.target);
+				var headingContent = topmost.parent('.wiki-heading-content');
+				if (headingContent.length != 0) {
+					var heading = headingContent.prev('.wiki-heading')[0];
+					document.href = heading.querySelector('.wiki-edit-section a').href;
+				} else {
+					if($(".edit-length").length === 0) return;
+					document.href = $(".edit-anchor")[0].href;
+				}
+			});
+			break;
+		case 'history':
+			$('.wiki-article').dblclick(function (evt) {
+				if ($(".history-anchor").length === 0) return;
+				document.href = $(".history-anchor")[0].href;
+			});
+			break;
+		default:
+		case 'doNothing':
 		case 'skinDefault':
 			break;
 	}
