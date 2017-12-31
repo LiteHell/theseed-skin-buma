@@ -50,6 +50,14 @@ function processSkinSettings() {
 		case 'skinDefault':
 			break;
 	}
+	switch(skinSettings.get('foldHeadingsByDefault')) {
+		case 'yes':
+			$(".wiki-heading-content").hide();
+			break;
+		case 'no':
+		case 'skinDefault':
+			break;
+	}
 	$(".settings-modal input").each(function(){
 		var input = $(this);
 		var settingVal = skinSettings.get(input.attr("name"));
