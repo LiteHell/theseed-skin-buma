@@ -31,6 +31,10 @@
 }
 textarea#textInput {
   height: 500px;
+  width: 100%;
+}
+.wiki-article .wiki-category > ul {
+  margin: 0;
 }
 /* expandable navbar dropdown in mobile */
 /* from https://github.com/jgthms/bulma/issues/1218 */
