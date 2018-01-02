@@ -166,5 +166,7 @@ $(function(){
 	});
 	mobile_expandable_menu();
 	// process wiki images
-    processWikiImages(false);
+	processWikiImages(false);
+	// fix bootstrap alerts
+	$(".wiki-article .alert.fade.in").removeClass("fade in");
 });
