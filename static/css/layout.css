@@ -29,7 +29,8 @@
   background: black;
   color: white;
 }
-textarea#textInput {
+textarea#textInput,
+iframe#previewFrame {
   height: 500px;
   width: 100%;
 }
