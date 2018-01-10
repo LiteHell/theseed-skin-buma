@@ -113,7 +113,7 @@
                             </span> 스킨 설정</a>
                         <div class="navbar-divider"></div>
                         {% if member %}
-                        <a href="/mypage" class="navbar-item">
+                        <a href="/member/mypage" class="navbar-item">
                             <span class="icon">
                                 <i class="far fa-user-circle"></i>
                             </span> 내정보</a>
@@ -131,12 +131,12 @@
                                 <i class="fas fa-chart-bar"></i>
                             </span> 내 토론 기여 목록</a>
                         <div class="navbar-divider"></div>
-                        <a href="/logout?redirect={{ url | url_encode }}" class="navbar-item">
+                        <a href="/member/logout?redirect={{ url | url_encode }}" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-sign-out-alt"></i>
                             </span> 로그아웃</a>
                         {% else %}
-                        <a href="/login?redirect={{ url | url_encode }}" class="navbar-item">
+                        <a href="/member/login?redirect={{ url | url_encode }}" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-sign-in-alt"></i>
                             </span> 로그인</a>
