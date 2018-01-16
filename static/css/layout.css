@@ -29,6 +29,12 @@
   background: black;
   color: white;
 }
+.res .r-body.r-hidden-body .hidden-content {
+  display: none;
+}
+.res.res-type-status .r-body {
+  background: orange;
+}
 textarea#textInput,
 iframe#previewFrame {
   height: 500px;
