@@ -1,6 +1,28 @@
 .res-wrapper {
     display: block;
     margin: 30px 0px;
+    &.res-loading[data-visible="true"] {
+        @keyframes head-loading {
+            from {background-color: #747474}
+            to {background-color: #cacaca}
+        }
+        @keyframes body-loading {
+            from {background-color: #e2d7d7}
+            to {background-color: #f3f3f3}
+        }
+        .r-head {
+            animation: head-loading 0.5s infinite;
+        }
+        .r-body {
+            animation: body-loading 0.5s infinite;
+        }
+    }
+}
+
+.topic-discuss a.more-box {
+    padding: 10px;
+    margin-left: 20px;
+    border: 1px solid black;
 }
 
 .res {
@@ -26,6 +48,9 @@
                 display: none;
             }
         }
+    }
+    .combo.admin-menu {
+        padding: 5px;
     }
     &.res-type-status {
         .r-body {
