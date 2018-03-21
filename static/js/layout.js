@@ -169,4 +169,10 @@ $(function(){
 	processWikiImages(false);
 	// fix bootstrap alerts
 	$(".wiki-article .alert.fade.in").removeClass("fade in");
+	// fix ugly close buttons in bootstrap alerts
+	var dismissibleAlerts = $(".wiki-article .alert.alert-dismissible:has(button.close)");
+	dismissibleAlerts.find("button.close").remove();
+	setTimeout(function() {
+		dismissibleAlerts.fadeOut(200, function(){$(this).remove();});
+	}, 3000);
 });
