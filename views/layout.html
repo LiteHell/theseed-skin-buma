@@ -265,6 +265,16 @@
                                 <span class="wiki-article-menu-text"> ACL</span>
                             </a>
                         </li>
+                        {%if skinInfo.viewName == 'wiki' && user %}
+                        <li class="is-active">
+                            <a href="/contribution/author/{{ document|encode_doc }}/document">
+                                <span class="icon">
+                                    <i class="fas fas fa-chart-line"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> 기여내역</span>
+                            </a>
+                        </li>
+                        {% endif %}
                         {% else %}
                         <li class="is-active">
                             <a href="#">
