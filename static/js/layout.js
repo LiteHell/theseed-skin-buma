@@ -136,6 +136,15 @@ $(function(){
 			}
 		}
 	});
+	// wiki search buttons
+	$("#wikiSearchBtn").click(function(evt) {
+		evt.preventDefault();
+		location.href = "/go/" + encodeURIComponent($("#wikiSearch").val());
+	});
+	$("#wikiGoRandomBtn").click(function(evt) {
+		evt.preventDefault();
+		location.href = "/random";
+	})
 	// skin settings
 	processSkinSettings();
 	$(".settings-modal input").on("change input", function(evt) {
