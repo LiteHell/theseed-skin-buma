@@ -73,6 +73,27 @@ iframe#previewFrame {
 .wiki-article .wiki-category > ul {
   margin: 0;
 }
+/* diff deleted line fix */
+table.diff .delete {
+  border-radius: initial;
+  border: none;
+  cursor: initial;
+  font-size: initial;
+  height: initial;
+  max-width: initial;
+  max-height: initial;
+  min-width: initial;
+  min-height: initial;
+  width: initial;
+}
+table.diff .delete :after,
+table.diff .delete :before {
+  background-color: initial !important;
+  height: 0px;
+  width: 0px;
+  transform: none;
+  transform-origin: none;
+}
 /* expandable navbar dropdown in mobile */
 /* from https://github.com/jgthms/bulma/issues/1218 */
 @media screen and (max-width: 767px) {
