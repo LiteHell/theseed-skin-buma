@@ -281,7 +281,7 @@
                         </li>
                         {% if skinInfo.viewName == 'wiki' && user %}
                         <li>
-                            <a href="/contribution/author/{{ document|encode_doc }}/document">
+                            <a href="/contribution/author/{{ document.title|url_encode }}/document">
                                 <span class="icon">
                                     <i class="fas fas fa-chart-line"></i>
                                 </span>
@@ -321,7 +321,7 @@
         <div class="container">
             <div class="content has-text-centered">
                 <p>
-                    Content is available under <a href="//creativecommons.org/licenses/by-nc-sa/2.0/kr/">CC BY-NC-SA 2.0 KR</a>.<br>
+                    {{ config.getString('wiki.copyright_text', '') }}<br>
                     theseed-skin-buma by LiteHell, the seed engine by theseed.io
                 </p>
             </div>
