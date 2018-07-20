@@ -312,6 +312,12 @@
                 <a href="/discuss/{{ member.username | encode_userdoc }}">사용자 토론</a>이 있습니다. 확인해주세요.
             </div>
             {% endif %}
+            {% if config.getString('wiki.sitenotice', null) %}
+            <div class="notification">
+                <button class="delete"></button>
+                {{ config.getString('wiki.sitenotice', '')|safe }}
+            </div>
+            {% endif %}
             <div class="wiki-article content">
                 {% block content %}{% endblock %}
             </div>
