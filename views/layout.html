@@ -279,7 +279,7 @@
                                 <span class="wiki-article-menu-text"> ACL</span>
                             </a>
                         </li>
-                        {% if skinInfo.viewName == 'wiki' && user %}
+                        {% if user %}
                         <li>
                             <a href="/contribution/author/{{ document.title|url_encode }}/document">
                                 <span class="icon">
