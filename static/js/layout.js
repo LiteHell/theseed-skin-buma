@@ -184,4 +184,12 @@ $(function(){
 	setTimeout(function() {
 		dismissibleAlerts.fadeOut(200, function(){$(this).remove();});
 	}, 3000);
+	$(".jump-buttons .jump-up").click(function(evt){
+		evt.preventDefault();
+		$('#wiki-main-title').get(0).scrollIntoView();
+	});
+	$(".jump-buttons .jump-down").click(function(evt){
+		evt.preventDefault();
+		$('footer').get(0).scrollIntoView();
+	});
 });

@@ -1,10 +1,12 @@
-.wiki-article .wiki-category > ul {
+.wiki-article .wiki-category>ul {
     margin: 0;
 }
 
 /* diff deleted line fix */
+
 table.diff .delete {
-    :after, :before {
+    :after,
+    :before {
         background-color: initial !important;
         height: 0px;
         width: 0px;
@@ -21,4 +23,32 @@ table.diff .delete {
     min-width: initial;
     min-height: initial;
     width: initial;
+}
+
+/* jump buttons */
+
+.jump-buttons {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    ul {
+        list-style-type: none;
+        li {
+            display: inline-block;
+            background: #00d1b2;
+            border: 1px solid #00d1b2;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+        li+li {
+            margin-left: 5px;
+        }
+        li>* {
+            vertical-align: text-middle;
+        }
+    }
 }
