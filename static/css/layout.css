@@ -104,6 +104,7 @@ table.diff .delete :before {
   list-style-type: none;
 }
 .jump-buttons ul li {
+  cursor: pointer;
   display: inline-block;
   background: #00d1b2;
   border: 1px solid #00d1b2;
