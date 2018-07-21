@@ -1,6 +1,6 @@
     <div class="nav navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a href="/" class="navbar-item">{% if config.getString('wiki.logo_url', null) %}<img src="{{ config.getString('wiki.logo_url', '') }}">{% elif %}{{ config.getString('wiki.site_name', 'Wiki') }}{{% endif %}</a>
+            <a href="/" class="navbar-item">{% if config.getString('wiki.logo_url', null) %}<img src="{{ config.getString('wiki.logo_url', '') }}">{% elif %}{{ config.getString('wiki.site_name', 'Wiki') }}{% endif %}</a>
             <button class="button navbar-burger" data-target="mainNavbar">
                 <span></span>
                 <span></span>
