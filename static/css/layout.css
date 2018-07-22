@@ -142,3 +142,6 @@ table.diff .delete :before {
     top: 50%;
   }
 }
+.container section.section .container {
+  overflow-x: scroll;
+}
