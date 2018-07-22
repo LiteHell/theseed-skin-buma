@@ -142,6 +142,6 @@ table.diff .delete :before {
     top: 50%;
   }
 }
-.container section.section .container {
+.container .wiki-article.content {
   overflow-x: scroll;
 }
