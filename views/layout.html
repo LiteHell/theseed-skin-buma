@@ -183,6 +183,15 @@
                                 <i class="fas fa-sign-out-alt"></i>
                             </span> 로그아웃</a>
                         {% else %}
+                        <a href="/contribution/author/{{ req_ip }}/document" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span> 내 문서 기여 목록</a>
+                        <a href="/contribution/author/{{ req_ip }}/discuss" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </span> 내 토론 기여 목록</a>
+                        <div class="navbar-divider"></div>
                         <a href="/member/login?redirect={{ url | url_encode }}" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-sign-in-alt"></i>
@@ -341,7 +350,15 @@
                 <p class="modal-card-title">buma 스킨 설정</p>
                 <button class="delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
+            <section class="modal-card-body">                
+                <article class="message is-info">
+                <div class="message-header">
+                  <p>안내</p>
+                </div>
+                <div class="message-body">
+                    스킨 설정은 새로고침해야 적용됩니다.
+                  </div>
+              </article>
                 <h2 class="title is-4">위키 문서내 취소선</h2>
                 <h2 class="subtitle is-6">위키 문서내 취소선을 싫어하시는 분들을 위한 설정입니다.</h3>
                 <div class="field">
@@ -361,7 +378,7 @@
                     </div>
                 </div>
                 <h2 class="title is-4">Animated gif를 동영상으로 보여주지 않기</h2>
-                <h2 class="subtitle is-6">GIF가 정상적으로 재생되지 않는 경우 시도하십시오.</h3>
+                <h2 class="subtitle is-6">GIF가 정상적으로 재생되지 않는 경우 변경하세요.</h3>
                     <div class="field">
                         <div class="control">
                             <label class="raido">
@@ -408,14 +425,21 @@
                             </label>
                         </div>
                     </div>
-                <article class="message is-info">
-                  <div class="message-header">
-                    <p>안내</p>
-                  </div>
-                  <div class="message-body">
-                      스킨 설정은 현재 개발중으로, 모자라고 오작동할 수 있습니다. 또한 변경된 스킨 설정은 새로고침해야 적용됩니다.
-                </div>
-                </article>
+                <h2 class="title is-4">점프 버튼 활성화</h2>
+                <h2 class="subtitle is-6">위/아래로 이동하는 점프 버튼을 표시할지의 여부입니다</h3>
+                    <div class="field">
+                        <div class="control">
+                            <label class="raido">
+                                <input type="radio" name="enableJumpButtons" value="yes"> 활성화
+                            </label>
+                            <label class="raido">
+                                <input type="radio" name="enableJumpButtons" value="no"> 비활성화
+                            </label>
+                            <label class="raido">
+                                <input type="radio" name="enableJumpButtons" value="skinDefault"> 스킨 기본값
+                            </label>
+                        </div>
+                    </div>
             </section>
         </div>
     </div>

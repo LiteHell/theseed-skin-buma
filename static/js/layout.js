@@ -84,6 +84,14 @@ function processSkinSettings() {
 		case 'skinDefault':
 			break;
 	}
+	switch(skinSettings.get('enableJumpButtons')) {
+		case 'yes':
+		case 'skinDefault':
+			break;
+		case 'no':
+			$('.jump-buttons').hide();
+			break;
+	}
 	$(".settings-modal input").each(function(){
 		var input = $(this);
 		var settingVal = skinSettings.get(input.attr("name"));
