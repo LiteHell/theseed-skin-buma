@@ -31,17 +31,15 @@
 				"path": "js/layout.js"
 			},
 			{
-				"path": "js/fontawesome-all.min.js"
+				"path": "js/all.min.js"
 			}
 		]
 	},
 	"auto_css_targets": {
 		"*": [
 			"css/bootstrap-custom.css",
-            "css/bulma.css",
-            "css/bulma.css.map",
+            "css/bulma.min.css",
             "css/jquery-ui.min.css",
-            "css/fa-svg-with-js.css",
             "css/layout.css"
 		]
 	},
