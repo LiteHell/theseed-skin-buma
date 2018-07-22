@@ -2,16 +2,14 @@
 	"override_views": [
 	],
 	"static_files": [
-		"css/bulma.css",
-		"css/bulma.css.map",
+		"css/bulma.min.css",
 		"css/bootstrap-custom.css",
 		"css/bootstrap-custom.css.map",
-		"css/fa-svg-with-js.css",
 		"css/layout.css",
         "css/jquery-ui.min.css",
 		"js/jquery.min.js",
 		"js/layout.js",
-        "js/fontawesome-all.min.js",
+        "js/all.min.js",
 		"js/jquery-ui.min.js",
 		"js/bootstrap.min.js",
 		"img/Loading.gif"
