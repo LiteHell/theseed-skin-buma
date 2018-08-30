@@ -206,7 +206,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    {{ skinInfo.title }}
+                    {{ skinInfo.title }}{% if rev %} (r{{ rev }} 판){% endif %}
                 </h1>
                 <h2 class="subtitle">
                     {% if skinInfo.viewName == 'wiki' and date %}
@@ -215,6 +215,9 @@
                     존재하지 않는 문서입니다. 직접 자유롭게 기여해보세요!
                     {% else %}
                     Powered by the seed engine
+                    {% endif %}
+                    {% if rev %}
+                    (현재 r{{ rev }}판을 보고계십니다.)
                     {% endif %}
                 </h2>
             </div>
