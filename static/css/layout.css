@@ -5,6 +5,14 @@
 #wiki-article-menu ul li.is-active .wiki-article-menu-text {
   display: initial;
 }
+#wiki-article-menu ul li .star-tab.starred a {
+  color: goldenrod;
+  border-color: gold;
+  background: gold;
+}
+#wiki-article-menu ul li .star-tab .star-count {
+  display: initial;
+}
 .res-wrapper {
   display: block;
   margin: 30px 0px;
@@ -141,6 +149,10 @@ table.diff .delete :before {
 }
 .jump-buttons ul li > * {
   vertical-align: text-middle;
+}
+/* dark */
+body.dark-buma {
+  filter: invert(1);
 }
 .container .wiki-article.content {
   overflow-x: scroll;
