@@ -291,6 +291,16 @@
                                 <span class="wiki-article-menu-text"> ACL</span>
                             </a>
                         </li>
+                        {% if star_count >= 0 %}
+                        <li class="star-tab{% starred %} starred {% endif %}">
+                            <a href="/member/{% starred %}un{% endif %}star/{{ document|encode_doc }}">
+                                <span class="icon">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="wiki-article-menu-text"> {% starred %}별찜해제;({% else %}별찜하기:D{% endif %}<small>{{{ star_count }}}</small></span>
+                            </a>
+                        </li>
+                        {% endif %}
                         {% if user %}
                         <li>
                             <a href="/contribution/author/{{ document.title|url_encode }}/document">
