@@ -301,7 +301,7 @@
                                 <span class="icon">
                                     <i class="fas fa-star"></i>
                                 </span>
-                                <span class="wiki-article-menu-text"> {% starred %}별찜해제;({% else %}별찜하기:D{% endif %}<small>{{{ star_count }}}</small></span>
+                                <span class="wiki-article-menu-text"> {% if starred %}별찜해제;({% else %}별찜하기:D{% endif %}<small>{{{ star_count }}}</small></span>
                             </a>
                         </li>
                         {% endif %}
