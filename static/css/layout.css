@@ -10,9 +10,6 @@
   border-color: gold;
   background: gold;
 }
-#wiki-article-menu ul li .star-tab .star-count {
-  display: initial;
-}
 .res-wrapper {
   display: block;
   margin: 30px 0px;
