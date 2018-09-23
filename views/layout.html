@@ -83,13 +83,12 @@
                             </span> 라이선스</a>
                     </div>
                 </div>
-                {%if perms.has('admin') %}
+                {%if perms.has('ipacl') %}
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a href="#" class="navbar-link">
                         <span class="icon">
                             <i class="fas fa-wrench"></i>
-                        </span> [ADMIN MENU]</a>
-                    {%if perms.has('ipacl') %}
+                        </span> 관리자 메뉴</a>
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="/admin/ipacl">
                             <span class="icon">
@@ -124,7 +123,6 @@
                     {% endif %}
                     </div>
                 </div>
-               {% endif %}
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
