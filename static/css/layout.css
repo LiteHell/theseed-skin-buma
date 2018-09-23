@@ -5,7 +5,7 @@
 #wiki-article-menu ul li.is-active .wiki-article-menu-text {
   display: initial;
 }
-#wiki-article-menu ul li .star-tab.starred a {
+#wiki-article-menu ul li.star-tab.starred a {
   color: goldenrod;
   border-color: gold;
   background: gold;
