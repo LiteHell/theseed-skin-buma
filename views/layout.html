@@ -296,8 +296,8 @@
                             </a>
                         </li>
                         {% if star_count >= 0 %}
-                        <li class="star-tab{% starred %} starred {% endif %}">
-                            <a href="/member/{% starred %}un{% endif %}star/{{ document|encode_doc }}">
+                        <li class="star-tab{% if starred %} starred {% endif %}">
+                            <a href="/member/{% if starred %}un{% endif %}star/{{ document|encode_doc }}">
                                 <span class="icon">
                                     <i class="fas fa-star"></i>
                                 </span>
