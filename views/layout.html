@@ -77,24 +77,16 @@
                             </span>
                             파일 올리기
                         </a>
-                        <a href="/License" class="navbar-item">
+                        <a class="navbar-item" href="/License">
                             <span class="icon">
                                 <i class="far fa-copyright"></i>
                             </span> 라이선스</a>
-                    </div>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a href="#" class="navbar-link">
-                        <span class="icon">
-                            <i class="fas fa-wrench"></i>
-                        </span> 관리자 메뉴</a>
-                {%if perms.has('ipacl') %}
-                    <div class="navbar-dropdown">
+                    {%if perms.has('ipacl') %}
                         <a class="navbar-item" href="/admin/ipacl">
                             <span class="icon">
                                 <i class="fas fa-ban"></i>
                             </span>
-                            IPACL
+                            [관리] IPACL
                         </a>
                     {% endif %}
                     {%if perms.has('suspend_account') %}
@@ -102,7 +94,7 @@
                             <span class="icon">
                                 <i class="fas fa-ban"></i>
                             </span>
-                            사용자 차단
+                            [관리] 사용자 차단
                         </a>
                     {% endif %}
                     {%if perms.has('grant') %}
@@ -110,7 +102,7 @@
                             <span class="icon">
                                 <i class="fas fa-user-plus"></i>
                             </span>
-                            권한 부여
+                            [관리] 권한 부여
                         </a>
                     {% endif %}
                     {%if perms.has('login_history') %}
@@ -118,12 +110,13 @@
                             <span class="icon">
                                 <i class="fas fa-history"></i>
                             </span>
-                            로그인 내역 조회
+                            [관리] 로그인 내역 조회
                         </a>
                     {% endif %}
                     </div>
                 </div>
             </div>
+        </div>
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="field has-addons">
