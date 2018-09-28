@@ -108,8 +108,6 @@ $(function(){
     $(".notification .delete").click(function(){
         $(this).parent().remove();
 	});
-	// hide wiki menu text on mobile
-	$(".wiki-article-menu-text").addClass("is-hidden-touch");
 	// mobile burgder menu
     $(".navbar .navbar-burger").click(function(){
         var target = $(this).data("target");
