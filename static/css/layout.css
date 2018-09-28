@@ -102,7 +102,7 @@ table.diff .delete :before {
 }
 /* expandable navbar dropdown in mobile */
 /* from https://github.com/jgthms/bulma/issues/1218 */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .navbar-link:after {
     border: 1px solid #00d1b2;
     border-right: 0;
@@ -148,7 +148,26 @@ table.diff .delete :before {
   vertical-align: text-middle;
 }
 /* dark */
-body.dark-buma {
+body.dark-buma .nav {
+  background: #424242;
+  color: white;
+}
+body.dark-buma .nav a:hover {
+  background: dimgray;
+  color: white;
+}
+body.dark-buma .nav a {
+  color: #a0a0a0;
+}
+body.dark-buma .hero.is-primary {
+  background: #345f59;
+}
+body.dark-buma .hero.is-danger {
+  background: #511f29;
+}
+body.dark-buma section.section,
+body.dark-buma footer {
+  background: white;
   filter: invert(1);
 }
 .container .wiki-article.content {
