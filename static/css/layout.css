@@ -1,5 +1,5 @@
 @media screen and (min-width: 1024px) {
-  #wiki-article-menu ul li {
+  #wiki-article-menu ul li .wiki-article-menu-text {
     display: none;
   }
 }
