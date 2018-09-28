@@ -1,5 +1,7 @@
-#wiki-article-menu ul li .wiki-article-menu-text {
-  display: none;
+@media screen and (min-width: 1024px) {
+  #wiki-article-menu ul li {
+    display: none;
+  }
 }
 #wiki-article-menu ul li:hover .wiki-article-menu-text,
 #wiki-article-menu ul li.is-active .wiki-article-menu-text {
