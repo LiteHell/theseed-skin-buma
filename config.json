@@ -4,7 +4,6 @@
 	"static_files": [
 		"css/bulma.min.css",
 		"css/bootstrap-custom.css",
-		"css/bootstrap-custom.css.map",
 		"css/layout.css",
         "css/jquery-ui.min.css",
 		"js/jquery.min.js",
