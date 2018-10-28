@@ -1,21 +1,26 @@
-# theseed-skin-buma
-Skin for the seed engine
+# buma
 
-# CSS
-To compile css, install less globally and run `lessc ./less/layout.less ./static/css/layout.css`. Usually css is pre-compiled so you don't have to do this unless you edited less files.
+## Project setup
+```
+npm install
+```
 
-# Copyright
-Copyright (C) 2017 LiteHell
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+### Compiles and minifies for production
+```
+npm run build
+```
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+### Run your tests
+```
+npm run test
+```
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+### Lints and fixes files
+```
+npm run lint
+```
