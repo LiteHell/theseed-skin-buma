@@ -1,22 +1,30 @@
 {
-  "name": "buma",
-  "version": "0.1.0",
-  "private": true,
+  "name": "theseed-skin-buma",
+  "version": "0.0.1",
+  "description": "skin for the seed engine",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "nuxt"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiteHell/theseed-skin-buma.git"
+  },
+  "author": "LiteHell",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/LiteHell/theseed-skin-buma/issues"
+  },
+  "homepage": "https://github.com/LiteHell/theseed-skin-buma#readme",
   "dependencies": {
-    "vue": "^2.5.17"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
-    "@vue/eslint-config-prettier": "^3.0.5",
-    "less": "^3.0.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-regular-svg-icons": "^5.5.0",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/vue-fontawesome": "^0.1.2",
+    "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "vue-template-compiler": "^2.5.17"
+    "nuxt": "^2.3.4",
+    "nuxt-buefy": "^0.3.2",
+    "nuxt-fontawesome": "^0.3.0"
   }
 }
