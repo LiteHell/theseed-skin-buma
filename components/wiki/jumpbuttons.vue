@@ -2,14 +2,14 @@
     <div class="jump-buttons">
         <ul>
             <li>
-                <div class="icon jump-up">
+                <a class="jump-up" href="#top">
                     <fontawesome icon="arrow-up" />
-                </div>
+                </a>
             </li>
             <li>
-                <div class="icon jump-down">
+                <a class="jump-down" href="#bottom">
                     <fontawesome icon="arrow-down" />
-                </div>
+                </a>
             </li>
         </ul>
     </div>
@@ -21,35 +21,30 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
-.jump-buttons {
+<style scoped lang="sass">
+.jump-buttons
     position: fixed;
     bottom: 10px;
     right: 10px;
-
-    ul {
+    &.lefthand
+        left: 10px;
+    ul
         list-style-type: none;
-
-        li {
-            cursor: pointer;
+        li 
             display: inline-block;
-            background: #00d1b2;
-            border: 1px solid #00d1b2;
+            background: white;
+            border: 1px solid white;
             font-size: 35px;
+            line-height: 45px;
             text-align: center;
             color: white;
             width: 50px;
             height: 50px;
             border-radius: 25px;
-        }
-
-        li+li {
-            margin-left: 5px;
-        }
-
-        li>* {
-            vertical-align: text-middle;
-        }
-    }
-}
+            border: 1px solid #d1d1d1;
+            box-shadow: 0px 2px 2px gray;
+            a 
+                vertical-align: text-top;
+        li+li 
+            margin-left: 7px;
 </style>

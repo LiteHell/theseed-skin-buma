@@ -1,9 +1,9 @@
 <template>
     <a class="navbar-item" :href="href">
         <template v-if="icon">
-            <fontawesome :icon="icon" />&nbsp;<slot></slot>
+            <fontawesome :icon="icon" class="fa-icon" />&nbsp;<span class="navbar-item-text"><slot></slot></span>
         </template>
-        <slot v-else></slot>
+        <span class="text" v-else><slot></slot></span>
     </a>
 </template>
 <script>

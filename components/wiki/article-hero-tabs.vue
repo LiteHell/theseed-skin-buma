@@ -57,25 +57,20 @@
     </ul>
 </template>
 
-<style lang="less" scoped>
-ul li {
-    @media screen and (min-width: 1024px) {
-        .wiki-article-menu-text {
+<style lang="sass" scoped>
+@import "~bulma/sass/utilities/mixins.sass";
+ul li
+    +desktop
+        .wiki-article-menu-text
             display: none;
-        }
-    }
     &:hover,
-    &.is-active {
-        .wiki-article-menu-text {
+    &.is-active
+        .wiki-article-menu-text
             display: initial;
-        }
-    }
-    &.star-tab.starred a {
+    &.star-tab.starred a
         color: goldenrod;
         border-color: gold;
         background: gold;
-    }
-}
 </style>
 
 

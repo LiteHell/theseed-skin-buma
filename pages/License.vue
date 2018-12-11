@@ -16,7 +16,10 @@
         <h2>사용된 라이브러리 및 리소스들</h2>
         <ul>
             <li><a href="//fontawesome.com">Font Awesome 5</a> : CC BY 4.0, MIT</li>
-            <li><a href="//bulma.io">bulma.io</a> : MIT License, Copyright (c) 2017 Jeremy Thomas</li>
+            <li><a href="//bulma.io">bulma.io</a> : MIT License, Copyright (c) 2017 Jeremy Thomas</li><li><a href="//jquery.com">JQuery</a> : MIT License, Copyright JS Foundation and other contributors, https://js.foundation/</li>
+            <li><a href="//jquery-ui.com">JQuery UI</a> : MIT License, Copyright JS Foundation and other contributors, https://js.foundation/</li>
+            <li><a href="//commons.wikimedia.org/wiki/File:Loading_icon.gif">Loading icon.gif</a> : CC BY 4.0, Copyright (C) 2015 Ahm masum</li>
+
         </ul>
         <h2>buma 스킨 라이선스</h2>
         <h3 style="text-align: center;">GNU GENERAL PUBLIC LICENSE</h3>

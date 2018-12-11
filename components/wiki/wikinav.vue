@@ -1,7 +1,7 @@
 <template>
     <b-navbar :brand="brand">
         <template slot="menu-right">
-            <div class="navbar-item">
+            <div class="navbar-item desktop-search">
                 <b-field>
                     <b-input placeholder="검색" type="search" icon="search" class="wikinav-query"></b-input>
                     <p class="control">
@@ -12,6 +12,7 @@
                     </p>
                 </b-field>
             </div>
+            <b-navlink href="#" icon="search" class="mobile-search">검색</b-navlink>
             <b-navdropdown v-if="user" right icon="user" :text="user.username">
                 <wikinav-right-items :user="user" />
             </b-navdropdown>
@@ -38,6 +39,21 @@
         </template>
     </b-navbar>
 </template>
+
+<style lang="sass" scoped>
+@import "~bulma/sass/utilities/mixins.sass";
+
+.mobile-search-box.disabled
+    display: none !important;
++touch
+    .desktop-search
+        display: none !important;
++desktop
+    .mobile-search
+        display: none !important;
+    .mobile-search-box
+        display: none !important;
+</style>
 
 <script>
 import bNavbar from '~/components/b-navbar.vue';

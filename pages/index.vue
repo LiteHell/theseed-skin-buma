@@ -38,7 +38,8 @@
                 starred: true,
                 starCount: 255,
                 lastModifiedAt: new Date(1429196400000)
-            })
+            });
+            store.commit('setLicense', 'cc-by-nc-sa');
         }
     }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="navbar-item has-dropdown is-hoverable">
-        <div v-if="icon" class="navbar-link"><fontawesome :icon="icon" />&nbsp;<span class="navbar-item-text" v-html="text" /></div>
+        <div v-if="icon" class="navbar-link"><fontawesome :icon="icon" class="fa-icon"/>&nbsp;<span class="navbar-item-text" v-html="text" /></div>
         <div v-else class="navbar-link" v-html="text">
         </div>
         <div :class="dropdownClasses">

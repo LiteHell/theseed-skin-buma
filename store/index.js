@@ -7,7 +7,8 @@ const store = () => new Vuex.Store({
         user: null,
         sitenotice: null,
         docInfo: null,
-        viewInfo: null
+        viewInfo: null,
+        license: null
     },
     mutations: {
         setWikiInfo (state, wikiinfo) {
@@ -31,6 +32,9 @@ const store = () => new Vuex.Store({
         },
         setViewInfo (state, viewInfo) {
             state.viewInfo = viewInfo;
+        },
+        setLicense (state, license) {
+            state.license = license;
         }
     }
 })
