@@ -2,5 +2,5 @@
 
 TO-DO
 [ ] skin settings
-[ ] search (desktop and mobile)
-[ ] dark mode
+[x] search (desktop and mobile)
+[x] dark mode

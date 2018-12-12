@@ -8,7 +8,9 @@ const store = () => new Vuex.Store({
         sitenotice: null,
         docInfo: null,
         viewInfo: null,
-        license: null
+        license: null,
+        licensetext: '',
+        footertext: ''
     },
     mutations: {
         setWikiInfo (state, wikiinfo) {
@@ -35,6 +37,12 @@ const store = () => new Vuex.Store({
         },
         setLicense (state, license) {
             state.license = license;
+        },
+        setCopyrightText (state, text) {
+            state.licensetext = text;
+        },
+        setFooterText (state, text) {
+            state.footertext = text;
         }
     }
 })

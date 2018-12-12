@@ -1,5 +1,23 @@
 <template>
     <div>
+        <template v-if="user">
+            <b-navlink href="#">
+                <article class="media">
+                    <figure class="media-left">
+                        <p class="image is-32x32">
+                            <img class="is-rounded" :src="user.gravatar">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content">
+                            <strong>{{ user.username }}</strong><br>
+                            Member
+                        </div>
+                    </div>
+                </article>
+            </b-navlink>
+            <b-navdivider />
+        </template>
         <b-navlink icon="wrench" class="skin-settings">스킨 설정</b-navlink>
         <b-navlink icon="adjust" class="toggle-dark">어두운테마 설정/해제</b-navlink>
         <b-navdivider v-if="user || ip" />

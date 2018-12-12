@@ -1,12 +1,12 @@
 <template>
-    <div class="mobile-searchbar">
-        <b-field>
-            <b-input placeholder="검색" type="search" icon="search" class="wikinav-query"></b-input>
+    <div class="mobile-search disabled">
+        <b-field class="search-fields">
+            <b-input placeholder="검색" type="search" icon="search" class="query" expanded></b-input>
             <p class="control">
-                <button class="button wikinav-random"><fontawesome icon="random"/></button>
+                <button class="button searchBtn"><fontawesome icon="search"/></button>
             </p>
             <p class="control">
-                <button class="button is-primary wikinav-search"><fontawesome icon="search"/></button>
+                <button class="button cancelBtn"><fontawesome icon="times"/></button>
             </p>
         </b-field>
     </div>
@@ -14,10 +14,14 @@
 
 <style lang="sass" scoped>
 @import "~bulma/sass/utilities/mixins.sass";
-.mobile-searchbar
-    +touch
+.mobile-search
+    +desktop
         display: none;
-
+    &.disabled
+        display: none;
+    background: white;
+    height: 100%;
+    padding: 8px 12px;
 </style>
 
 

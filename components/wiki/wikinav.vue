@@ -3,16 +3,16 @@
         <template slot="menu-right">
             <div class="navbar-item desktop-search">
                 <b-field>
-                    <b-input placeholder="검색" type="search" icon="search" class="wikinav-query"></b-input>
+                    <b-input placeholder="검색" type="search" icon="search" class="query"></b-input>
                     <p class="control">
-                        <button class="button wikinav-random"><fontawesome icon="random"/></button>
+                        <button class="button randomBtn"><fontawesome icon="random"/></button>
                     </p>
                     <p class="control">
-                        <button class="button is-primary wikinav-search"><fontawesome icon="search"/></button>
+                        <button class="button is-primary searchBtn"><fontawesome icon="search"/></button>
                     </p>
                 </b-field>
             </div>
-            <b-navlink href="#" icon="search" class="mobile-search">검색</b-navlink>
+            <b-navlink href="#" icon="search" class="toggle-mobile-search">검색</b-navlink>
             <b-navdropdown v-if="user" right icon="user" :text="user.username">
                 <wikinav-right-items :user="user" />
             </b-navdropdown>
@@ -49,9 +49,7 @@
     .desktop-search
         display: none !important;
 +desktop
-    .mobile-search
-        display: none !important;
-    .mobile-search-box
+    .toggle-mobile-search
         display: none !important;
 </style>
 

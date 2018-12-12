@@ -3,6 +3,7 @@
         <a href="#" id="top"></a>
         <wikinav v-if="user.ip" :ip="user.ip" :brand="navbrand"/>
         <wikinav v-else :user="user" :brand="navbrand"/>
+        <mobile-searchbar />
         <b-hero :title="viewInfo.title" :subtitle="subtitle">
             <article-hero-tabs v-if="docInfo && isUserDoc" :docname='docInfo.fullname' :starred="docInfo.starred" :star-count="docInfo.starCount" :current-view="viewInfo.viewName" :username="docInfo.name"/>
             <article-hero-tabs v-else-if="docInfo" :docname='docInfo.fullname' :starred="docInfo.starred" :star-count="docInfo.starCount" :current-view="viewInfo.viewName"/>
@@ -18,7 +19,10 @@
                         <img :src="licenseImg" alt="license">
                     </p>
                     theseed-skin-buma by LiteHell, Distributed under GPL-3.0+. Feel free to contribute via <a href="//github.com/litehell/theseed-skin-buma">github</a>.<br>
-                    the seed engine by <a href="//theseed.io/License">the seed engine</a>.
+                    the seed engine by <a href="//theseed.io/License">theseed.io</a>.
+                </p>
+                <p class="custom-footer" v-html="additionalFooter">
+
                 </p>
             </div></div>
         </footer>
@@ -42,10 +46,11 @@ footer .licenses {
     import wikisection from '~/components/wiki/wikisection.vue'
     import jumpbuttons from '~/components/wiki/jumpbuttons.vue';
     import skinsettings from '~/components/wiki/skinsettings.vue'
+    import mobileSearchbar from '~/components/wiki/mobile-searchbar.vue'
 
     export default {
         components: {
-            wikinav, wikisection, bHero, articleHeroTabs, jumpbuttons, skinsettings
+            wikinav, wikisection, bHero, articleHeroTabs, jumpbuttons, skinsettings, mobileSearchbar
         },
         computed: {
             navbrand: function() {
@@ -59,7 +64,10 @@ footer .licenses {
                 return (this.$store.state.license && supported.includes(this.$store.state.license)) ? ('/img/licenses/' + this.$store.state.license + '.png') : null;
             },
             user: function() {
-                return this.$store.state.user;
+                if(!this.$store.state.user) return null;
+                let user = this.$store.state.user;
+                user.gravatar = this.gravatar;
+                return user;
             },
             sitenotice: function() {
                 return this.$store.state.sitenotice;
@@ -78,6 +86,12 @@ footer .licenses {
                     return this.docInfo.lastModifiedAt.toString() + '에 마지막으로 수정됐습니다.';
                 else
                     return 'Powered by the seed engine';
+            },
+            additionalFooter: function () {
+                return (this.$store.state.licensetext || '') + '<br>' + (this.$store.state.footertext || '');
+            },
+            gravatar: function() {
+                return '/test-identicon.svg';
             }
         }
     }
