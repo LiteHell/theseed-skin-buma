@@ -18,7 +18,6 @@
             </b-navlink>
             <b-navdivider />
         </template>
-        <b-navlink icon="wrench" class="skin-settings">스킨 설정</b-navlink>
         <b-navlink icon="adjust" class="toggle-dark">어두운테마 설정/해제</b-navlink>
         <b-navdivider v-if="user || ip" />
         <template v-if="user">

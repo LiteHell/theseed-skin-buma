@@ -28,7 +28,6 @@
         </footer>
         <a href="#" id="bottom"></a>
         <jumpbuttons />
-        <!-- <skinsettings /> -->
     </div>
 </template>
 
@@ -45,12 +44,11 @@ footer .licenses {
     import articleHeroTabs from '~/components/wiki/article-hero-tabs.vue';
     import wikisection from '~/components/wiki/wikisection.vue'
     import jumpbuttons from '~/components/wiki/jumpbuttons.vue';
-    import skinsettings from '~/components/wiki/skinsettings.vue'
-    import mobileSearchbar from '~/components/wiki/mobile-searchbar.vue'
+    import mobileSearchbar from '~/components/wiki/mobile-searchbar.vue';
 
     export default {
         components: {
-            wikinav, wikisection, bHero, articleHeroTabs, jumpbuttons, skinsettings, mobileSearchbar
+            wikinav, wikisection, bHero, articleHeroTabs, jumpbuttons, mobileSearchbar
         },
         computed: {
             navbrand: function() {
