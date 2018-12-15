@@ -3,7 +3,7 @@
         <template slot="menu-right">
             <div class="navbar-item desktop-search">
                 <b-field>
-                    <b-input placeholder="검색" type="search" icon="search" class="query"></b-input>
+                    <b-input placeholder="검색" type="search" class="query"></b-input>
                     <p class="control">
                         <button class="button randomBtn"><fontawesome icon="random"/></button>
                     </p>

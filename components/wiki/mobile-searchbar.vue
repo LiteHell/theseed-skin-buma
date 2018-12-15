@@ -1,7 +1,7 @@
 <template>
     <div class="mobile-search disabled">
         <b-field class="search-fields">
-            <b-input placeholder="검색" type="search" icon="search" class="query" expanded></b-input>
+            <b-input placeholder="검색" type="search" class="query" expanded></b-input>
             <p class="control">
                 <button class="button searchBtn"><fontawesome icon="search"/></button>
             </p>
