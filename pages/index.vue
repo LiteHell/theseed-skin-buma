@@ -19,7 +19,6 @@ Nulla auctor pulvinar dui, vel ultrices nisl pellentesque in. Aenean fringilla, 
 
 <script>
     export default {
-        layout: 'wiki-default',
         fetch({store}) {
             let testAsIp = false;
             let testUserDoc = false;

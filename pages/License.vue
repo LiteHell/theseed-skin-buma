@@ -710,7 +710,6 @@ Public License instead of this License.  But first, please read
 
 <script>
     export default {
-        layout: 'wiki-default',
         fetch({
             store
         }) {
