@@ -15,11 +15,12 @@
             <div class="container">
             <div class="content">
                 <p>
-                    <p class="licenses" v-if="licenseImg">
-                        <img :src="licenseImg" alt="license">
-                    </p>
-                    theseed-skin-buma by LiteHell, Distributed under GPL-3.0+. Feel free to contribute via <a href="//github.com/litehell/theseed-skin-buma">github</a>.<br>
-                    the seed engine by <a href="//theseed.io/License">theseed.io</a>.
+                <p class="licenses" v-if="licenseImg">
+                    <img :src="licenseImg" alt="license">
+                </p>
+                <p class="engine-license">
+                theseed-skin-buma by LiteHell, Distributed under GPL-3.0+. Feel free to contribute via <a href="//github.com/litehell/theseed-skin-buma">github</a>.<br>
+                the seed engine by <a href="//theseed.io/License">theseed.io</a>.
                 </p>
                 <p class="custom-footer" v-html="additionalFooter">
 

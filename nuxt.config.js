@@ -17,6 +17,7 @@ module.exports = {
     ],
     css: [
         {src: '~/assets/css/darkmode.sass', lang: 'sass'},
+        {src: '~/assets/css/print.sass', lang: 'sass'},
         '~/assets/jquery-ui.min.css'
     ],
     head: {
