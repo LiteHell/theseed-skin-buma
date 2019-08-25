@@ -1,10 +1,10 @@
 {
   "name": "theseed-skin-buma",
-  "version": "0.0.1",
-  "description": "skin for the seed engine",
+  "version": "1.0.0",
+  "description": "third-party skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "dev": "nuxt"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,16 +17,10 @@
   },
   "homepage": "https://github.com/LiteHell/theseed-skin-buma#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.8",
-    "@fortawesome/free-regular-svg-icons": "^5.5.0",
-    "@fortawesome/free-solid-svg-icons": "^5.5.0",
-    "@fortawesome/vue-fontawesome": "^0.1.2",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "node-sass": "^4.11.0",
-    "nuxt": "^2.3.4",
-    "nuxt-buefy": "^0.3.2",
-    "nuxt-fontawesome": "^0.3.0",
-    "sass-loader": "^7.1.0"
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "buefy": "^0.8.2"
   }
 }
