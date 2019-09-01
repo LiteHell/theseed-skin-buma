@@ -54,11 +54,11 @@
 </style>
 
 <script>
-import bNavbar from '~/components/b-navbar.vue';
-import bNavlink from '~/components/b-navlink.vue';
-import bNavdropdown from '~/components/b-navdropdown.vue';
-import bNavdivider from '~/components/b-navdivider.vue';
-import wikinavRightItems from '~/components/wiki/_wikinav-right-items.vue';
+import bNavbar from '~/buma/components/b-navbar.vue';
+import bNavlink from '~/buma/components/b-navlink.vue';
+import bNavdropdown from '~/buma/components/b-navdropdown.vue';
+import bNavdivider from '~/buma/components/b-navdivider.vue';
+import wikinavRightItems from '~/buma/components/wiki/_wikinav-right-items.vue';
 
 export default {
     name:'wikinav',

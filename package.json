@@ -2,9 +2,8 @@
   "name": "theseed-skin-buma",
   "version": "1.0.0",
   "description": "third-party skin for the seed engine",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxt"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,11 @@
     "@fortawesome/free-regular-svg-icons": "^5.10.2",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
-    "buefy": "^0.8.2"
+    "buefy": "^0.8.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1"
+  },
+  "devDependencies": {
+    "nuxt": "^2.9.2"
   }
 }

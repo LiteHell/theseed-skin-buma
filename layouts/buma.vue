@@ -34,7 +34,7 @@ footer .licenses {
     float: right;
 }
 </style>
-<style scoped src="buefy/dist/buefy.css">
+<style src="buefy/dist/buefy.css">
 
 </style>
 
@@ -47,7 +47,7 @@ footer .licenses {
     import mobileSearchbar from '~/buma/components/wiki/mobile-searchbar.vue';
     // Buefy and fontawesome
     import Vue from 'vue';
-    import { Buefy } from 'buefy';
+    import Buefy from 'buefy';
     import { library } from '@fortawesome/fontawesome-svg-core'
     import { fas } from '@fortawesome/free-solid-svg-icons'
     import { far } from '@fortawesome/free-regular-svg-icons'

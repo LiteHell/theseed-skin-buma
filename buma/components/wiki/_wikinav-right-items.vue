@@ -38,8 +38,8 @@
     </div>
 </template>
 <script>
-    import bNavlink from '~/components/b-navlink.vue';
-    import bNavdivider from '~/components/b-navdivider.vue';
+    import bNavlink from '~/buma/components/b-navlink.vue';
+    import bNavdivider from '~/buma/components/b-navdivider.vue';
 
     export default {
         name: 'wikinav-right-items',
