@@ -1,12 +1,12 @@
 <template>
     <nav class="navbar buma-topnav">
         <div class="navbar-brand">
-            <a href="/" class="navbar-item">
+            <nuxt-link to="/" class="navbar-item">
                 <img v-if="brand && brand.img" :src="brand.img" />
                 <template v-if="brand && brand.text">
                     {{ brand.text }}
                 </template>
-            </a>
+            </nuxt-link>
             <div class="navbar-mobile">
                 <div class="mobile-left">
                 <slot>

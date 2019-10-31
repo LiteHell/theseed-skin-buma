@@ -1,58 +1,63 @@
 <template>
     <ul>
         <li :class="{'is-active': currentView == 'wiki'}">
-            <a :href="createDocLink('wiki')">
+            <nuxt-link :to="this.docname | doc_action_link('wiki')">
                 <fontawesome icon="eye" />&nbsp;<span class="wiki-article-menu-text">읽기</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView == 'edit'}">
-            <a :href="createDocLink('edit')">
+            <nuxt-link :to="this.docname | doc_action_link('edit')">
                 <fontawesome icon="edit" />&nbsp;<span class="wiki-article-menu-text">편집</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView.startsWith('thread')}">
-            <a :href="createDocLink('thread')">
+            <nuxt-link :to="this.docname | doc_action_link('thread')">
                 <fontawesome icon="comments" />&nbsp;<span class="wiki-article-menu-text">토론</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView == 'move'}">
-            <a :href="createDocLink('move')">
+            <nuxt-link :to="this.docname | doc_action_link('move')">
                 <fontawesome icon="arrow-right" />&nbsp;<span class="wiki-article-menu-text">이동</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView == 'delete'}">
-            <a :href="createDocLink('delete')">
+            <nuxt-link :to="this.docname | doc_action_link('delete')">
                 <fontawesome icon="trash-alt" />&nbsp;<span class="wiki-article-menu-text">삭제</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView == 'xref'}">
-            <a :href="createDocLink('xref')">
+            <nuxt-link :to="this.docname | doc_action_link('xref')">
                 <fontawesome icon="random" />&nbsp;<span class="wiki-article-menu-text">역링크</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView == 'history'}">
-            <a :href="createDocLink('history')">
+            <nuxt-link :to="this.docname | doc_action_link('history')">
                 <fontawesome icon="history" />&nbsp;<span class="wiki-article-menu-text">역사</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="{'is-active': currentView == 'acl'}">
-            <a :href="createDocLink('acl')">
+            <nuxt-link :to="this.docname | doc_action_link('acl')">
                 <fontawesome icon="key" />&nbsp;<span class="wiki-article-menu-text">ACL</span>
-            </a>
+            </nuxt-link>
         </li>
         <li :class="starTabClasses">
-            <a :href="toggleStarLink">
+            <nuxt-link v-if="starred" :to="docname | doc_action_link('member/unstar')">
                 <fontawesome icon="star" />
-                <span v-if="starred" class="wiki-article-menu-text">별찜 해제(</span>
-                <span v-else class="wiki-article-menu-text">별찜(</span>
+                <span class="wiki-article-menu-text">별찜 해제(</span>
                 <span class="star-count">{{ starCount }}</span>
                 <span class="wiki-article-menu-text">)</span>
-            </a>
+            </nuxt-link>
+            <nuxt-link v-else :to="docname | doc_action_link('member/star')">
+                <fontawesome icon="star" />
+                <span class="wiki-article-menu-text">별찜(</span>
+                <span class="star-count">{{ starCount }}</span>
+                <span class="wiki-article-menu-text">)</span>
+            </nuxt-link>
         </li>
         <li v-if="username">
-            <a :href="userContribsLink">
+            <nuxt-link :to="userContribsLink">
                 <fontawesome icon="chart-line" />&nbsp;<span class="wiki-article-menu">기여내역</span>
-            </a>
+            </nuxt-link>
         </li>
     </ul>
 </template>
@@ -79,7 +84,7 @@ ul li
         name: 'article-hero-tabs',
         props: {
             docname: {
-                type: String,
+                type: Object,
                 required: true
             },
             starred: {
@@ -100,14 +105,8 @@ ul li
             }
         },
         methods: {
-            createDocLink: function (action) {
-                return '/' + action + '/' + encodeURIComponent(this.docname);
-            }
         },
         computed: {
-            toggleStarLink: function () {
-                return (this.starred ? '/member/unstar/' : '/member/star') + encodeURIComponent(this.docname)
-            },
             starTabClasses: function () {
                 return {
                     'star-tab': true,
