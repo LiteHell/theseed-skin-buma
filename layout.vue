@@ -39,12 +39,12 @@ footer .licenses {
 </style>
 
 <script>
-    import wikinav from '~/buma/components/wiki/wikinav.vue';
-    import bHero from '~/buma/components/b-hero.vue';
-    import articleHeroTabs from '~/buma/components/wiki/article-hero-tabs.vue';
-    import wikisection from '~/buma/components/wiki/wikisection.vue'
-    import jumpbuttons from '~/buma/components/wiki/jumpbuttons.vue';
-    import mobileSearchbar from '~/buma/components/wiki/mobile-searchbar.vue';
+    import wikinav from './buma/components/wiki/wikinav.vue';
+    import bHero from './buma/components/b-hero.vue';
+    import articleHeroTabs from './buma/components/wiki/article-hero-tabs.vue';
+    import wikisection from './buma/components/wiki/wikisection.vue'
+    import jumpbuttons from './buma/components/wiki/jumpbuttons.vue';
+    import mobileSearchbar from './buma/components/wiki/mobile-searchbar.vue';
     // Buefy and fontawesome
     import Vue from 'vue';
     import Buefy from 'buefy';
