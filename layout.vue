@@ -53,13 +53,14 @@ footer .licenses {
     import { far } from '@fortawesome/free-regular-svg-icons'
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+    if (process.browser) {
+        Vue.use(Buefy);
+        library.add(fas);
+        library.add(far);
+        Vue.component('fontawesome', FontAwesomeIcon);
+    }
+
     export default {
-        created() {
-            Vue.use(Buefy);
-            library.add(fas);
-            library.add(far);
-            Vue.component('fontawesome', FontAwesomeIcon);
-        },
         components: {
             wikinav, wikisection, bHero, articleHeroTabs, jumpbuttons, mobileSearchbar
         },
