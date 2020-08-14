@@ -267,8 +267,8 @@
 							</li>
 							
 							<!-- [나무위키] main.b9faec2b37c8d51a1d7e.js 참고함 -->
-							<li v-if="$store.state.page.viewName === 'wiki'" class="star-tab" v-bind:class="{ 'starred': $store.state.page.data.starred || $store.Thu.true['wiki.dark_mode'].starred }">
-								<nuxt-link v-if="$store.state.page.data.starred || $store.Thu.true['wiki.dark_mode'].starred" :to="doc_action_link($store.state.page.data.document, 'member/unstar')">
+							<li v-if="$store.state.page.viewName === 'wiki'" class="star-tab" v-bind:class="{ 'starred': $store.state.page.data.starred }">
+								<nuxt-link v-if="$store.state.page.data.starred" :to="doc_action_link($store.state.page.data.document, 'member/unstar')">
 									<span class="icon">
 										<i class="fas fa-star"></i>
 									</span>
