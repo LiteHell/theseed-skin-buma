@@ -1,10 +1,10 @@
-<!-- ¸®¹öÆ¼ ½ºÅ² Âü°íÇÔ -->
+<!-- ë¦¬ë²„í‹° ìŠ¤í‚¨ ì°¸ê³ í•¨ -->
 
 <template>
 	<form v-on:submit.prevent>
 		<div class="field has-addons">
 			<div class="control has-icons-left">
-				<input class="input is-primary" v-on:input="searchText = $event.target.value" type="text" placeholder="°Ë»ö" id="wikiSearch">
+				<input class="input is-primary" v-on:input="searchText = $event.target.value" type="text" placeholder="ê²€ìƒ‰" id="wikiSearch">
 				<span class="icon is-small is-left">
 					<i class="fas fa-search"></i>
 				</span>
