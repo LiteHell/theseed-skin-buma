@@ -367,7 +367,7 @@
                 <div class="wiki-article content" @dblclick="doBehaviorWhenDblClick">
                     <nuxt />
 
-                    <skin-license v-if="$store.state.page.viewName === license"></skin-license>
+                    <skin-license v-if="$store.state.page.viewName === 'license'"></skin-license>
                 </div>
             </div>
         </section>
