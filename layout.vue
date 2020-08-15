@@ -485,7 +485,7 @@ export default {
 			switch(action) {
 				case 'edit':
 				case 'history':
-					const link = this.doc_action_link($store.state.page.data.document, action);
+					const link = this.doc_action_link(this.$store.state.page.data.document, action);
 					this.$router.push(link);
 					break;
 				case 'doNothing':
