@@ -4,7 +4,7 @@
 	<form v-on:submit.prevent>
 		<div class="field has-addons">
 			<div class="control has-icons-left">
-				<input class="input is-primary" v-on:input="searchText = $event.target.value" type="text" placeholder="검색" id="wikiSearch">
+				<input class="input is-primary" v-on:input="searchText = $event.target.value" type="text" autocomplete="off"  @blur="blur" @focus="focus" @input="inputChange" @keyup.enter="keyEnter" @keydown.tab="keyEnter" @keydown.up="keyUp" @keydown.down="keyDown" placeholder="검색" id="wikiSearch">
 				<span class="icon is-small is-left">
 					<i class="fas fa-search"></i>
 				</span>
@@ -50,3 +50,38 @@ export default {
     }
 }
 </script>
+
+
+<style scoped>
+.v-autocomplete-list {
+    position: absolute;
+    z-index: 3;
+    border: 1px solid #CCC;
+    background-color: #fff;
+    width: 10.8rem;
+}
+@media (max-width: 1023px) {
+    .v-autocomplete-list {
+        width: 100%;
+    }
+}
+.theseed-dark-mode .v-autocomplete-list {
+  background-color: #2d2f34;
+    border: 1px solid #383b40;
+}
+.v-autocomplete-list-item {
+  cursor: pointer;
+  color: #373a3c;
+  padding: 0.5rem;
+}
+.theseed-dark-mode .v-autocomplete-list-item {
+  color: #ddd;
+}
+ .v-autocomplete-list-item.v-autocomplete-item-active {
+  background-color: #f3f6fa;
+}
+.theseed-dark-mode .v-autocomplete-list-item.v-autocomplete-item-active {
+  background-color: #383b40;
+}
+</style>
+
