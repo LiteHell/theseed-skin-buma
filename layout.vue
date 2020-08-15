@@ -1,16 +1,16 @@
 <template>
 	<div class="buma">
 		<div class="nav navbar" role="navigation" aria-label="main navigation">
-			<div class="navbar-brand">
-				<nuxt-link to=/ class="navbar-brand"></nuxt-link>
-				<button class="button navbar-burger" data-target="mainNavbar">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
 			<div class="navbar-menu" id="mainNavbar">
 				<div class="navbar-start">
+					<div class="navbar-brand">
+						<nuxt-link to="/" class="navbar-item"></nuxt-link>
+						<button class="button navbar-burger" data-target="mainNavbar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
 					<nuxt-link to="/RecentChanges" class="navbar-item">
 						<span class="icon">
 							<i class="fas fa-binoculars"></i>
