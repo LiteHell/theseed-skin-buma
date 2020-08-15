@@ -5,6 +5,9 @@
 This is a third-party skin for the seed engine, based on [bulma](https://bulma.io).
 Special thanks to [gdl-888](https://github.com/gdl-888) for porting to Vue.js.
 
+## Formatting
+This project uses [prettier](https://prettier.io) for formatting. It convenient to use Visual Studio Code with [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
 ## Copyright
 Copyright (C) 2017 LiteHell, and contributors
 
