@@ -173,6 +173,7 @@
 			</div>
 		</div>
 		<section class="hero {% if error || skinInfo.viewName === 'notfound' %}is-danger{% else %}is-primary{% endif %}" id="wiki-main-title">
+ 		<section id="wiki-main-title" class="hero" v-bind:class="{ [($store.state.page.data.error || $store.state.page.viewName == 'notfound') ? 'is-danger' : 'is-primary']: true }">
 			<div class="hero-body">
 				<div class="container">
 					<h1 class=title v-text="$store.state.page.title" />
