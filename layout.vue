@@ -160,6 +160,15 @@
 									<i class="fas fa-adjust"></i>
 								</span> 다크테마 설정/해제</a>
 							<div class="navbar-divider"></div>
+							<nuxt-link :to="contribution_ip_link($store.state.session.ip)" class="navbar-item">
+								<span class="icon">
+									<i class="fas fa-chart-line"></i>
+								</span> 내 문서 기여 목록</nuxt-link>
+							<nuxt-link :to="contribution_ip_link_discuss($store.state.session.ip)" class="navbar-item">
+								<span class="icon">
+									<i class="fas fa-chart-bar"></i>
+								</span> 내 토론 기여 목록</nuxt-link>
+							<div class="navbar-divider"></div>
 							<nuxt-link :to="{path:'/member/login',query:{redirect:$route.fullPath}}" class="navbar-item">
 								<span class="icon">
 									<i class="fas fa-sign-in-alt"></i>
@@ -191,95 +200,100 @@
 			<div class="hero-foot">
 				<div class="container">
 					<div class="tabs is-left is-boxed" id="wiki-article-menu">
-						<ul>
-							{% if document %}
-							<li {% if skinInfo.viewName=='wiki' %} class="is-active" {% endif %}>
-								<a href="/w/{{ document|encode_doc }}">
+						<ul v-if="$store.state.page.data.document">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'wiki' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'w')">
 									<span class="icon">
 										<i class="fas fa-eye"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 읽기</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='edit' %} class="is-active" {% endif %}>
-								<a href="/edit/{{ document|encode_doc }}" class="edit-anchor">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'edit' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'edit')" class=edit-anchor>
 									<span class="icon">
 										<i class="fas fa-edit"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 편집</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='thread' || skinInfo.viewName=='thread_list' || skinInfo.viewName=='thread_list_close'
-								%} class="is-active" {% endif %}>
-								<a href="/discuss/{{ document|encode_doc }}">
+							<li v-bind:class="{ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName)' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'discuss')">
 									<span class="icon">
 										<i class="far fa-comments"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 토론</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='move' %} class="is-active" {% endif %}>
-								<a href="/move/{{ document|encode_doc }}">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'move' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'move')">
 									<span class="icon">
 										<i class="fas fa-arrow-right"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 이동</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='delete' %} class="is-active" {% endif %}>
-								<a href="/delete/{{ document|encode_doc }}">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'delete' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'delete')">
 									<span class="icon">
 										<i class="far fa-trash-alt"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 삭제</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='xref' %} class="is-active" {% endif %}>
-								<a href="/xref/{{ document|encode_doc }}">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'backlink' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'backlink')">
 									<span class="icon">
 										<i class="fas fa-random"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 역링크</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='history' %} class="is-active" {% endif %}>
-								<a href="/history/{{ document|encode_doc }}" class="history-anchor">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'history' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'history')">
 									<span class="icon">
 										<i class="fas fa-history"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 역사</span>
-								</a>
+								</nuxt-link>
 							</li>
-							<li {% if skinInfo.viewName=='acl' %} class="is-active" {% endif %}>
-								<a href="/acl/{{ document|encode_doc }}">
+							<li v-bind:class="{ 'is-active': $store.state.page.viewName === 'acl' }">
+								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'acl')">
 									<span class="icon">
 										<i class="fas fa-key"></i>
 									</span>
 									<span class="wiki-article-menu-text"> ACL</span>
-								</a>
+								</nuxt-link>
 							</li>
-							{% if star_count >= 0 %}
-							<li class="star-tab{% if starred %} starred {% endif %}">
-								<a href="/member/{% if starred %}un{% endif %}star/{{ document|encode_doc }}">
+							
+							<!-- [나무위키] main.b9faec2b37c8d51a1d7e.js 참고함 -->
+							<li v-if="$store.state.page.viewName === 'wiki'" class="star-tab" v-bind:class="{ 'starred': $store.state.page.data.starred }">
+								<nuxt-link v-if="$store.state.page.data.starred" :to="doc_action_link($store.state.page.data.document, 'member/unstar')">
 									<span class="icon">
 										<i class="fas fa-star"></i>
 									</span>
-									<span class="wiki-article-menu-text"> {% if starred %}별찜 해제{% else %}별찜{% endif %} (</span><span
-										class="star-count">{{ star_count }}</span><span class="wiki-article-menu-text">)</span>
-								</a>
+									<span class="wiki-article-menu-text"> 별찜 해제 (</span><span class="star-count">{{ $store.state.page.data.star_count ? $store.state.page.data.star_count : '' }}</span><span class="wiki-article-menu-text">)</span>
+								</nuxt-link>
+								<nuxt-link v-else :to="doc_action_link($store.state.page.data.document, 'member/star')">
+									<span class="icon">
+										<i class="fas fa-star"></i>
+									</span>
+									<span class="wiki-article-menu-text"> 별찜 (</span><span class="star-count">{{ $store.state.page.data.star_count ? $store.state.page.data.star_count : '' }}</span><span class="wiki-article-menu-text">)</span>
+								</nuxt-link>
 							</li>
-							{% endif %}
-							{% if user %}
-							<li>
-								<a href="/contribution/author/{{ document.title|url_encode }}/document">
+							
+							<!-- [나무위키] main.a65ef46d6b3879416d5f.js 및 main.b9faec2b37c8d51a1d7e.js 참고함 -->
+							<li v-if="$store.state.page.data.user">
+								<nuxt-link :to="contribution_author_link($store.state.page.data.document.title)">
 									<span class="icon">
 										<i class="fas fas fa-chart-line"></i>
 									</span>
 									<span class="wiki-article-menu-text"> 기여내역</span>
-								</a>
+								</nuxt-link>
 							</li>
-							{% endif %}
-							{% else %}
+						</ul>
+						
+						<ul v-else>
 							<li class="is-active">
 								<a href="#">
 									<span class="icon">
@@ -288,7 +302,6 @@
 									<span class="wiki-article-menu-text"> 특수문서</span>
 								</a>
 							</li>
-							{% endif %}
 						</ul>
 					</div>
 				</div>
