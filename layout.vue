@@ -478,7 +478,7 @@ export default {
 	},
 	methods: {
 		doBehaviorWhenDblClick() {
-			if (!$store.state.page.data.document)
+			if (!this.$store.state.page.data.document)
 				return;
 			
 			const action = this.$store.state.localConfig['buma.behaviorWhenDblClick'];
