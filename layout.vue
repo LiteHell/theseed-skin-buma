@@ -1074,13 +1074,11 @@ import SettingItemCheckbox from '~/components/settingItemCheckbox';
 import SettingItemSelect from '~/components/settingItemSelect';
 
 if(process.browser) {
-    try {
-        require("./js/jquery.min.js");
-        require("./js/jquery-ui.min.js");
-        require("./js/bootstrap.min.js");
-        require("./js/layout.js");
-        require("./js/all.min.js");
-    } catch(e) {}
+    try { require("./js/jquery.min.js"); } catch(e) { console.log(e.stack); }
+    try { require("./js/jquery-ui.min.js"); } catch(e) { console.log(e.stack); }
+    try { require("./js/bootstrap.min.js"); } catch(e) { console.log(e.stack); }
+    try { require("./js/layout.js"); } catch(e) { console.log(e.stack); }
+    try { require("./js/all.min.js"); } catch(e) { console.log(e.stack); }
 }
 export default {
     mixins: [Common],
