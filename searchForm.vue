@@ -24,14 +24,14 @@
                 </span>
             </div>
             <div class="control">
-                <a href="#" class="button" id="wikiSearchBtn" @click="gotodoc">
+                <a href="#" class="button" id="wikiSearchBtn" @click.prevent="gotodoc">
                     <span class="icon">
                         <i class="fas fa-search"></i>
                     </span>
                 </a>
             </div>
             <div class="control">
-                <a href="#" class="button" id="wikiGoRandomBtn" @click="random">
+                <a href="#" class="button" id="wikiGoRandomBtn" @click.prevent="random">
                     <span class="icon">
                         <i class="fas fa-random"></i>
                     </span>
