@@ -1,16 +1,16 @@
 <template>
 	<div class="buma">
 		<div class="nav navbar" role="navigation" aria-label="main navigation">
-			<div class="navbar-brand">
-				<nuxt-link to=/ class="navbar-brand"></nuxt-link>
-				<button class="button navbar-burger" data-target="mainNavbar">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
 			<div class="navbar-menu" id="mainNavbar">
 				<div class="navbar-start">
+					<div class="navbar-brand">
+						<nuxt-link to="/" class="navbar-item"></nuxt-link>
+						<button class="button navbar-burger" data-target="mainNavbar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
 					<nuxt-link to="/RecentChanges" class="navbar-item">
 						<span class="icon">
 							<i class="fas fa-binoculars"></i>
@@ -97,7 +97,7 @@
 				</div>
 
 				<div class="navbar-item has-dropdown is-hoverable">
-					<template v-if="$store.state.session.member"><a href="#" class="navbar-link">
+					<template v-if="$store.state.session.member">
 						<a href="#" class="navbar-link">
 						<span class="icon">
 							<i class="fas fa-user"></i>
@@ -145,15 +145,10 @@
 						</span> 익명</a>
 
 						<div class="navbar-dropdown is-right">
-							<a href="#" id="skin-settings" class="navbar-item">
+							<a href="#" @click.prevent="$modal.show('theseed-setting');" class="navbar-item">
 								<span class="icon">
 									<i class="fas fa-wrench"></i>
 								</span> 스킨 설정</a>
-							<a href="#" id="toggle-dark-theme" class="navbar-item">
-								<span class="icon">
-									<i class="fas fa-adjust"></i>
-								</span> 다크테마 설정/해제</a>
-							<div class="navbar-divider"></div>
 							<nuxt-link :to="contribution_ip_link($store.state.session.ip)" class="navbar-item">
 								<span class="icon">
 									<i class="fas fa-chart-line"></i>
