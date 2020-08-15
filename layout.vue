@@ -1072,6 +1072,7 @@ import Setting from '~/components/setting';
 import LocalDate from '~/components/localDate';
 import SettingItemCheckbox from '~/components/settingItemCheckbox';
 import SettingItemSelect from '~/components/settingItemSelect';
+import SearchForm from './searchForm';
 
 if(process.browser) {
     try { require("./js/jquery.min.js"); } catch(e) { console.log(e.stack); }
@@ -1087,6 +1088,7 @@ export default {
         LocalDate,
         SettingItemSelect,
         SettingItemCheckbox,
+        SearchForm,
     },
     loadingBarColor(isDark) {
       return isDark ? 'white' : 'black';
