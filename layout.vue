@@ -401,7 +401,7 @@
                 <option value="skinDefault">스킨 기본값</option>
             </setting-item-select>
         </setting>
-        <div class="jump-buttons">
+        <div class="jump-buttons" v-if="$store.state.localConfig['buma.enableJumpButtons'] !== 'no'">
             <ul>
                 <li>
                     <div class="icon jump-up">
