@@ -2,7 +2,7 @@
     <div>
         <h2 class="title">buma 스킨 정보</h2>
         <p>
-            Copyright (C) 2017 LiteHell<br /><br />
+            Copyright (C) 2017 LiteHell, and contributors<br /><br />
             This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
             the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br /><br />
             This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -700,5 +700,8 @@
         &lt;https://www.gnu.org/licenses/why-not-lgpl.html&gt;.
 
         </pre>
+        <h2 class="title">기타</h2>
+        <p>Special thanks to <a href="https://github.com/gdl-888">gdl-888</a> for porting into Vue.js.
+        Contributions and issues are always welcomed. Visit <a href="https://github.com/LiteHell/theseed-skin-buma">the repository</a> for contributing and issue reporting.</p>
     </div>
 </template>
