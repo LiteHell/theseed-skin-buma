@@ -1,5 +1,5 @@
 <template>
-	<div class=buma>
+	<div class="buma">
 		<div class="nav navbar" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<nuxt-link to=/ class=navbar-brand></nuxt-link>
@@ -30,7 +30,7 @@
 									<i class="fas fa-beer"></i>
 								</span>
 								작성이 필요한 문서
-							</nuxt-linknuxt-link>
+							</nuxt-link>
 							<nuxt-link class="navbar-item" to="/OrphanedPages">
 								<span class="icon">
 									<i class="far fa-frown"></i>
@@ -83,8 +83,8 @@
 								<span class="icon">
 									<i class="far fa-copyright"></i>
 								</span> 라이선스</nuxt-link>
-								
-                         <a to=# @click.prevent="$modal.show('theseed-setting');" class="navbar-item">설정</a>
+
+                         <a to='#' @click.prevent="$modal.show('theseed-setting');" class="navbar-item">설정</a>
                          <template v-if="$store.state.session.menus.length">
 								<nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" class="navbar-item" v-text="m.t"/>
 							</template>
@@ -96,14 +96,14 @@
 				<div class="navbar-item">
 					<search-form />
 				</div>
-				
+
 				<div class="navbar-item has-dropdown is-hoverable">
 					<template v-if="$store.state.session.member"><a href="#" class="navbar-link">
 						<a href="#" class="navbar-link">
 						<span class="icon">
 							<i class="fas fa-user"></i>
 						</span> {{ $store.state.session.member.username }}</a>
-						
+
 						<div class="navbar-dropdown is-right">
 							<a href="#" id="skin-settings" class="navbar-item">
 								<span class="icon">
@@ -143,13 +143,13 @@
 								</span> 로그아웃</nuxt-link>
 						</div>
 					</template>
-					
+
 					<template v-else>
 						<a href="#" class="navbar-link">
 						<span class="icon">
 							<i class="fas fa-user-secret"></i>
 						</span> 익명</a>
-						
+
 						<div class="navbar-dropdown is-right">
 							<a href="#" id="skin-settings" class="navbar-item">
 								<span class="icon">
@@ -186,11 +186,11 @@
 						<span v-if="$store.state.page.viewName === 'wiki' && $store.state.page.data.date">
 							<local-date :date="$store.state.page.data.date" />에 마지막으로 수정됐습니다.
 						</span>
-						
+
 						<span v-else-if="$store.state.page.viewName === 'notfound'">
 							존재하지 않는 문서입니다. 직접 자유롭게 기여해보세요!
 						</span>
-						
+
 						<span v-else>
 							Powered by the seed engine
 						</span>
@@ -217,7 +217,7 @@
 									<span class="wiki-article-menu-text"> 편집</span>
 								</nuxt-link>
 							</li>
-							<li v-bind:class="{ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName)' }">
+							<li v-bind:class="{ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName) }">
 								<nuxt-link :to="doc_action_link($store.state.page.data.document, 'discuss')">
 									<span class="icon">
 										<i class="far fa-comments"></i>
@@ -265,7 +265,7 @@
 									<span class="wiki-article-menu-text"> ACL</span>
 								</nuxt-link>
 							</li>
-							
+
 							<!-- [나무위키] main.b9faec2b37c8d51a1d7e.js 참고함 -->
 							<li v-if="$store.state.page.viewName === 'wiki'" class="star-tab" v-bind:class="{ 'starred': $store.state.page.data.starred }">
 								<nuxt-link v-if="$store.state.page.data.starred" :to="doc_action_link($store.state.page.data.document, 'member/unstar')">
@@ -281,7 +281,7 @@
 									<span class="wiki-article-menu-text"> 별찜 (</span><span class="star-count">{{ $store.state.page.data.star_count ? $store.state.page.data.star_count : '' }}</span><span class="wiki-article-menu-text">)</span>
 								</nuxt-link>
 							</li>
-							
+
 							<!-- [나무위키] main.a65ef46d6b3879416d5f.js 및 main.b9faec2b37c8d51a1d7e.js 참고함 -->
 							<li v-if="$store.state.page.data.user">
 								<nuxt-link :to="contribution_author_link($store.state.page.data.document.title)">
@@ -292,7 +292,7 @@
 								</nuxt-link>
 							</li>
 						</ul>
-						
+
 						<ul v-else>
 							<li class="is-active">
 								<a href="#">
@@ -313,15 +313,15 @@
 					<button class=delete></button>
 					<nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'discuss')">사용자 토론</nuxt-link>이 있습니다. 확인해주세요.
 				</div>
-				
+
 				<div class="notification" v-if="$store.state.config['wiki.sitenotice']">
 					<button class="delete"></button>
 					<span v-html="$store.state.config['wiki.sitenotice']" />
 				</div>
-				
+
 				<div class="wiki-article content">
 					<nuxt />
-					
+
 					<div v-if="$store.state.page.viewName === 'license'">
 						<h2 class="title">buma 스킨 정보</h2>
 						<p>Copyright (C) 2017 LiteHell<br><br>
@@ -1026,7 +1026,7 @@
 					<p>
 						<span v-html="$store.state.config['wiki.copyright_text']" />
 						<span v-html="$store.state.config['wiki.footer_text']" />
-						
+
 						theseed-skin-buma by LiteHell, the seed engine by theseed.io
 					</p>
 				</div>
