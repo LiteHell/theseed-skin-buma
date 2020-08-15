@@ -364,7 +364,7 @@
                     <span v-html="$store.state.config['wiki.sitenotice']" />
                 </div>
 
-                <div class="wiki-article content">
+                <div class="wiki-article content" @dblclick="doBehaviorWhenDblClick">
                     <nuxt />
 
                     <skin-license v-if="$store.state.page.viewName === license"></skin-license>
@@ -475,6 +475,25 @@ export default {
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
-    }
+	},
+	methods: {
+		doBehaviorWhenDblClick() {
+			if (!$store.state.page.data.document)
+				return;
+			
+			const action = this.$store.state.localConfig['buma.behaviorWhenDblClick'];
+			switch(action) {
+				case 'edit':
+				case 'history':
+					const link = this.doc_action_link($store.state.page.data.document, action);
+					this.$router.push(link);
+					break;
+				case 'doNothing':
+				case 'skinDefault':
+				default:
+					break;
+			}
+		}
+	}
 };
 </script>
