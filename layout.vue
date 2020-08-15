@@ -145,15 +145,10 @@
 						</span> 익명</a>
 
 						<div class="navbar-dropdown is-right">
-							<a href="#" id="skin-settings" class="navbar-item">
+							<a href="#" @click.prevent="$modal.show('theseed-setting');" class="navbar-item">
 								<span class="icon">
 									<i class="fas fa-wrench"></i>
 								</span> 스킨 설정</a>
-							<a href="#" id="toggle-dark-theme" class="navbar-item">
-								<span class="icon">
-									<i class="fas fa-adjust"></i>
-								</span> 다크테마 설정/해제</a>
-							<div class="navbar-divider"></div>
 							<nuxt-link :to="contribution_ip_link($store.state.session.ip)" class="navbar-item">
 								<span class="icon">
 									<i class="fas fa-chart-line"></i>
