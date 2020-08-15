@@ -1,10 +1,14 @@
 <template>
     <div>
         <h2 class="title">buma 스킨 정보</h2>
-        <p>Copyright (C) 2017 LiteHell<br><br>
-        This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br><br>
-        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.<br><br>
-        You should have received a copy of the GNU General Public License along with this program.  If not, see <a href="http://www.gnu.org/licenses/">&lt;http://www.gnu.org/licenses/&gt;</a>.
+        <p>
+            Copyright (C) 2017 LiteHell<br /><br />
+            This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+            the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br /><br />
+            This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+            MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.<br /><br />
+            You should have received a copy of the GNU General Public License along with this program. If not, see
+            <a href="http://www.gnu.org/licenses/">&lt;http://www.gnu.org/licenses/&gt;</a>.
         </p>
         <h2 class="title">사용된 라이브러리 및 리소스들</h2>
         <ul>
@@ -13,7 +17,10 @@
             <li><a href="//jquery.com">JQuery</a> : MIT License, Copyright JS Foundation and other contributors, https://js.foundation/</li>
             <li><a href="//jquery-ui.com">JQuery UI</a> : MIT License, Copyright JS Foundation and other contributors, https://js.foundation/</li>
             <li><a href="//commons.wikimedia.org/wiki/File:Loading_icon.gif">Loading icon.gif</a> : CC BY 4.0, Copyright (C) 2015 Ahm masum</li>
-            <li><a href="//getbootstrap.com">Bootstrap v4 alpha (Custom built)</a> Copyright (c) 2011-2017 Twitter. Inc., Copyright (c) 2011-2017 The Bootstrap Authors, MIT License</li>
+            <li>
+                <a href="//getbootstrap.com">Bootstrap v4 alpha (Custom built)</a> Copyright (c) 2011-2017 Twitter. Inc., Copyright (c) 2011-2017 The
+                Bootstrap Authors, MIT License
+            </li>
         </ul>
         <h2 class="title">buma 스킨 라이선스</h2>
         <pre>
