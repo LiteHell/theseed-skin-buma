@@ -97,7 +97,7 @@
 				</div>
 
 				<div class="navbar-item has-dropdown is-hoverable">
-					<template v-if="$store.state.session.member"><a href="#" class="navbar-link">
+					<template v-if="$store.state.session.member">
 						<a href="#" class="navbar-link">
 						<span class="icon">
 							<i class="fas fa-user"></i>
