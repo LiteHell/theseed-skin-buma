@@ -2,7 +2,7 @@
 	<div class="buma">
 		<div class="nav navbar" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
-				<nuxt-link to=/ class=navbar-brand></nuxt-link>
+				<nuxt-link to=/ class="navbar-brand"></nuxt-link>
 				<button class="button navbar-burger" data-target="mainNavbar">
 					<span></span>
 					<span></span>
@@ -84,7 +84,6 @@
 									<i class="far fa-copyright"></i>
 								</span> 라이선스</nuxt-link>
 
-                         <a to='#' @click.prevent="$modal.show('theseed-setting');" class="navbar-item">설정</a>
                          <template v-if="$store.state.session.menus.length">
 								<nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" class="navbar-item" v-text="m.t"/>
 							</template>
@@ -105,15 +104,10 @@
 						</span> {{ $store.state.session.member.username }}</a>
 
 						<div class="navbar-dropdown is-right">
-							<a href="#" id="skin-settings" class="navbar-item">
+							<a href="#" @click.prevent="$modal.show('theseed-setting');" class="navbar-item">
 								<span class="icon">
 									<i class="fas fa-wrench"></i>
 								</span> 스킨 설정</a>
-							<a href="#" id="toggle-dark-theme" class="navbar-item">
-								<span class="icon">
-									<i class="fas fa-adjust"></i>
-								</span> 다크테마 설정/해제</a>
-							<div class="navbar-divider"></div>
 							<nuxt-link to="/member/mypage" class="navbar-item">
 								<span class="icon">
 									<i class="far fa-user-circle"></i>
@@ -1032,106 +1026,19 @@
 				</div>
 			</div>
 		</footer>
-		<div class="modal settings-modal">
-			<div class="modal-background"></div>
-			<div class="modal-card">
-				<header class="modal-card-head">
-					<p class="modal-card-title">buma 스킨 설정</p>
-					<button class="delete" aria-label="close"></button>
-				</header>
-				<section class="modal-card-body">
-					<article class="message is-info">
-						<div class="message-header">
-							<p>안내</p>
-						</div>
-						<div class="message-body">
-							스킨 설정은 새로고침해야 적용됩니다.
-						</div>
-					</article>
-					<h2 class="title is-4">위키 문서내 취소선</h2>
-					<h2 class="subtitle is-6">위키 문서내 취소선을 싫어하시는 분들을 위한 설정입니다.</h3>
-						<div class="field">
-							<div class="control">
-								<label class="raido">
-									<input type="radio" name="hideDeletedOnWiki" value="hide"> 숨기기
-								</label>
-								<label class="raido">
-									<input type="radio" name="hideDeletedOnWiki" value="undelete"> 취소선 해제
-								</label>
-								<label class="raido">
-									<input type="radio" name="hideDeletedOnWiki" value="doNothing"> 아무것도 하지 않음
-								</label>
-								<label class="raido">
-									<input type="radio" name="hideDeletedOnWiki" value="skinDefault"> 스킨 기본값
-								</label>
-							</div>
-						</div>
-						<h2 class="title is-4">Animated gif를 동영상으로 보여주지 않기</h2>
-						<h2 class="subtitle is-6">GIF가 정상적으로 재생되지 않는 경우 변경하세요.</h3>
-							<div class="field">
-								<div class="control">
-									<label class="raido">
-										<input type="radio" name="noVideoForGif" value="yes"> 네
-									</label>
-									<label class="raido">
-										<input type="radio" name="noVideoForGif" value="no"> 아니오
-									</label>
-									<label class="raido">
-										<input type="radio" name="noVideoForGif" value="skinDefault"> 스킨 기본값
-									</label>
-								</div>
-							</div>
-							<h2 class="title is-4">문단 제목 기본으로 접기</h2>
-							<h2 class="subtitle is-6">문단 제목을 기본으로 접을시의 여부입니다.</h3>
-								<div class="field">
-									<div class="control">
-										<label class="raido">
-											<input type="radio" name="foldHeadingsByDefault" value="yes"> 네
-										</label>
-										<label class="raido">
-											<input type="radio" name="foldHeadingsByDefault" value="no"> 아니오
-										</label>
-										<label class="raido">
-											<input type="radio" name="foldHeadingsByDefault" value="skinDefault"> 스킨 기본값
-										</label>
-									</div>
-								</div>
-								<h2 class="title is-4">더블 클릭시 행동</h2>
-								<h2 class="subtitle is-6">더블 클릭시의 행동입니다.</h3>
-									<div class="field">
-										<div class="control">
-											<label class="raido">
-												<input type="radio" name="behaviorWhenDblClick" value="edit"> 편집
-											</label>
-											<label class="raido">
-												<input type="radio" name="behaviorWhenDblClick" value="history"> 역사
-											</label>
-											<label class="raido">
-												<input type="radio" name="behaviorWhenDblClick" value="doNothing"> 아무것도 하지 않음
-											</label>
-											<label class="raido">
-												<input type="radio" name="behaviorWhenDblClick" value="skinDefault"> 스킨 기본값
-											</label>
-										</div>
-									</div>
-									<h2 class="title is-4">점프 버튼 활성화</h2>
-									<h2 class="subtitle is-6">위/아래로 이동하는 점프 버튼을 표시할지의 여부입니다</h3>
-										<div class="field">
-											<div class="control">
-												<label class="raido">
-													<input type="radio" name="enableJumpButtons" value="yes"> 활성화
-												</label>
-												<label class="raido">
-													<input type="radio" name="enableJumpButtons" value="no"> 비활성화
-												</label>
-												<label class="raido">
-													<input type="radio" name="enableJumpButtons" value="skinDefault"> 스킨 기본값
-												</label>
-											</div>
-										</div>
-				</section>
-			</div>
-		</div>
+		<setting>
+			<setting-item-select label="더블 클릭시 행동" ckey="buma.behaviorWhenDblClick" default="skinDefault" note="더블 클릭시의 행동입니다">
+				<option value="edit">편집</option>
+				<option value="history">역사</option>
+				<option value="doNohting">아무것도 하지 않음</option>
+				<option value="skinDefault">스킨 기본값</option>
+			</setting-item-select>
+			<setting-item-select label="점프 버튼 활성화" ckey="buma.enableJumpButtons" default="skinDefault" note="위/아래로 이동하는 점프 버튼을 표시할지의 여부입니다">
+				<option value="yes">활성화</option>
+				<option value="no">비활성화</option>
+				<option value="skinDefault">스킨 기본값</option>
+			</setting-item-select>
+		</setting>
 		<div class="jump-buttons">
 			<ul>
 				<li>
@@ -1162,6 +1069,9 @@
 import Common from '~/mixins/common';
 import Setting from '~/components/setting';
 import LocalDate from '~/components/localDate';
+import SettingItemCheckbox from '~/components/settingItemCheckbox';
+import SettingItemSelect from '~/components/settingItemSelect';
+
 if(process.browser) {
     try {
         require("./js/jquery.min.js");
@@ -1175,7 +1085,12 @@ export default {
     mixins: [Common],
     components: {
         Setting,
-        LocalDate
-    }
+        LocalDate,
+        SettingItemSelect,
+        SettingItemCheckbox,
+    },
+    loadingBarColor(isDark) {
+      return isDark ? 'white' : 'black';
+    },
 }
 </script>
