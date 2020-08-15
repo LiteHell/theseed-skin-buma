@@ -705,3 +705,9 @@
         Contributions and issues are always welcomed. Visit <a href="https://github.com/LiteHell/theseed-skin-buma">the repository</a> for contributing and issue reporting.</p>
     </div>
 </template>
+
+<script>
+export default {
+    
+}
+</script>
