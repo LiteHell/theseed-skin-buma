@@ -150,25 +150,25 @@ table.diff .delete :before {
   vertical-align: text-middle;
 }
 /* dark */
-body.dark-buma .nav {
+body.theseed-dark-mode .nav {
   background: #424242;
   color: white;
 }
-body.dark-buma .nav a:hover {
+body.theseed-dark-mode .nav a:hover {
   background: dimgray;
   color: white;
 }
-body.dark-buma .nav a {
+body.theseed-dark-mode .nav a {
   color: #a0a0a0;
 }
-body.dark-buma .hero.is-primary {
+body.theseed-dark-mode .hero.is-primary {
   background: #345f59;
 }
-body.dark-buma .hero.is-danger {
+body.theseed-dark-mode .hero.is-danger {
   background: #511f29;
 }
-body.dark-buma section.section,
-body.dark-buma footer {
+body.theseed-dark-mode section.section,
+body.theseed-dark-mode footer {
   background: white;
   filter: invert(1);
 }
