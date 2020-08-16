@@ -10,11 +10,6 @@ $(function () {
         var target = $(this).data('target');
         $('#' + target).toggleClass('is-active');
     });
-    // wiki search
-    $('#wikiGoRandomBtn').click(function (evt) {
-        evt.preventDefault();
-        location.href = '/random';
-    });
     /* expandable navbar-dropdown items */
     /* from https://github.com/jgthms/bulma/issues/1218 */
     $('.navbar-link').on('click', function () {
