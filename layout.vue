@@ -433,8 +433,8 @@ import Setting from '~/components/setting';
 import LocalDate from '~/components/localDate';
 import SettingItemCheckbox from '~/components/settingItemCheckbox';
 import SettingItemSelect from '~/components/settingItemSelect';
-import SearchForm from './searchForm';
-import SkinLicense from './skinLicense';
+import SearchForm from './components/searchForm';
+import SkinLicense from './components/skinLicense';
 
 if (process.browser) {
     try {
