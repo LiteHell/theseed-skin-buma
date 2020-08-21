@@ -411,11 +411,6 @@ if (process.browser) {
         console.log(e.stack);
     }
     try {
-        require('./js/bootstrap.min.js');
-    } catch (e) {
-        console.log(e.stack);
-    }
-    try {
         require('./js/all.min.js');
     } catch (e) {
         console.log(e.stack);
