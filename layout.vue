@@ -401,11 +401,6 @@ import BDropdown from './components/b-dropdown';
 
 if (process.browser) {
     try {
-        require('./js/jquery.min.js');
-    } catch (e) {
-        console.log(e.stack);
-    }
-    try {
         require('./js/jquery-ui.min.js');
     } catch (e) {
         console.log(e.stack);
