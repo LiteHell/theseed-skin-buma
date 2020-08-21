@@ -23,181 +23,156 @@
                         </span>
                         최근 토론
                     </nuxt-link>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a href="#" class="navbar-link">
+                    <b-dropdown icon="fas fa-cogs" label="도구">
+                        <nuxt-link class="navbar-item" to="/NeededPages">
                             <span class="icon">
-                                <i class="fas fa-cogs"></i>
+                                <i class="fas fa-beer"></i>
                             </span>
-                            도구
-                        </a>
-                        <div class="navbar-dropdown">
-                            <nuxt-link class="navbar-item" to="/NeededPages">
-                                <span class="icon">
-                                    <i class="fas fa-beer"></i>
-                                </span>
-                                작성이 필요한 문서
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/OrphanedPages">
-                                <span class="icon">
-                                    <i class="far fa-frown"></i>
-                                </span>
-                                고립된 문서
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/UncategorizedPages">
-                                <span class="icon">
-                                    <i class="far fa-question-circle"></i>
-                                </span>
-                                분류가 되지 않은 문서
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/OldPages">
-                                <span class="icon">
-                                    <i class="fas fa-pause"></i>
-                                </span>
-                                편집된 지 오래된 문서
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/ShortestPages">
-                                <span class="icon">
-                                    <i class="far fa-thumbs-down"></i>
-                                </span>
-                                내용이 짧은 문서
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/LongestPages">
-                                <span class="icon">
-                                    <i class="far fa-thumbs-up"></i>
-                                </span>
-                                내용이 긴 문서
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/BlockHistory">
-                                <span class="icon">
-                                    <i class="fas fa-ban"></i>
-                                </span>
-                                차단 내역
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/RandomPage">
-                                <span class="icon">
-                                    <i class="fas fa-random"></i>
-                                </span>
-                                RandomPage
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/Upload">
-                                <span class="icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </span>
-                                파일 올리기
-                            </nuxt-link>
-                            <nuxt-link class="navbar-item" to="/License">
-                                <span class="icon">
-                                    <i class="far fa-copyright"></i>
-                                </span>
-                                라이선스
-                            </nuxt-link>
+                            작성이 필요한 문서
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/OrphanedPages">
+                            <span class="icon">
+                                <i class="far fa-frown"></i>
+                            </span>
+                            고립된 문서
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/UncategorizedPages">
+                            <span class="icon">
+                                <i class="far fa-question-circle"></i>
+                            </span>
+                            분류가 되지 않은 문서
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/OldPages">
+                            <span class="icon">
+                                <i class="fas fa-pause"></i>
+                            </span>
+                            편집된 지 오래된 문서
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/ShortestPages">
+                            <span class="icon">
+                                <i class="far fa-thumbs-down"></i>
+                            </span>
+                            내용이 짧은 문서
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/LongestPages">
+                            <span class="icon">
+                                <i class="far fa-thumbs-up"></i>
+                            </span>
+                            내용이 긴 문서
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/BlockHistory">
+                            <span class="icon">
+                                <i class="fas fa-ban"></i>
+                            </span>
+                            차단 내역
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/RandomPage">
+                            <span class="icon">
+                                <i class="fas fa-random"></i>
+                            </span>
+                            RandomPage
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/Upload">
+                            <span class="icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </span>
+                            파일 올리기
+                        </nuxt-link>
+                        <nuxt-link class="navbar-item" to="/License">
+                            <span class="icon">
+                                <i class="far fa-copyright"></i>
+                            </span>
+                            라이선스
+                        </nuxt-link>
 
-                            <template v-if="$store.state.session.menus.length">
-                                <nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" class="navbar-item" v-text="m.t" />
-                            </template>
-                        </div>
-                    </div>
+                        <template v-if="$store.state.session.menus.length">
+                            <nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" class="navbar-item" v-text="m.t" />
+                        </template>
+                    </b-dropdown>
                 </div>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
                     <search-form />
                 </div>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <template v-if="$store.state.session.member">
-                        <a href="#" class="navbar-link">
+                <template v-if="$store.state.session.member">
+                    <b-dropdown right-dropdown="true" icon="fas fa-user" :label="$store.state.session.member.username">
+                        <a href="#" @click.prevent="$modal.show('theseed-setting')" class="navbar-item">
                             <span class="icon">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-wrench"></i>
                             </span>
-                            {{ $store.state.session.member.username }}
+                            스킨 설정
                         </a>
-
-                        <div class="navbar-dropdown is-right">
-                            <a href="#" @click.prevent="$modal.show('theseed-setting')" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-wrench"></i>
-                                </span>
-                                스킨 설정
-                            </a>
-                            <nuxt-link to="/member/mypage" class="navbar-item">
-                                <span class="icon">
-                                    <i class="far fa-user-circle"></i>
-                                </span>
-                                내정보
-                            </nuxt-link>
-                            <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'w')" class="navbar-item">
-                                <span class="icon">
-                                    <i class="far fa-sticky-note"></i>
-                                </span>
-                                내 사용자 문서
-                            </nuxt-link>
-                            <div class="navbar-divider"></div>
-                            <nuxt-link :to="contribution_author_link($store.state.session.member.username)" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </span>
-                                내 문서 기여 목록
-                            </nuxt-link>
-                            <nuxt-link :to="contribution_author_link_discuss($store.state.session.member.username)" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-chart-bar"></i>
-                                </span>
-                                내 토론 기여 목록
-                            </nuxt-link>
-                            <nuxt-link to="/member/starred_documents" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-bookmark"></i>
-                                </span>
-                                별찜한 문서들
-                            </nuxt-link>
-                            <div class="navbar-divider"></div>
-                            <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                </span>
-                                로그아웃
-                            </nuxt-link>
-                        </div>
-                    </template>
-
-                    <template v-else>
-                        <a href="#" class="navbar-link">
+                        <nuxt-link to="/member/mypage" class="navbar-item">
                             <span class="icon">
-                                <i class="fas fa-user-secret"></i>
+                                <i class="far fa-user-circle"></i>
                             </span>
-                            익명
-                        </a>
+                            내정보
+                        </nuxt-link>
+                        <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'w')" class="navbar-item">
+                            <span class="icon">
+                                <i class="far fa-sticky-note"></i>
+                            </span>
+                            내 사용자 문서
+                        </nuxt-link>
+                        <div class="navbar-divider"></div>
+                        <nuxt-link :to="contribution_author_link($store.state.session.member.username)" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            내 문서 기여 목록
+                        </nuxt-link>
+                        <nuxt-link :to="contribution_author_link_discuss($store.state.session.member.username)" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </span>
+                            내 토론 기여 목록
+                        </nuxt-link>
+                        <nuxt-link to="/member/starred_documents" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-bookmark"></i>
+                            </span>
+                            별찜한 문서들
+                        </nuxt-link>
+                        <div class="navbar-divider"></div>
+                        <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span>
+                            로그아웃
+                        </nuxt-link>
+                    </b-dropdown>   
+                </template>
 
-                        <div class="navbar-dropdown is-right">
-                            <a href="#" @click.prevent="$modal.show('theseed-setting')" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-wrench"></i>
-                                </span>
-                                스킨 설정
-                            </a>
-                            <nuxt-link :to="contribution_ip_link($store.state.session.ip)" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </span>
-                                내 문서 기여 목록
-                            </nuxt-link>
-                            <nuxt-link :to="contribution_ip_link_discuss($store.state.session.ip)" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-chart-bar"></i>
-                                </span>
-                                내 토론 기여 목록
-                            </nuxt-link>
-                            <div class="navbar-divider"></div>
-                            <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" class="navbar-item">
-                                <span class="icon">
-                                    <i class="fas fa-sign-in-alt"></i>
-                                </span>
-                                로그인
-                            </nuxt-link>
-                        </div>
-                    </template>
-                </div>
+                <template v-else>
+                    <b-dropdown right-dropdown="true" icon="fas fa-user-secret" label="익명">
+                        <a href="#" @click.prevent="$modal.show('theseed-setting')" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-wrench"></i>
+                            </span>
+                            스킨 설정
+                        </a>
+                        <nuxt-link :to="contribution_ip_link($store.state.session.ip)" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            내 문서 기여 목록
+                        </nuxt-link>
+                        <nuxt-link :to="contribution_ip_link_discuss($store.state.session.ip)" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </span>
+                            내 토론 기여 목록
+                        </nuxt-link>
+                        <div class="navbar-divider"></div>
+                        <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </span>
+                            로그인
+                        </nuxt-link>
+                    </b-dropdown>
+                </template>
             </div>
         </div>
         <section
@@ -422,6 +397,7 @@ import SearchForm from './components/searchForm';
 import SkinLicense from './components/skinLicense';
 import BNotification from './components/b-notification';
 import JumpButtons from './components/jumpButtons';
+import BDropdown from './components/b-dropdown';
 
 if (process.browser) {
     try {
@@ -455,7 +431,8 @@ export default {
         SearchForm,
         SkinLicense,
         BNotification,
-        JumpButtons
+        JumpButtons,
+        BDropdown
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
