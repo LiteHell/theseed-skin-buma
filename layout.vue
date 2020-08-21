@@ -346,23 +346,21 @@
         </section>
         <section class="section">
             <div class="container">
-                <div
+                <b-notification
                     v-if="
                         $store.state.session.member &&
                         $store.state.session.member.user_document_discuss &&
                         $store.state.localConfig['wiki.hide_user_document_discuss'] !== $store.state.session.member.user_document_discuss
                     "
-                    class="notification is-link"
+                    class="is-link"
                 >
-                    <button class="delete"></button>
                     <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'discuss')">사용자 토론</nuxt-link>이 있습니다.
                     확인해주세요.
-                </div>
+                </b-notification>
 
-                <div class="notification" v-if="$store.state.config['wiki.sitenotice']">
-                    <button class="delete"></button>
+                <b-notification v-if="$store.state.config['wiki.sitenotice']">
                     <span v-html="$store.state.config['wiki.sitenotice']" />
-                </div>
+                </b-notification>
 
                 <div class="wiki-article content" @dblclick="doBehaviorWhenDblClick">
                     <nuxt />
@@ -401,20 +399,7 @@
                 <option value="skinDefault">스킨 기본값</option>
             </setting-item-select>
         </setting>
-        <div class="jump-buttons" v-if="$store.state.localConfig['buma.enableJumpButtons'] !== 'no'">
-            <ul>
-                <li>
-                    <div class="icon jump-up">
-                        <div class="fas fa-arrow-up"></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon jump-down">
-                        <div class="fas fa-arrow-down"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <jump-buttons />
     </div>
 </template>
 
@@ -435,6 +420,8 @@ import SettingItemCheckbox from '~/components/settingItemCheckbox';
 import SettingItemSelect from '~/components/settingItemSelect';
 import SearchForm from './components/searchForm';
 import SkinLicense from './components/skinLicense';
+import BNotification from './components/b-notification';
+import JumpButtons from './components/jumpButtons';
 
 if (process.browser) {
     try {
@@ -453,11 +440,6 @@ if (process.browser) {
         console.log(e.stack);
     }
     try {
-        require('./js/layout.js');
-    } catch (e) {
-        console.log(e.stack);
-    }
-    try {
         require('./js/all.min.js');
     } catch (e) {
         console.log(e.stack);
@@ -471,7 +453,9 @@ export default {
         SettingItemSelect,
         SettingItemCheckbox,
         SearchForm,
-        SkinLicense
+        SkinLicense,
+        BNotification,
+        JumpButtons
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
