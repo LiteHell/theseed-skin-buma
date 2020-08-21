@@ -1,11 +1,11 @@
 <template>
     <div class="buma">
         <div class="nav navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-menu" id="mainNavbar">
+            <div class="navbar-menu" :class="{'is-active': isNavbarActive}" id="mainNavbar">
                 <div class="navbar-start">
                     <div class="navbar-brand">
                         <nuxt-link to="/" class="navbar-item"></nuxt-link>
-                        <button class="button navbar-burger" data-target="mainNavbar">
+                        <button class="button navbar-burger" @click.prevent="toggleNavbarBurger">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -459,7 +459,12 @@ export default {
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
-	},
+    },
+    data: function () {
+        return {
+            isNavbarActive: false
+        };
+    },
 	methods: {
 		doBehaviorWhenDblClick() {
 			if (!this.$store.state.page.data.document)
@@ -477,7 +482,10 @@ export default {
 				default:
 					break;
 			}
-		}
+        },
+        isNavbarActive() {
+            this.toggleNavbarBurger = !this.toggleNavbarBurger;
+        }
 	}
 };
 </script>

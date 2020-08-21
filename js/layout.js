@@ -1,11 +1,6 @@
 // liberty skin 참고함.
 
 $(function () {
-    // mobile burgder menu
-    $('.navbar .navbar-burger').click(function () {
-        var target = $(this).data('target');
-        $('#' + target).toggleClass('is-active');
-    });
     /* expandable navbar-dropdown items */
     /* from https://github.com/jgthms/bulma/issues/1218 */
     $('.navbar-link').on('click', function () {
