@@ -1,0 +1,25 @@
+{
+  "name": "theseed-skin-buma",
+  "version": "1.0.0",
+  "description": "Frontend skin for the seed engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/litehell/theseed-skin-buma.git"
+  },
+  "author": "LiteHell",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/litehell/theseed-skin-buma/issues"
+  },
+  "homepage": "https://github.com/litehell/theseed-skin-buma#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
