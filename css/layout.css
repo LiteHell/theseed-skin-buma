@@ -167,10 +167,8 @@ body.theseed-dark-mode .hero.is-primary {
 body.theseed-dark-mode .hero.is-danger {
     background: #511f29;
 }
-body.theseed-dark-mode section.section,
-body.theseed-dark-mode footer {
-    background: white;
-    filter: invert(1);
+body.theseed-dark-mode {
+    background: #414141;
 }
 .container .wiki-article.content {
     overflow-x: scroll;
