@@ -4,7 +4,7 @@
             <div class="navbar-menu" :class="{'is-active': isNavbarActive}" id="mainNavbar">
                 <div class="navbar-start">
                     <div class="navbar-brand">
-                        <nuxt-link to="/" class="navbar-item"></nuxt-link>
+                        <nuxt-link to="/" class="navbar-item"><img :src="$store.state.config['wiki.logo_url']" v-if="$store.state.config['wiki.logo_url']">{{ $store.state.config['wiki.site_name'] }}</nuxt-link>
                         <button class="button navbar-burger" @click.prevent="toggleNavbarBurger">
                             <span></span>
                             <span></span>
