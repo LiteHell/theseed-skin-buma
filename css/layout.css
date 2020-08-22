@@ -169,6 +169,7 @@ body.theseed-dark-mode .hero.is-danger {
 }
 body.theseed-dark-mode {
     background: #414141;
+    color: white;
 }
 .container .wiki-article.content {
     overflow-x: scroll;
