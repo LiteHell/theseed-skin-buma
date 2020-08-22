@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import $ from "jquery";
-
 export default {
     props: {
         icon: String,
@@ -42,7 +40,8 @@ export default {
             this.screenResizeTimeout = setTimeout(this.toggleBySize, 100);
         },
         toggleBySize() {
-            if ($(window).width() < 1024) {
+            const windowWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            if (windowWidth < 1024) {
                 this.dropdownStyle.display = 'none';
             } else {
                 this.dropdownStyle.display = '';

@@ -16,15 +16,13 @@
 </template>
 
 <script>
-import $ from "jquery";
-
 export default {
     methods: {
         goUp() {
-            $("#wiki-main-title").get(0).scrollIntoView();
+            document.querySelector("#wiki-main-title").scrollIntoView();
         },
         goDown() {
-            $("footer").get(0).scrollIntoView();
+            document.querySelector("footer").scrollIntoView();
         }
     }
 }

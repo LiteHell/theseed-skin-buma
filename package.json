@@ -19,7 +19,5 @@
   "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "dependencies": {
-    "jquery": "^3.5.1"
-  }
+  "dependencies": {}
 }
