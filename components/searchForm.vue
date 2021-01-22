@@ -2,7 +2,7 @@
 
 <template>
     <form v-on:submit.prevent>
-        <div class="dropdown is-active">
+        <div class="dropdown" :class="{'is-active': show}">
             <div class="dropdown-trigger">
                 <div class="field has-addons">
                     <div class="control has-icons-left">
@@ -40,26 +40,27 @@
                     </div>
                 </div>
             </div>
-            <div class="dropdown-content" v-if="show">
-                <a
-                    class="dropdown-item"
-                    v-for="(item, i) in internalItems"
-                    @click="onClickItem(item)"
-                    v-bind:key="i"
-                    :class="{ 'is-active': i === cursor }"
-                    @mouseover="cursor = i"
-                    href="#"
-                >
-                    {{ item }}
-                </a>
-            </div>
+            <div class="dropdwon-menu">
+                <div class="dropdown-content">
+                    <a
+                        class="dropdown-item"
+                        v-for="(item, i) in internalItems"
+                        @click="onClickItem(item)"
+                        v-bind:key="i"
+                        :class="{ 'is-active': i === cursor }"
+                        @mouseover="cursor = i"
+                        href="#"
+                    >
+                        {{ item }}
+                    </a>
+                </div>
+                </div>
         </div>
     </form>
 </template>
 
 <script>
 import AutocompleteMixin from '~/mixins/autocomplete';
-import Common from '~/mixins/common';
 
 export default {
     mixins: [AutocompleteMixin],
