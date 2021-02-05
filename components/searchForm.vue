@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dropdwon-menu">
+            <div class="dropdown-menu">
                 <div class="dropdown-content">
                     <a
                         class="dropdown-item"
@@ -54,7 +54,7 @@
                         {{ item }}
                     </a>
                 </div>
-                </div>
+            </div>
         </div>
     </form>
 </template>
