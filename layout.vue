@@ -14,74 +14,74 @@
                     <nuxt-link to="/RecentChanges" class="navbar-item">
                         <span class="icon">
                             <i class="fas fa-binoculars"></i>
-                        </span>
+                        </span>&nbsp;
                         최근 변경
                     </nuxt-link>
                     <nuxt-link to="/RecentDiscuss" class="navbar-item">
                         <span class="icon">
                             <i class="far fa-comments"></i>
-                        </span>
+                        </span>&nbsp;
                         최근 토론
                     </nuxt-link>
                     <b-dropdown icon="fas fa-cogs" label="도구">
                         <nuxt-link class="navbar-item" to="/NeededPages">
                             <span class="icon">
                                 <i class="fas fa-beer"></i>
-                            </span>
+                            </span>&nbsp;
                             작성이 필요한 문서
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/OrphanedPages">
                             <span class="icon">
                                 <i class="far fa-frown"></i>
-                            </span>
+                            </span>&nbsp;
                             고립된 문서
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/UncategorizedPages">
                             <span class="icon">
                                 <i class="far fa-question-circle"></i>
-                            </span>
+                            </span>&nbsp;
                             분류가 되지 않은 문서
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/OldPages">
                             <span class="icon">
                                 <i class="fas fa-pause"></i>
-                            </span>
+                            </span>&nbsp;
                             편집된 지 오래된 문서
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/ShortestPages">
                             <span class="icon">
                                 <i class="far fa-thumbs-down"></i>
-                            </span>
+                            </span>&nbsp;
                             내용이 짧은 문서
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/LongestPages">
                             <span class="icon">
                                 <i class="far fa-thumbs-up"></i>
-                            </span>
+                            </span>&nbsp;
                             내용이 긴 문서
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/BlockHistory">
                             <span class="icon">
                                 <i class="fas fa-ban"></i>
-                            </span>
+                            </span>&nbsp;
                             차단 내역
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/RandomPage">
                             <span class="icon">
                                 <i class="fas fa-random"></i>
-                            </span>
+                            </span>&nbsp;
                             RandomPage
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/Upload">
                             <span class="icon">
                                 <i class="fas fa-cloud-upload-alt"></i>
-                            </span>
+                            </span>&nbsp;
                             파일 올리기
                         </nuxt-link>
                         <nuxt-link class="navbar-item" to="/License">
                             <span class="icon">
                                 <i class="far fa-copyright"></i>
-                            </span>
+                            </span>&nbsp;
                             라이선스
                         </nuxt-link>
 

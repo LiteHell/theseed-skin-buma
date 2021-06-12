@@ -3,7 +3,7 @@
         <a href="#" class="navbar-link" @click.prevent="toggleNavbar">
             <span class="icon" v-if="icon">
                 <i :class="icon"></i>
-            </span>
+            </span>&nbsp;
             {{ label }}
         </a>
         <div class="navbar-dropdown" :class="{'is-right': rightDropdown}" :style="dropdownStyle">
