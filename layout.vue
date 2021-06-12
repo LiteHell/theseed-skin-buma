@@ -383,6 +383,7 @@
 <style>
 @import './css/bootstrap-custom.css';
 @import './css/bulma.min.css';
+@import './css/jquery-ui.min.css';
 @import './css/layout.css';
 </style>
 
@@ -398,6 +399,18 @@ import BNotification from './components/b-notification';
 import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
 
+if (process.browser) {
+    try {
+        require('./js/jquery-ui.min.js');
+    } catch (e) {
+        console.log(e.stack);
+    }
+    try {
+        require('./js/all.min.js');
+    } catch (e) {
+        console.log(e.stack);
+    }
+}
 export default {
     mixins: [Common],
     components: {
