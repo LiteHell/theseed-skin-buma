@@ -5,7 +5,7 @@
         <div class="dropdown" :class="{'is-active': show}">
             <div class="dropdown-trigger">
                 <div class="field has-addons">
-                    <div class="control has-icons-left">
+                    <div class="control has-icons-left is-expanded">
                         <input
                             class="input is-primary"
                             v-on:input="searchText = $event.target.value"
@@ -58,6 +58,12 @@
         </div>
     </form>
 </template>
+
+<style scoped>
+.dropdown, .dropdown-trigger {
+    width: 100%;
+}
+</style>
 
 <script>
 import AutocompleteMixin from '~/mixins/autocomplete';
