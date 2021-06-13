@@ -22,7 +22,7 @@ export default {
     data () {
         return {
             dropdownStyle: {
-                display: ''
+                display: 'none'
             },
             screenResizeTimeout: null
         };
