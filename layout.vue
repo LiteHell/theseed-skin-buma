@@ -91,45 +91,45 @@
                             <a href="#" @click.prevent="$modal.show('theseed-setting')" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-wrench"></i>
-                                </span>
+                                </span>&nbsp;
                                 스킨 설정
                             </a>
                             <nuxt-link to="/member/mypage" class="navbar-item">
                                 <span class="icon">
                                     <i class="far fa-user-circle"></i>
-                                </span>
+                                </span>&nbsp;
                                 내정보
                             </nuxt-link>
                             <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'w')" class="navbar-item">
                                 <span class="icon">
                                     <i class="far fa-sticky-note"></i>
-                                </span>
+                                </span>&nbsp;
                                 내 사용자 문서
                             </nuxt-link>
                             <div class="navbar-divider"></div>
                             <nuxt-link :to="contribution_author_link($store.state.session.member.username)" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-chart-line"></i>
-                                </span>
+                                </span>&nbsp;
                                 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_author_link_discuss($store.state.session.member.username)" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-chart-bar"></i>
-                                </span>
+                                </span>&nbsp;
                                 내 토론 기여 목록
                             </nuxt-link>
                             <nuxt-link to="/member/starred_documents" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-bookmark"></i>
-                                </span>
+                                </span>&nbsp;
                                 별찜한 문서들
                             </nuxt-link>
                             <div class="navbar-divider"></div>
                             <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-sign-out-alt"></i>
-                                </span>
+                                </span>&nbsp;
                                 로그아웃
                             </nuxt-link>
                         </b-dropdown>
@@ -140,26 +140,26 @@
                             <a href="#" @click.prevent="$modal.show('theseed-setting')" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-wrench"></i>
-                                </span>
+                                </span>&nbsp;
                                 스킨 설정
                             </a>
                             <nuxt-link :to="contribution_ip_link($store.state.session.ip)" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-chart-line"></i>
-                                </span>
+                                </span>&nbsp;
                                 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_ip_link_discuss($store.state.session.ip)" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-chart-bar"></i>
-                                </span>
+                                </span>&nbsp;
                                 내 토론 기여 목록
                             </nuxt-link>
                             <div class="navbar-divider"></div>
                             <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" class="navbar-item">
                                 <span class="icon">
                                     <i class="fas fa-sign-in-alt"></i>
-                                </span>
+                                </span>&nbsp;
                                 로그인
                             </nuxt-link>
                         </b-dropdown>
