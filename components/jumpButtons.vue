@@ -5,8 +5,7 @@
                 <div class="icon jump-up" @click.prevent="goUp">
                     <div class="fas fa-arrow-up"></div>
                 </div>
-            </li>
-            <li>
+            </li><li>
                 <div class="icon jump-down" @click.prevent="goDown">
                     <div class="fas fa-arrow-down"></div>
                 </div>
@@ -28,16 +27,21 @@
     cursor: pointer;
     display: inline-block;
     background: #00d1b2;
-    border: 1px solid #00d1b2;
-    font-size: 35px;
+    border: 1px solid #00c0a3;
+    font-size: 30px;
     text-align: center;
     color: white;
     width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    height: 45px;
 }
-.jump-buttons ul li + li {
-    margin-left: 5px;
+.jump-buttons ul li:hover {
+    background: #00917b
+}
+.jump-buttons ul li:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+.jump-buttons ul li:last-child {
+    border-radius: 0px 5px 5px 0px;
 }
 .jump-buttons ul li > * {
     vertical-align: text-middle;
@@ -48,10 +52,10 @@
 export default {
     methods: {
         goUp() {
-            document.querySelector("#wiki-main-title").scrollIntoView();
+            document.querySelector("#wiki-main-title").scrollIntoView({ behavior: 'smooth' });
         },
         goDown() {
-            document.querySelector("footer").scrollIntoView();
+            document.querySelector("footer").scrollIntoView({ behavior: 'smooth' });
         }
     }
 }
