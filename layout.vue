@@ -1,5 +1,6 @@
 <template>
     <div class="buma">
+        <div class="top-anchor"></div>
         <nav class="nav navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <nuxt-link to="/" class="navbar-item"

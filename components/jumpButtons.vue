@@ -52,10 +52,10 @@
 export default {
     methods: {
         goUp() {
-            document.querySelector("#wiki-main-title").scrollIntoView({ behavior: 'smooth' });
+            document.querySelector(".top-anchor").scrollIntoView({ behavior: 'smooth', block: 'start' });
         },
         goDown() {
-            document.querySelector("footer").scrollIntoView({ behavior: 'smooth' });
+            document.querySelector("footer").scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
     }
 }
