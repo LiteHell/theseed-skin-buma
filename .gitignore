@@ -1,2 +1,5 @@
 node_modules
 .vscode
+bulma.js
+src/bulmaClassnames.js
+css/bulma.min.css

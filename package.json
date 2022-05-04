@@ -4,7 +4,7 @@
   "description": "Frontend skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-modular-bulma": "node-sass ./node_modules/bulma/bulma.sass ./css/bulma.css && postcss ./css/bulma.css > ./css/bulma.min.css && rm ./css/bulma.css"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/litehell/theseed-skin-buma#readme",
   "devDependencies": {
+    "cssnano": "^5.1.7",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
+    "postcss-modules": "^4.3.1",
     "prettier": "^2.0.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bulma": "^0.9.3"
+  }
 }
