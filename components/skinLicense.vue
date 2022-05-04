@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="title">buma 스킨 정보</h2>
+        <h2 :class="bulma('title')">buma 스킨 정보</h2>
         <p>
             Copyright (C) 2017 LiteHell, and contributors<br /><br />
             This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
@@ -10,7 +10,7 @@
             You should have received a copy of the GNU General Public License along with this program. If not, see
             <a href="http://www.gnu.org/licenses/">&lt;http://www.gnu.org/licenses/&gt;</a>.
         </p>
-        <h2 class="title">사용된 라이브러리 및 리소스들</h2>
+        <h2 :class="bulma('title')">사용된 라이브러리 및 리소스들</h2>
         <ul>
             <li><a href="//fontawesome.com">Font Awesome 5</a> : CC BY 4.0, MIT</li>
             <li><a href="//bulma.io">bulma.io</a> : MIT License, Copyright (c) 2017 Jeremy Thomas</li>
@@ -22,7 +22,7 @@
                 Bootstrap Authors, MIT License
             </li>
         </ul>
-        <h2 class="title">buma 스킨 라이선스</h2>
+        <h2 :class="bulma('title')">buma 스킨 라이선스</h2>
         <pre>
                 GNU GENERAL PUBLIC LICENSE
                 Version 3, 29 June 2007
@@ -700,14 +700,18 @@
         &lt;https://www.gnu.org/licenses/why-not-lgpl.html&gt;.
 
         </pre>
-        <h2 class="title">기타</h2>
+        <h2 :class="bulma('title')">기타</h2>
         <p>Special thanks to <a href="https://github.com/gdl-888">gdl-888</a> for porting into Vue.js.
         Contributions and issues are always welcomed. Visit <a href="https://github.com/LiteHell/theseed-skin-buma">the repository</a> for contributing and issue reporting.</p>
     </div>
 </template>
 
 <script>
+import bulma from '../src/bulma'
+
 export default {
-    
+    methods: {
+        bulma
+    }    
 }
 </script>

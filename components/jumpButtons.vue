@@ -2,11 +2,11 @@
     <div class="jump-buttons" v-if="$store.state.localConfig['buma.enableJumpButtons'] !== 'no'">
         <ul>
             <li>
-                <div class="icon jump-up" @click.prevent="goUp" title="위로 이동">
+                <div class="jump-up" :class="bulma('icon')" @click.prevent="goUp" title="위로 이동">
                     <div class="fas fa-arrow-up"></div>
                 </div>
             </li><li>
-                <div class="icon jump-down" @click.prevent="goDown" title="아래로 이동">
+                <div class="jump-down" :class="bulma('icon')" @click.prevent="goDown" title="아래로 이동">
                     <div class="fas fa-arrow-down"></div>
                 </div>
             </li>
@@ -49,6 +49,8 @@
 </style>
 
 <script>
+import bulma from '../src/bulma';
+
 export default {
     methods: {
         goUp() {
@@ -56,7 +58,8 @@ export default {
         },
         goDown() {
             document.querySelector("footer").scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }
+        },
+        bulma
     }
 }
 </script>

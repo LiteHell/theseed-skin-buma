@@ -2,12 +2,12 @@
 
 <template>
     <form v-on:submit.prevent>
-        <div class="dropdown" :class="{'is-active': show}">
-            <div class="dropdown-trigger">
-                <div class="field has-addons">
-                    <div class="control has-icons-left is-expanded">
+        <div :class="bulma({'dropdown': true, 'is-active': show})">
+            <div :class="bulma('dropdown-trigger')">
+                <div :class="bulma('field has-addons')">
+                    <div :class="bulma('control has-icons-left is-expanded')">
                         <input
-                            class="input is-primary"
+                            :class="bulma('input is-primary')"
                             v-on:input="searchText = $event.target.value"
                             type="text"
                             autocomplete="off"
@@ -20,34 +20,33 @@
                             @keydown.down="keyDown"
                             placeholder="검색"
                         />
-                        <span class="icon is-small is-left">
+                        <span :class="bulma('icon is-small is-left')">
                             <i class="fas fa-search"></i>
                         </span>
                     </div>
-                    <div class="control">
-                        <a href="#" class="button" @click.prevent="gotodoc">
-                            <span class="icon">
+                    <div :class="bulma('control')">
+                        <a href="#" :class="bulma('button')" @click.prevent="gotodoc">
+                            <span :class="bulma('icon')">
                                 <i class="fas fa-search"></i>
                             </span>
                         </a>
                     </div>
-                    <div class="control">
-                        <a href="#" class="button" @click.prevent="random">
-                            <span class="icon">
+                    <div :class="bulma('control')">
+                        <a href="#" :class="bulma('button')" @click.prevent="random">
+                            <span :class="bulma('icon')">
                                 <i class="fas fa-random"></i>
                             </span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="dropdown-menu">
-                <div class="dropdown-content">
+            <div :class="bulma('dropdown-menu')">
+                <div :class="bulma('dropdown-content')">
                     <a
-                        class="dropdown-item"
+                        :class="bulma({'dropdown-item': true, 'is-active': i === cursor})"
                         v-for="(item, i) in internalItems"
                         @click="onClickItem(item)"
-                        v-bind:key="i"
-                        :class="{ 'is-active': i === cursor }"
+                        :key="i"
                         @mouseover="cursor = i"
                         href="#"
                     >
@@ -67,6 +66,7 @@
 
 <script>
 import AutocompleteMixin from '~/mixins/autocomplete';
+import bulma from '../src/bulma';
 
 export default {
     mixins: [AutocompleteMixin],
@@ -77,7 +77,8 @@ export default {
         },
         random() {
             this.$router.push('/random');
-        }
+        },
+        bulma
     }
 };
 </script>

@@ -1,18 +1,20 @@
 <template>
-    <div class="navbar-item has-dropdown is-hoverable">
-        <a href="#" class="navbar-link" @click.prevent="toggleNavbar">
-            <span class="icon" v-if="icon">
+    <div :class="bulma('navbar-item has-dropdown is-hoverable')">
+        <a href="#" :class="bulma('navbar-link')" @click.prevent="toggleNavbar">
+            <span :class="bulma('icon')" v-if="icon">
                 <i :class="icon"></i>
             </span>&nbsp;
             {{ label }}
         </a>
-        <div class="navbar-dropdown" :class="{'is-right': rightDropdown}" :style="dropdownStyle">
+        <div :class="bulma({'navbar-dropdown': true, 'is-right': rightDropdown})" :style="dropdownStyle">
             <slot></slot>
         </div>
     </div>
 </template>
 
 <script>
+import bulma from '../src/bulma';
+
 export default {
     props: {
         icon: String,
@@ -46,7 +48,8 @@ export default {
             } else {
                 this.dropdownStyle.display = '';
             }
-        }
+        },
+        bulma
     },
     ready: function () {
         if (process.browser)
