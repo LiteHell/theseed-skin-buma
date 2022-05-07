@@ -396,14 +396,13 @@ import BNotification from './components/b-notification';
 import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
 import bulma from './src/bulma';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faArrowUp, faArrowDown, faSearch, faRandom } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-if (process.browser) {
-    try {
-        require('./js/all.min.js');
-    } catch (e) {
-        console.log(e.stack);
-    }
-}
+library.add(faArrowUp, faArrowDown, faSearch, faRandom);
+Vue.component('buma-font-awesome-icon', FontAwesomeIcon)
+
 export default {
     mixins: [Common],
     components: {

@@ -21,20 +21,20 @@
                             placeholder="검색"
                         />
                         <span :class="bulma('icon is-small is-left')">
-                            <i class="fas fa-search"></i>
+                            <buma-font-awesome-icon icon="fa-solid fa-search">
                         </span>
                     </div>
                     <div :class="bulma('control')">
                         <a href="#" :class="bulma('button')" @click.prevent="gotodoc">
                             <span :class="bulma('icon')">
-                                <i class="fas fa-search"></i>
+                            <buma-font-awesome-icon icon="fa-solid fa-search">
                             </span>
                         </a>
                     </div>
                     <div :class="bulma('control')">
                         <a href="#" :class="bulma('button')" @click.prevent="random">
                             <span :class="bulma('icon')">
-                                <i class="fas fa-random"></i>
+                            <buma-font-awesome-icon icon="fa-solid fa-random">
                             </span>
                         </a>
                     </div>

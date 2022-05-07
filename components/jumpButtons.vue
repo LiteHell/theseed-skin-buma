@@ -3,11 +3,11 @@
         <ul>
             <li>
                 <div class="jump-up" :class="bulma('icon')" @click.prevent="goUp" title="위로 이동">
-                    <div class="fas fa-arrow-up"></div>
+                    <buma-font-awesome-icon icon="fa-solid fa-arrow-up">
                 </div>
             </li><li>
                 <div class="jump-down" :class="bulma('icon')" @click.prevent="goDown" title="아래로 이동">
-                    <div class="fas fa-arrow-down"></div>
+                    <buma-font-awesome-icon icon="fa-solid fa-arrow-down">
                 </div>
             </li>
         </ul>
