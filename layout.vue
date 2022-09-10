@@ -198,7 +198,7 @@
                     <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
                 <div :class="bulma('container')">
                         <ul v-if="$store.state.page.data.document">
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'wiki' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'wiki' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'w')">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-eye"></i>
@@ -206,7 +206,7 @@
                                     <span class="wiki-article-menu-text"> 읽기</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'edit' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'edit' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'edit')" class="edit-anchor">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-edit"></i>
@@ -214,7 +214,7 @@
                                     <span class="wiki-article-menu-text"> 편집</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName) }">
+                            <li v-bind:class="bulma({ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName) }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'discuss')">
                                     <span :class="bulma('icon')">
                                         <i class="far fa-comments"></i>
@@ -222,7 +222,7 @@
                                     <span class="wiki-article-menu-text"> 토론</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'move' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'move' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'move')">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-arrow-right"></i>
@@ -230,7 +230,7 @@
                                     <span class="wiki-article-menu-text"> 이동</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'delete' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'delete' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'delete')">
                                     <span :class="bulma('icon')">
                                         <i class="far fa-trash-alt"></i>
@@ -238,7 +238,7 @@
                                     <span class="wiki-article-menu-text"> 삭제</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'backlink' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'backlink' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'backlink')">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-random"></i>
@@ -246,7 +246,7 @@
                                     <span class="wiki-article-menu-text"> 역링크</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'history' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'history' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'history')">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-history"></i>
@@ -254,7 +254,7 @@
                                     <span class="wiki-article-menu-text"> 역사</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="{ 'is-active': $store.state.page.viewName === 'acl' }">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'acl' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'acl')">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-key"></i>
@@ -378,10 +378,7 @@
 
 <style>
 @import './css/bulma.min.css';
-@import './css/layout.css';
-.mobile-search-navbar .navbar-brand, .mobile-search-navbar .navbar-brand .navbar-item, .mobile-search-navbar .navbar-brand .navbar-item > * {
-    width: 100%;
-}
+@import './css/layout.min.css';
 </style>
 
 <script>
