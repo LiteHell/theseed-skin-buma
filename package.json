@@ -4,8 +4,9 @@
   "description": "Frontend skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "build-modular-bulma": "node-sass ./node_modules/bulma/bulma.sass ./css/bulma.css && postcss ./css/bulma.css > ./css/bulma.min.css && rm ./css/bulma.css",
-    "build": "yarn build-modular-bulma"
+    "build-modular-bulma": "node-sass ./scss/bulma.scss ./css/bulma.css && postcss ./css/bulma.css > ./css/bulma.min.css && rm ./css/bulma.css",
+    "build-layout-css": "node-sass ./scss/layout.scss ./css/layout.css && postcss ./css/layout.css > ./css/layout.min.css && rm ./css/layout.css",
+    "build": "yarn build-modular-bulma && yarn build-layout-css"
   },
   "repository": {
     "type": "git",
