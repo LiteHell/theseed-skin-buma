@@ -5,6 +5,13 @@
 This is a third-party skin for the seed engine, based on [bulma](https://bulma.io).
 Special thanks to [gdl-888](https://github.com/gdl-888) for porting to Vue.js.
 
+## Build
+You need [Yarn](https://yarnpkg.com/) to build this skin.
+```bash
+yarn
+yarn build
+```
+
 ## Formatting
 This project uses [prettier](https://prettier.io) for formatting. It convenient to use Visual Studio Code with [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
