@@ -2,8 +2,8 @@
 
 <template>
     <form v-on:submit.prevent>
-        <div :class="bulma({'dropdown': true, 'is-active': show})">
-            <div :class="bulma('dropdown-trigger')">
+        <div class="fullWidth" :class="bulma({'dropdown': true, 'is-active': show})">
+            <div class="fullWidth" :class="bulma('dropdown-trigger')">
                 <div :class="bulma('field has-addons')">
                     <div :class="bulma('control has-icons-left is-expanded')">
                         <input
@@ -59,7 +59,7 @@
 </template>
 
 <style scoped>
-.dropdown, .dropdown-trigger {
+.fullWidth {
     width: 100%;
 }
 </style>
