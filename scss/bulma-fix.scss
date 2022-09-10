@@ -1,0 +1,7 @@
+:global(.mobile-search-navbar) .navbar-brand {
+    &,
+    & .navbar-item,
+    & .navbar-item > * {
+        width: 100%;
+    }
+}

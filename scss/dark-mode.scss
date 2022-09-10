@@ -1,0 +1,22 @@
+:global(body.theseed-dark-mode) {
+    background: #414141;
+    color: white;
+    
+    .nav {
+        background: #424242;
+        color: white;
+    }
+    .nav a:hover {
+        background: dimgray;
+        color: white;
+    }
+    .nav a {
+        color: #a0a0a0;
+    }
+    .hero.is-primary {
+        background: #345f59;
+    }
+    .hero.is-danger {
+        background: #511f29;
+    }
+}
