@@ -389,7 +389,6 @@ import LocalDate from '~/components/localDate';
 import SettingItemCheckbox from '~/components/settingItemCheckbox';
 import SettingItemSelect from '~/components/settingItemSelect';
 import SearchForm from './components/searchForm';
-import SkinLicense from './components/skinLicense';
 import BNotification from './components/b-notification';
 import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
@@ -409,7 +408,6 @@ export default {
         SettingItemSelect,
         SettingItemCheckbox,
         SearchForm,
-        SkinLicense,
         BNotification,
         JumpButtons,
         BDropdown
