@@ -99,7 +99,7 @@
                                 <span :class="bulma('icon')">
                                     <i class="far fa-user-circle"></i>
                                 </span>&nbsp;
-                                내정보
+                                내 정보
                             </nuxt-link>
                             <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'w')" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
