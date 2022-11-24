@@ -333,7 +333,7 @@
                     <span v-html="$store.state.config['wiki.sitenotice']" />
                 </b-notification>
 
-                <div class="wiki-article" :class="bulma('content')" @dblclick="doBehaviorWhenDblClick">
+                <div class="wiki-article" @dblclick="doBehaviorWhenDblClick">
                     <nuxt />
 
                     <skin-license v-if="$store.state.page.viewName === 'license'"></skin-license>
