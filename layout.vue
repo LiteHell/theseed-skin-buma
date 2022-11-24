@@ -383,6 +383,7 @@
 </style>
 
 <script>
+import Vue from 'vue';
 import Common from '~/mixins/common';
 import Setting from '~/components/setting';
 import LocalDate from '~/components/localDate';
