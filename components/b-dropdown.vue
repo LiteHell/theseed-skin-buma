@@ -2,7 +2,7 @@
     <div :class="bulma('navbar-item has-dropdown is-hoverable')">
         <a href="#" :class="bulma('navbar-link')" @click.prevent="toggleNavbar">
             <span :class="bulma('icon')" v-if="icon">
-                <i :class="icon"></i>
+                <buma-font-awesome-icon :class="icon"></buma-font-awesome-icon>
             </span>&nbsp;
             {{ label }}
         </a>
@@ -14,8 +14,10 @@
 
 <script>
 import bulma from '../src/bulma';
+import bumaFontAwesomeIcon from './buma-font-awesome-icon.vue';
 
 export default {
+  components: { bumaFontAwesomeIcon },
     props: {
         icon: String,
         label: String,

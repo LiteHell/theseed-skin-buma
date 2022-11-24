@@ -3,11 +3,11 @@
         <ul>
             <li>
                 <div class="jump-up" :class="bulma('icon')" @click.prevent="goUp" title="위로 이동">
-                    <buma-font-awesome-icon icon="fa-solid fa-arrow-up">
+                    <buma-font-awesome-icon icon="fa-solid fa-arrow-up"></buma-font-awesome-icon>
                 </div>
             </li><li>
                 <div class="jump-down" :class="bulma('icon')" @click.prevent="goDown" title="아래로 이동">
-                    <buma-font-awesome-icon icon="fa-solid fa-arrow-down">
+                    <buma-font-awesome-icon icon="fa-solid fa-arrow-down"></buma-font-awesome-icon>
                 </div>
             </li>
         </ul>
@@ -50,8 +50,12 @@
 
 <script>
 import bulma from '../src/bulma';
+import bumaFontAwesomeIcon from './buma-font-awesome-icon.vue';
 
 export default {
+    components: {
+        bumaFontAwesomeIcon
+    },
     methods: {
         goUp() {
             document.querySelector(".top-anchor").scrollIntoView({ behavior: 'smooth', block: 'start' });

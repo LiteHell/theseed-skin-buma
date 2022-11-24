@@ -21,20 +21,20 @@
                             placeholder="검색"
                         />
                         <span :class="bulma('icon is-small is-left')">
-                            <buma-font-awesome-icon icon="fa-solid fa-search">
+                            <buma-font-awesome-icon icon="fa-solid fa-search"></buma-font-awesome-icon>
                         </span>
                     </div>
                     <div :class="bulma('control')">
                         <a href="#" :class="bulma('button')" @click.prevent="gotodoc">
                             <span :class="bulma('icon')">
-                            <buma-font-awesome-icon icon="fa-solid fa-search">
+                            <buma-font-awesome-icon icon="fa-solid fa-search"></buma-font-awesome-icon>
                             </span>
                         </a>
                     </div>
                     <div :class="bulma('control')">
                         <a href="#" :class="bulma('button')" @click.prevent="random">
                             <span :class="bulma('icon')">
-                            <buma-font-awesome-icon icon="fa-solid fa-random">
+                            <buma-font-awesome-icon icon="fa-solid fa-random"></buma-font-awesome-icon>
                             </span>
                         </a>
                     </div>
@@ -67,8 +67,10 @@
 <script>
 import AutocompleteMixin from '~/mixins/autocomplete';
 import bulma from '../src/bulma';
+import bumaFontAwesomeIcon from './buma-font-awesome-icon.vue';
 
 export default {
+    components: {bumaFontAwesomeIcon},
     mixins: [AutocompleteMixin],
     methods: {
         gotodoc() {
