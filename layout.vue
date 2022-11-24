@@ -396,6 +396,14 @@ import BDropdown from './components/b-dropdown';
 import bulma from './src/bulma';
 import bumaFontAwesomeIcon from './components/buma-font-awesome-icon.vue';
 
+if (process.browser) {
+    try {
+        require('./js/all.min.js');
+    } catch (e) {
+        console.log(e.stack);
+    }
+}
+
 export default {
     mixins: [Common],
     components: {
