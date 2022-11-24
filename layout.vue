@@ -206,7 +206,7 @@
                                     <span class="wiki-article-menu-text"> 읽기</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'edit' }, true)">
+                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'edit' || $store.state.page.viewName === 'edit_request' || $store.state.page.viewName === 'edit_edit_request' }, true)">
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'edit')" class="edit-anchor">
                                     <span :class="bulma('icon')">
                                         <i class="fas fa-edit"></i>
