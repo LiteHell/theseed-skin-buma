@@ -1,0 +1,26 @@
+.wiki-article {
+    a {
+        color: unset;
+        text-decoration: unset;
+        strong {
+            color: unset;
+        }
+        &:hover {
+            color: unset;
+        }
+    }
+
+    strong {
+        color: unset;
+    }
+
+    table {
+        td, th {
+            vertical-align: middle;
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+}
