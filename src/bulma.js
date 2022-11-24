@@ -1,6 +1,6 @@
 import bulmaClassnames from "./bulmaClassnames";
 
-module.exports = (classes) => {
+export default function (classes) {
     let modified = [];
     if (typeof classes === 'string')
         modified = classes.split(' ').map(i => bulmaClassnames[i] || i);
