@@ -1,5 +1,5 @@
 <template>
-    <div :class="bulma('notification is-link')" v-if="destroyed">
+    <div :class="bulma('notification is-link')" v-if="!destroyed">
         <button :class="bulma('delete')" v-if="deleteButton" @click.prevent="deleteMyself"></button>
         <slot></slot>
     </div>
