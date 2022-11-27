@@ -2,7 +2,7 @@
     <div :class="bulma('navbar-item has-dropdown is-hoverable')">
         <a href="#" :class="bulma('navbar-link')" @click.prevent="toggleNavbar">
             <span :class="bulma('icon')" v-if="icon">
-                <buma-font-awesome-icon :class="icon"></buma-font-awesome-icon>
+                <buma-font-awesome-icon :icon="icon"></buma-font-awesome-icon>
             </span>&nbsp;
             {{ label }}
         </a>
