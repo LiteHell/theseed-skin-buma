@@ -45,7 +45,7 @@
                     <a
                         :class="bulma({'dropdown-item': true, 'is-active': i === cursor})"
                         v-for="(item, i) in internalItems"
-                        @click="onClickItem(item)"
+                        @click="onClickItem_buma(item)"
                         :key="i"
                         @mouseover="cursor = i"
                         href="#"
@@ -79,6 +79,9 @@ export default {
         },
         random() {
             this.$router.push('/random');
+        },
+        onClickItem_buma(item) {
+            this.$router.push('/Go?q=' + encodeURIComponent(item));
         },
         bulma
     }
