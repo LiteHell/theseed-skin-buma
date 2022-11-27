@@ -296,7 +296,7 @@
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fas fa-chart-line"></buma-font-awesome-icon>
                                     </span>
-                                    <span class="wiki-article-menu-text"> 기여내역</span>
+                                    <span class="wiki-article-menu-text"> 기여 </span>
                                 </nuxt-link>
                             </li>
                         </ul>
@@ -307,7 +307,7 @@
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fa-cogs"></buma-font-awesome-icon>
                                     </span>
-                                    <span class="wiki-article-menu-text"> 특수문서</span>
+                                    <span class="wiki-article-menu-text"> 특수 문서</span>
                                 </a>
                             </li>
                         </ul>
