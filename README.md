@@ -15,6 +15,13 @@ yarn build
 ## Formatting
 This project uses [prettier](https://prettier.io) for formatting. It convenient to use Visual Studio Code with [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
+## License
+### FontAwesome
+[Read this](https://fontawesome.com/license/free)
+
+### Others
+(Will be added later)
+
 ## Copyright
 Copyright (C) 2017 LiteHell, and contributors
 

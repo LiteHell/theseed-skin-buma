@@ -1,8 +1,9 @@
 <template>
-    <font-awesome-icon :icon="icon"></font-awesome-icon>
+    <i :class="icon.replace('fa-regular', 'far').replace('fa-solid', 'fas')"></i>
 </template>
 
 <script>
+/*
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faArrowRight,
@@ -61,10 +62,11 @@ library.add(
 );
 library.add(faComments, faFrown, faQuestionCircle, faThumbsDown, faThumbsUp, faCopyright, faUserCircle, faStickyNote, faTrashAlt);
 
+*/
 export default {
-    component: {
+    /* component: {
         FontAwesomeIcon
-    },
+    }, */
     props: {
         icon: String
     }
