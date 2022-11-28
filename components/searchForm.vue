@@ -81,7 +81,9 @@ export default {
             this.$router.push('/random');
         },
         onClickItem_buma(item) {
-            this.$router.push('/Go?q=' + encodeURIComponent(item));
+            return () => {
+                this.$router.push('/Go?q=' + encodeURIComponent(item))
+            };
         },
         bulma
     }
