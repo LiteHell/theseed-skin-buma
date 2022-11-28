@@ -302,7 +302,7 @@
                         </ul>
 
                         <ul v-else>
-                            <li :class="bulma('is-active')">
+                            <li :class="bulma('is-active', true)">
                                 <a href="#">
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fa-cogs"></buma-font-awesome-icon>
