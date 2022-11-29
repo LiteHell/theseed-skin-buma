@@ -1,9 +1,71 @@
+/**
+ * Copyright Notice
+ *
+ * font-size values of headings and styles of ul, pre, ol, sup, sub are from bulma
+ * bulma is licensed under MIT License, bulma: Copyright (c) 2022 Jeremy Thomas
+ */
 .wiki-article {
     ul {
-        list-style-type: disc;
+        list-style-type: disc outside;
     }
 
     img {
         height: inherit;
+    }
+
+    strong {
+        font-weight: bold;
+        color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1.125em;
+    }
+
+    h6 {
+        font-size: 1em;
+    }
+
+    pre {
+        white-space: pre;
+        word-wrap: normal;
+    }
+
+    ol {
+        list-style-position: outside;
+    }
+
+    ol:not([type]) {
+        list-style-type: decimal;
+    }
+
+    sup,
+    sub {
+        font-size: 75%;
     }
 }
