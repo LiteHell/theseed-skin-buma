@@ -59,4 +59,12 @@
     a:hover {
         color: #ffaf1a;
     }
+
+    .navbar-dropdown {
+        background: #505050;
+    }
+
+    .navbar-item.is-hoverable:hover .navbar-link {
+        background: #787878;
+    }
 }
