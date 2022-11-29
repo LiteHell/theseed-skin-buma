@@ -1,22 +1,62 @@
 :global(body.theseed-dark-mode) {
     background: #414141;
-    color: white;
-    
+    color: #C8C8C8;
+
     .nav {
         background: #424242;
-        color: white;
+        color: #D2D2D2;
     }
+
     .nav a:hover {
         background: dimgray;
         color: white;
     }
+
     .nav a {
         color: #a0a0a0;
     }
+
+    .nav nav.navbar-menu {
+        background: #505050;
+    }
+
     .hero.is-primary {
         background: #345f59;
     }
+
     .hero.is-danger {
         background: #511f29;
+    }
+
+    footer.footer {
+        background: #323232;
+    }
+
+    input.input {
+        background: #505050;
+        border-color: #C8C8C8;
+        color: #DCDCDC;
+    }
+
+    .field .control .button {
+        background: #787878;
+        color: #F0F0F0;
+    }
+
+    table th {
+        color: #C8C8C8;
+    }
+
+    .dropdown-content {
+        background: #505050;
+        color: #DCDCDC;
+    }
+
+    a {
+        color: #e69500;
+    }
+
+    a:hover {
+        color: #ffaf1a;
     }
 }
