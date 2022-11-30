@@ -1,23 +1,40 @@
 :global(body.theseed-dark-mode) {
     background: #414141;
-    color: #C8C8C8;
+    color: #c8c8c8;
 
     .nav {
         background: #424242;
-        color: #D2D2D2;
-    }
+        color: #d2d2d2;
 
-    .nav a:hover {
-        background: dimgray;
-        color: white;
-    }
+        a:hover {
+            background: dimgray;
+            color: white;
+        }
 
-    .nav a {
-        color: #a0a0a0;
-    }
+        a {
+            color: #a0a0a0;
+        }
 
-    .nav .navbar-menu, .nav .navbar-item .navbar-link, .nav .navbar-menu, .navbar-item {
-        background: #424242;
+        .navbar-menu,
+        .navbar-item .navbar-link,
+        .navbar-menu,
+        .navbar-item {
+            background: #424242;
+        }
+
+        .navbar-dropdown {
+            background: #424242;
+        }
+
+        .navbar-item.is-hoverable:hover .navbar-link,
+        .navbar-divider {
+            background: #787878;
+        }
+
+        .dropdown-content {
+            background: #424242;
+            color: #dcdcdc;
+        }
     }
 
     .hero.is-primary {
@@ -34,25 +51,20 @@
 
     input.input {
         background: #505050;
-        border-color: #C8C8C8;
-        color: #DCDCDC;
+        border-color: #c8c8c8;
+        color: #dcdcdc;
         &::placeholder {
-            color: #DCDCDC;
+            color: #dcdcdc;
         }
     }
 
     .field .control .button {
         background: #787878;
-        color: #F0F0F0;
+        color: #f0f0f0;
     }
 
     table th {
-        color: #C8C8C8;
-    }
-
-    .dropdown-content {
-        background: #424242;
-        color: #DCDCDC;
+        color: #c8c8c8;
     }
 
     a {
@@ -61,13 +73,5 @@
 
     a:hover {
         color: #ffaf1a;
-    }
-
-    .navbar-dropdown {
-        background: #424242;
-    }
-
-    .navbar-item.is-hoverable:hover .navbar-link, .navbar-divider {
-        background: #787878;
     }
 }
