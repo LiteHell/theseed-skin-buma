@@ -36,6 +36,9 @@
         background: #505050;
         border-color: #C8C8C8;
         color: #DCDCDC;
+        &::placeholder {
+            color: #DCDCDC;
+        }
     }
 
     .field .control .button {
