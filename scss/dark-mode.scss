@@ -16,8 +16,8 @@
         color: #a0a0a0;
     }
 
-    .nav nav.navbar-menu {
-        background: #505050;
+    .nav .navbar-menu, .nav .navbar-item .navbar-link, .nav .navbar-menu, .navbar-item {
+        background: #424242;
     }
 
     .hero.is-primary {
@@ -51,7 +51,7 @@
     }
 
     .dropdown-content {
-        background: #505050;
+        background: #424242;
         color: #DCDCDC;
     }
 
@@ -64,10 +64,10 @@
     }
 
     .navbar-dropdown {
-        background: #505050;
+        background: #424242;
     }
 
-    .navbar-item.is-hoverable:hover .navbar-link {
+    .navbar-item.is-hoverable:hover .navbar-link, .navbar-divider {
         background: #787878;
     }
 }
