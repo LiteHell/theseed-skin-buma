@@ -124,7 +124,7 @@
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-solid fa-bookmark"></buma-font-awesome-icon>
                                 </span>&nbsp;
-                                별찜한 문서들
+                                별찜한 문서
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
