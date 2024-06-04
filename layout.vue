@@ -87,8 +87,8 @@
                     <div :class="bulma('navbar-item is-hidden-touch')">
                         <search-form />
                     </div>
-                    <template v-if="$store.state.session.member">
-                        <b-dropdown right-dropdown icon="fa-solid fa-user" :label="$store.state.session.member.username">
+                    <template v-if="$store.state.session.account.type === 1">
+                        <b-dropdown right-dropdown icon="fa-solid fa-user" :label="$store.state.session.account.name">
                             <a href="#" @click.prevent="$modal.show('theseed-setting')" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon>
@@ -101,20 +101,20 @@
                                 </span>&nbsp;
                                 내 정보
                             </nuxt-link>
-                            <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'w')" :class="bulma('navbar-item')">
+                            <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'w')" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-regular fa-sticky-note"></buma-font-awesome-icon>
                                 </span>&nbsp;
                                 내 사용자 문서
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
-                            <nuxt-link :to="contribution_author_link($store.state.session.member.username)" :class="bulma('navbar-item')">
+                            <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon>
                                 </span>&nbsp;
                                 내 문서 기여 목록
                             </nuxt-link>
-                            <nuxt-link :to="contribution_author_link_discuss($store.state.session.member.username)" :class="bulma('navbar-item')">
+                            <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon>
                                 </span>&nbsp;
@@ -144,13 +144,13 @@
                                 </span>&nbsp;
                                 스킨 설정
                             </a>
-                            <nuxt-link :to="contribution_ip_link($store.state.session.ip)" :class="bulma('navbar-item')">
+                            <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon>
                                 </span>&nbsp;
                                 내 문서 기여 목록
                             </nuxt-link>
-                            <nuxt-link :to="contribution_ip_link_discuss($store.state.session.ip)" :class="bulma('navbar-item')">
+                            <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
                                     <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon>
                                 </span>&nbsp;
@@ -292,7 +292,7 @@
 
                             <!-- [나무위키] main.a65ef46d6b3879416d5f.js 및 main.b9faec2b37c8d51a1d7e.js 참고함 -->
                             <li v-if="$store.state.page.data.user">
-                                <nuxt-link :to="contribution_author_link($store.state.page.data.document.title)">
+                                <nuxt-link :to="contribution_link($store.state.session.account.uuid)">
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fas fa-chart-line"></buma-font-awesome-icon>
                                     </span>
@@ -319,13 +319,12 @@
             <div :class="bulma('container')">
                 <b-notification
                     v-if="
-                        $store.state.session.member &&
-                        $store.state.session.member.user_document_discuss &&
-                        $store.state.localConfig['wiki.hide_user_document_discuss'] !== $store.state.session.member.user_document_discuss
+                        $store.state.session.user_document_discuss &&
+                        $store.state.localConfig['wiki.hide_user_document_discuss'] !== $store.state.session.user_document_discuss
                     "
                     :class="bulma('is-link')"
                 >
-                    <nuxt-link :to="doc_action_link(user_doc($store.state.session.member.username), 'discuss')">사용자 토론</nuxt-link>이 있습니다.
+                    <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'discuss')">사용자 토론</nuxt-link>이 있습니다.
                     확인해주세요.
                 </b-notification>
 
