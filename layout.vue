@@ -290,7 +290,9 @@
                                 </nuxt-link>
                             </li>
 
-                            <!-- [나무위키] main.a65ef46d6b3879416d5f.js 및 main.b9faec2b37c8d51a1d7e.js 참고함 -->
+                        <!--
+                            [나무위키] main.a65ef46d6b3879416d5f.js 및 main.b9faec2b37c8d51a1d7e.js 참고함
+                            
                             <li v-if="$store.state.page.data.user">
                                 <nuxt-link :to="contribution_link($store.state.session.account.uuid)">
                                     <span :class="bulma('icon')">
@@ -299,6 +301,7 @@
                                     <span class="wiki-article-menu-text"> 기여 목록</span>
                                 </nuxt-link>
                             </li>
+                        -->
                         </ul>
 
                         <ul v-else>
