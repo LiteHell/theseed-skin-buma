@@ -84,6 +84,11 @@ export default {
             this.$router.push('/Go?q=' + encodeURIComponent(item));
         },
         bulma
+    },
+    watch: {
+        $route() {
+            this.reset();
+        }
     }
 };
 </script>
