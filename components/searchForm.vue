@@ -1,5 +1,3 @@
-<!-- 리버티 스킨 참고함 -->
-
 <template>
     <form v-on:submit.prevent>
         <div class="fullWidth" :class="bulma({'dropdown': true, 'is-active': show})">
@@ -8,6 +6,7 @@
                     <div :class="bulma('control has-icons-left is-expanded')">
                         <input
                             :class="bulma('input is-primary')"
+                            v-model="searchTextModel"
                             v-on:input="searchText = $event.target.value"
                             type="text"
                             autocomplete="off"
@@ -45,7 +44,7 @@
                     <a
                         :class="bulma({'dropdown-item': true, 'is-active': i === cursor})"
                         v-for="(item, i) in internalItems"
-                        @click.prevent="onClickItem_buma(item)"
+                        @click.prevent="onClickItem(item)"
                         :key="i"
                         @mouseover="cursor = i"
                         href="#"
@@ -79,9 +78,6 @@ export default {
         },
         random() {
             this.$router.push('/random');
-        },
-        onClickItem_buma(item) {
-            this.$router.push('/Go?q=' + encodeURIComponent(item));
         },
         bulma
     },
