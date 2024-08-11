@@ -5,12 +5,13 @@
  * bulma is licensed under MIT License, bulma: Copyright (c) 2022 Jeremy Thomas
  */
 .wiki-article {
+    word-break: break-all;
     td, th {
         vertical-align: middle;
     }
     
     ul {
-        margin-left: 1.2em;
+        padding-inline-start: 40px;
         list-style: disc outside;
         ul {
             list-style: circle outside;
