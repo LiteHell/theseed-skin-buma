@@ -5,7 +5,7 @@ module.exports = (ctx) => ({
         ctx.file.basename === 'bulma.css' &&
             require('postcss-modules')({
                 getJSON: function (_cssFileName, json, _outputFileName) {
-                    fs.writeFileSync('./src/bulmaClassnames.js', 'module.exports = ' + JSON.stringify(json), { encoding: 'utf8' });
+                    fs.writeFileSync('./src/bulmaClassnames.js', 'export default ' + JSON.stringify(json), { encoding: 'utf8' });
                 }
             }),
         require('cssnano')({
