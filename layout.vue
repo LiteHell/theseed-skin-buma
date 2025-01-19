@@ -319,6 +319,10 @@
         </section>
         <section :class="bulma('section')">
             <div :class="bulma('container')">
+                <b-notification v-if="$store.state.config['wiki.sitenotice']" color="is-warning">
+                    <span v-html="$store.state.config['wiki.sitenotice']" />
+                </b-notification>
+
                 <b-notification
                     v-if="
                         $store.state.session.user_document_discuss &&
@@ -328,10 +332,6 @@
                 >
                     <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'discuss')">사용자 토론</nuxt-link>이 있습니다.
                     확인해주세요.
-                </b-notification>
-
-                <b-notification v-if="$store.state.config['wiki.sitenotice']">
-                    <span v-html="$store.state.config['wiki.sitenotice']" />
                 </b-notification>
 
                 <div class="wiki-article" @dblclick="doBehaviorWhenDblClick">
