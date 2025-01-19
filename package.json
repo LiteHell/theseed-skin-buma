@@ -4,8 +4,8 @@
   "description": "Frontend skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "build-modular-bulma": "node-sass ./scss/bulma.scss ./css/bulma.css && postcss ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
-    "build-layout-css": "node-sass ./scss/layout.scss ./css/layout.css && postcss ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
+    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && postcss ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
+    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && postcss ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
     "build": "yarn build-modular-bulma && yarn build-layout-css"
   },
   "repository": {
@@ -20,12 +20,12 @@
   "homepage": "https://github.com/litehell/theseed-skin-buma#readme",
   "devDependencies": {
     "cssnano": "^5.1.7",
-    "node-sass": "^9.0.0",
     "postcss": "^8.4.13",
     "postcss-cli": "^9.1.0",
     "postcss-modules": "^4.3.1",
     "prettier": "^2.0.5",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sass": "^1.83.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

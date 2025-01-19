@@ -358,8 +358,6 @@
     </div>
 </template>
 
-<!-- 리버티 스킨 참고함 -->
-
 <style>
 @import './css/bulma.min.css';
 @import './css/layout.min.css';
@@ -375,14 +373,10 @@ import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
 import bulma from './src/bulma';
 import bumaFontAwesomeIcon from './components/buma-font-awesome-icon.vue';
-
-if (process.browser) {
-    try {
-        require('./js/all.min.js');
-    } catch (e) {
-        console.log(e.stack);
-    }
-}
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+library.add(fas, far);
 
 export default {
     mixins: [Common],
@@ -422,10 +416,10 @@ export default {
         toggleNavbarBurger() {
             this.isNavbarActive = !this.isNavbarActive;
         },
-        bulma,
         openSettingModal() {
             this.$vfm.show({ component: SettingModal });
-        }
+        },
+        bulma
     }
 };
 </script>
