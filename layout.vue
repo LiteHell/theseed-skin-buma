@@ -336,7 +336,7 @@
                 <div class="wiki-article" @dblclick="doBehaviorWhenDblClick">
                     <nuxt />
 
-                    <!--<skin-license v-if="$store.state.page.viewName === 'license'"></skin-license>-->
+                    <skin-license v-if="$store.state.page.viewName === 'license'"></skin-license>
                 </div>
             </div>
         </section>
@@ -370,8 +370,9 @@ import SearchForm from './components/searchForm';
 import BNotification from './components/b-notification';
 import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
-import bulma from './src/bulma';
 import bumaFontAwesomeIcon from './components/buma-font-awesome-icon.vue';
+import skinLicense from './components/skinLicense';
+import bulma from './src/bulma';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
@@ -385,7 +386,8 @@ export default {
         SearchForm,
         BNotification,
         JumpButtons,
-        BDropdown
+        BDropdown,
+        skinLicense
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
