@@ -174,11 +174,10 @@
                     <search-form />
                 </div>
             </div>
-
         </nav>
         <section
             id="wiki-main-title"
-            :class="bulma({ 'hero': true, [$store.state.page.data.error || $store.state.page.viewName == 'notfound' ? 'is-danger' : 'is-primary']: true })"
+            :class="bulma({ 'hero': true, [$store.state.page.viewName === 'error' || $store.state.page.title === '오류' ? 'is-danger' : $store.state.page.viewName === 'notfound' ? 'is-warning' : 'is-primary']: true })"
         >
             <div :class="bulma('hero-body')">
                 <div :class="bulma('container')">
@@ -396,7 +395,15 @@ export default {
             isNavbarActive: false
         };
     },
+    watch: {
+        '$store.state.currentTheme'(newValue) {
+            this.changeTheme(newValue);
+        }
+    },
     methods: {
+        changeTheme(theme) {
+            document.documentElement.dataset.theme = theme;
+        },
         doBehaviorWhenDblClick() {
             if (!this.$store.state.page.data.document) return;
 
@@ -420,6 +427,9 @@ export default {
             this.$vfm.show({ component: SettingModal });
         },
         bulma
+    },
+    mounted() {
+        this.changeTheme(this.$store.state.currentTheme);
     }
 };
 </script>
