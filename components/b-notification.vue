@@ -1,6 +1,6 @@
 <template>
-    <div :class="bulma('notification is-link')" v-if="!destroyed">
-        <button :class="bulma('delete')" v-if="deleteButton" @click.prevent="deleteMyself"></button>
+    <div v-if="!destroyed" :class="bulma(['notification', color, light ? 'is-light' : null])">
+        <button v-if="deleteButton" @click="deleteMyself" :class="bulma('delete')"></button>
         <slot></slot>
     </div>
 </template>
@@ -12,11 +12,18 @@ export default {
     props: {
         deleteButton: {
             type: Boolean,
-            required: false,
             default: true
+        },
+        color: {
+            type: String,
+            default: 'is-link'
+        },
+        light: {
+            type: Boolean,
+            default: false
         }
     },
-    data: function () {
+    data() {
         return {
             destroyed: false
         };
