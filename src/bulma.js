@@ -3,11 +3,12 @@ import bulmaClassnames from "./bulmaClassnames";
 export default function (classes, mirror = false) {
     let modified = [];
     let unmodified = [];
-    if (typeof classes === 'string')
+    let type = Array.isArray(classes) ? 'array' : typeof classes;
+    if (type === 'string')
         unmodified = classes.split(' ');
-    else if (typeof classes === 'object')
+    else if (type === 'object')
         unmodified = Object.entries(classes).filter(([k, v]) => Boolean(v)).map(([k, v]) => k);
-    else if (typeof classes === 'array')
+    else if (type === 'array')
         unmodified = classes;
     else
         throw new Error('Unexcepted parameter into bulma function')
