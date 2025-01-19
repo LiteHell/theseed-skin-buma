@@ -1,3 +1,11 @@
+:global(#wiki-main-title) {
+    --bulma-hero-color-l: 100%;
+}
+
+.navbar-item, .navbar-link {
+    gap: 0;
+}
+
 :global(.mobile-search-navbar) .navbar-brand {
     &,
     & .navbar-item,
