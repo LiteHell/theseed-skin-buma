@@ -8,34 +8,30 @@
                         $store.state.config['wiki.site_name']
                     }}</nuxt-link
                 >
-                <a :class="bulma({'navbar-burger': true, 'is-active': isNavbarActive})" @click.prevent="toggleNavbarBurger">
+                <a :class="bulma({ 'navbar-burger': true, 'is-active': isNavbarActive })" @click.prevent="toggleNavbarBurger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </a>
             </div>
-            <div :class="bulma({'navbar-menu': true, 'is-active': isNavbarActive})" id="mainNavbar">
+            <div :class="bulma({ 'navbar-menu': true, 'is-active': isNavbarActive })" id="mainNavbar">
                 <div :class="bulma('navbar-start')">
                     <nuxt-link to="/RecentChanges" :class="bulma('navbar-item')">
-                        <span :class="bulma('icon')">
-                            <buma-font-awesome-icon icon="fa-solid fa-binoculars"></buma-font-awesome-icon> </span
-                        >&nbsp; 최근 변경
+                        <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-binoculars"></buma-font-awesome-icon> </span>&nbsp;
+                        최근 변경
                     </nuxt-link>
                     <nuxt-link to="/RecentDiscuss" :class="bulma('navbar-item')">
-                        <span :class="bulma('icon')">
-                            <buma-font-awesome-icon icon="fa-regular fa-comments"></buma-font-awesome-icon> </span
-                        >&nbsp; 최근 토론
+                        <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-regular fa-comments"></buma-font-awesome-icon> </span>&nbsp;
+                        최근 토론
                     </nuxt-link>
                     <b-dropdown icon="fa-solid fa-cogs" label="도구">
                         <nuxt-link :class="bulma('navbar-item')" to="/NeededPages">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-solid fa-beer"></buma-font-awesome-icon> </span
-                            >&nbsp; 작성이 필요한 문서
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-beer"></buma-font-awesome-icon> </span>&nbsp;
+                            작성이 필요한 문서
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/OrphanedPages">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-regular fa-frown"></buma-font-awesome-icon> </span
-                            >&nbsp; 고립된 문서
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-regular fa-frown"></buma-font-awesome-icon> </span>&nbsp;
+                            고립된 문서
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/UncategorizedPages">
                             <span :class="bulma('icon')">
@@ -43,43 +39,42 @@
                             >&nbsp; 분류가 되지 않은 문서
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/OldPages">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-solid fa-pause"></buma-font-awesome-icon> </span
-                            >&nbsp; 편집된 지 오래된 문서
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-pause"></buma-font-awesome-icon> </span>&nbsp;
+                            편집된 지 오래된 문서
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/ShortestPages">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-regular fa-thumbs-down"></buma-font-awesome-icon> </span
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-regular fa-thumbs-down"></buma-font-awesome-icon> </span
                             >&nbsp; 내용이 짧은 문서
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/LongestPages">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-regular fa-thumbs-up"></buma-font-awesome-icon> </span
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-regular fa-thumbs-up"></buma-font-awesome-icon> </span
                             >&nbsp; 내용이 긴 문서
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/BlockHistory">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-solid fa-ban"></buma-font-awesome-icon> </span
-                            >&nbsp; 차단 내역
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-ban"></buma-font-awesome-icon> </span>&nbsp; 차단
+                            내역
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/RandomPage">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-solid fa-random"></buma-font-awesome-icon> </span
-                            >&nbsp; RandomPage
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-random"></buma-font-awesome-icon> </span>&nbsp;
+                            RandomPage
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/Upload">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-solid fa-cloud-upload-alt"></buma-font-awesome-icon> </span
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-cloud-upload-alt"></buma-font-awesome-icon> </span
                             >&nbsp; 파일 올리기
                         </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/License">
-                            <span :class="bulma('icon')">
-                                <buma-font-awesome-icon icon="fa-regular fa-copyright"></buma-font-awesome-icon> </span
+                            <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-regular fa-copyright"></buma-font-awesome-icon> </span
                             >&nbsp; 라이선스
                         </nuxt-link>
 
                         <template v-if="$store.state.session.menus.length">
-                            <nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" :class="bulma('navbar-item')" v-text="m.t" />
+                            <nuxt-link
+                                v-for="m in $store.state.session.menus"
+                                :to="m.l"
+                                v-bind:key="m.l"
+                                :class="bulma('navbar-item')"
+                                v-text="m.t"
+                            />
                         </template>
                     </b-dropdown>
                 </div>
@@ -91,47 +86,40 @@
                         <b-dropdown right-dropdown icon="fa-solid fa-user" :label="$store.state.session.account.name">
                             <a href="#" @click.prevent="openSettingModal" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                스킨 설정
+                                    <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon> </span
+                                >&nbsp; 스킨 설정
                             </a>
                             <nuxt-link to="/member/mypage" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-regular fa-user-circle"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                내 정보
+                                    <buma-font-awesome-icon icon="fa-regular fa-user-circle"></buma-font-awesome-icon> </span
+                                >&nbsp; 내 정보
                             </nuxt-link>
                             <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'w')" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-regular fa-sticky-note"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                내 사용자 문서
+                                    <buma-font-awesome-icon icon="fa-regular fa-sticky-note"></buma-font-awesome-icon> </span
+                                >&nbsp; 내 사용자 문서
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                내 문서 기여 목록
+                                    <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon> </span
+                                >&nbsp; 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                내 토론 기여 목록
+                                    <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon> </span
+                                >&nbsp; 내 토론 기여 목록
                             </nuxt-link>
                             <nuxt-link to="/member/starred_documents" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-bookmark"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                별찜한 문서
+                                    <buma-font-awesome-icon icon="fa-solid fa-bookmark"></buma-font-awesome-icon> </span
+                                >&nbsp; 별찜한 문서
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-sign-out-alt"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                로그아웃
+                                    <buma-font-awesome-icon icon="fa-solid fa-sign-out-alt"></buma-font-awesome-icon> </span
+                                >&nbsp; 로그아웃
                             </nuxt-link>
                         </b-dropdown>
                     </template>
@@ -140,28 +128,24 @@
                         <b-dropdown right-dropdown icon="fa-solid fa-user-secret" label="익명">
                             <a href="#" @click.prevent="openSettingModal" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                스킨 설정
+                                    <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon> </span
+                                >&nbsp; 스킨 설정
                             </a>
                             <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                내 문서 기여 목록
+                                    <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon> </span
+                                >&nbsp; 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                내 토론 기여 목록
+                                    <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon> </span
+                                >&nbsp; 내 토론 기여 목록
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-sign-in-alt"></buma-font-awesome-icon>
-                                </span>&nbsp;
-                                로그인
+                                    <buma-font-awesome-icon icon="fa-solid fa-sign-in-alt"></buma-font-awesome-icon> </span
+                                >&nbsp; 로그인
                             </nuxt-link>
                         </b-dropdown>
                     </template>
@@ -177,7 +161,16 @@
         </nav>
         <section
             id="wiki-main-title"
-            :class="bulma({ 'hero': true, [$store.state.page.viewName === 'error' || $store.state.page.title === '오류' ? 'is-danger' : $store.state.page.viewName === 'notfound' ? 'is-warning' : 'is-primary']: true })"
+            :class="
+                bulma({
+                    hero: true,
+                    [$store.state.page.viewName === 'error' || $store.state.page.title === '오류'
+                        ? 'is-danger'
+                        : $store.state.page.viewName === 'notfound'
+                        ? 'is-warning'
+                        : 'is-primary']: true
+                })
+            "
         >
             <div :class="bulma('hero-body')">
                 <div :class="bulma('container')">
@@ -194,10 +187,14 @@
                 </div>
             </div>
             <div :class="bulma('hero-foot')">
-                    <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
-                <div :class="bulma('container')">
+                <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
+                    <div :class="bulma('container')">
                         <ul v-if="$store.state.page.data.document">
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'wiki' }, true)">
+                            <li
+                                v-bind:class="
+                                    bulma({ 'is-active': $store.state.page.viewName === 'wiki' || $store.state.page.viewName === 'notfound' }, true)
+                                "
+                            >
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'w')">
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fa-eye"></buma-font-awesome-icon>
@@ -205,7 +202,19 @@
                                     <span class="wiki-article-menu-text"> 읽기</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'edit' || $store.state.page.viewName === 'edit_request' || $store.state.page.viewName === 'edit_edit_request' }, true)">
+                            <li
+                                v-bind:class="
+                                    bulma(
+                                        {
+                                            'is-active':
+                                                $store.state.page.viewName === 'edit' ||
+                                                $store.state.page.viewName === 'edit_request' ||
+                                                $store.state.page.viewName === 'edit_edit_request'
+                                        },
+                                        true
+                                    )
+                                "
+                            >
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'edit')" class="edit-anchor">
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fa-edit"></buma-font-awesome-icon>
@@ -213,7 +222,11 @@
                                     <span class="wiki-article-menu-text"> 편집</span>
                                 </nuxt-link>
                             </li>
-                            <li v-bind:class="bulma({ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName) }, true)">
+                            <li
+                                v-bind:class="
+                                    bulma({ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName) }, true)
+                                "
+                            >
                                 <nuxt-link :to="doc_action_link($store.state.page.data.document, 'discuss')">
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-regular fa-comments"></buma-font-awesome-icon>
@@ -262,7 +275,6 @@
                                 </nuxt-link>
                             </li>
 
-                            <!-- [나무위키] main.b9faec2b37c8d51a1d7e.js 참고함 -->
                             <li
                                 v-if="$store.state.page.viewName === 'wiki'"
                                 class="star-tab"
@@ -289,9 +301,6 @@
                                 </nuxt-link>
                             </li>
 
-                        
-                        <!-- [나무위키] main.a65ef46d6b3879416d5f.js 및 main.b9faec2b37c8d51a1d7e.js 참고함 -->
-                        
                             <li v-if="$store.state.page.data.user">
                                 <nuxt-link :to="contribution_link($store.state.page.data.user.uuid)">
                                     <span :class="bulma('icon')">
@@ -312,8 +321,8 @@
                                 </a>
                             </li>
                         </ul>
-                </div>
-                    </nav>
+                    </div>
+                </nav>
             </div>
         </section>
         <section :class="bulma('section')">
@@ -347,8 +356,9 @@
                         <span v-html="$store.state.config['wiki.copyright_text']" />
                         <span v-html="$store.state.config['wiki.footer_text']" />
 
-                        theseed-skin-buma by LiteHell, the seed engine by theseed.io <br>
-                        theseed-skin-buma is distributed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License Version 3</a>
+                        theseed-skin-buma by LiteHell, the seed engine by theseed.io <br />
+                        theseed-skin-buma is distributed under
+                        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License Version 3</a>
                     </p>
                 </div>
             </div>
