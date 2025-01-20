@@ -19,7 +19,7 @@
                             @keydown.down="keyDown"
                             placeholder="검색"
                         />
-                        <span :class="bulma('icon is-small is-left')">
+                        <span :class="bulma('icon is-small is-left has-text-primary')">
                             <buma-font-awesome-icon icon="fa-solid fa-search"></buma-font-awesome-icon>
                         </span>
                     </div>
