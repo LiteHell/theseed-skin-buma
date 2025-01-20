@@ -24,14 +24,14 @@
                         </span>
                     </div>
                     <div :class="bulma('control')">
-                        <a href="#" :class="bulma('button')" @click.prevent="gotodoc">
+                        <a href="#" :class="bulma('button is-primary is-outlined')" @click.prevent="gotodoc">
                             <span :class="bulma('icon')">
                             <buma-font-awesome-icon icon="fa-solid fa-search"></buma-font-awesome-icon>
                             </span>
                         </a>
                     </div>
                     <div :class="bulma('control')">
-                        <a href="#" :class="bulma('button')" @click.prevent="random">
+                        <a href="#" :class="bulma('button is-primary is-outlined')" @click.prevent="random">
                             <span :class="bulma('icon')">
                             <buma-font-awesome-icon icon="fa-solid fa-random"></buma-font-awesome-icon>
                             </span>
