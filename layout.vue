@@ -85,8 +85,7 @@
                     <template v-if="$store.state.session.account.type === 1">
                         <b-dropdown right-dropdown icon="fa-solid fa-user" :label="$store.state.session.account.name">
                             <a href="#" @click.prevent="openSettingModal" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon> </span
                                 >&nbsp; 스킨 설정
                             </a>
                             <nuxt-link to="/member/mypage" :class="bulma('navbar-item')">
@@ -101,24 +100,20 @@
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon> </span
                                 >&nbsp; 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon> </span
                                 >&nbsp; 내 토론 기여 목록
                             </nuxt-link>
                             <nuxt-link to="/member/starred_documents" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-bookmark"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-bookmark"></buma-font-awesome-icon> </span
                                 >&nbsp; 별찜한 문서
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-sign-out-alt"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-sign-out-alt"></buma-font-awesome-icon> </span
                                 >&nbsp; 로그아웃
                             </nuxt-link>
                         </b-dropdown>
@@ -127,24 +122,20 @@
                     <template v-else>
                         <b-dropdown right-dropdown icon="fa-solid fa-user-secret" label="익명">
                             <a href="#" @click.prevent="openSettingModal" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-wrench"></buma-font-awesome-icon> </span
                                 >&nbsp; 스킨 설정
                             </a>
                             <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-chart-line"></buma-font-awesome-icon> </span
                                 >&nbsp; 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-chart-bar"></buma-font-awesome-icon> </span
                                 >&nbsp; 내 토론 기여 목록
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <buma-font-awesome-icon icon="fa-solid fa-sign-in-alt"></buma-font-awesome-icon> </span
+                                <span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-solid fa-sign-in-alt"></buma-font-awesome-icon> </span
                                 >&nbsp; 로그인
                             </nuxt-link>
                         </b-dropdown>
@@ -288,15 +279,18 @@
                                         <buma-font-awesome-icon icon="fa-solid fa-star"></buma-font-awesome-icon>
                                     </span>
                                     <span class="wiki-article-menu-text"> 별찜 해제 (</span
-                                    ><span class="star-count">{{ $store.state.page.data.star_count ? $store.state.page.data.star_count : '' }}</span
+                                    ><span class="star-count">{{ $store.state.page.data.star_count }}</span
                                     ><span class="wiki-article-menu-text">)</span>
                                 </nuxt-link>
-                                <nuxt-link v-else :to="doc_action_link($store.state.page.data.document, 'member/star')">
+                                <nuxt-link
+                                    v-else-if="$store.state.page.data.star_count >= 0"
+                                    :to="doc_action_link($store.state.page.data.document, 'member/star')"
+                                >
                                     <span :class="bulma('icon')">
                                         <buma-font-awesome-icon icon="fa-solid fa-star"></buma-font-awesome-icon>
                                     </span>
                                     <span class="wiki-article-menu-text"> 별찜 (</span
-                                    ><span class="star-count">{{ $store.state.page.data.star_count ? $store.state.page.data.star_count : '' }}</span
+                                    ><span class="star-count">{{ $store.state.page.data.star_count }}</span
                                     ><span class="wiki-article-menu-text">)</span>
                                 </nuxt-link>
                             </li>
