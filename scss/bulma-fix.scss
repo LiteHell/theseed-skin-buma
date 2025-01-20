@@ -6,6 +6,10 @@
     gap: 0;
 }
 
+.notification {
+    margin-bottom: 1rem;
+}
+
 :global(.mobile-search-navbar) .navbar-brand {
     &,
     & .navbar-item,
