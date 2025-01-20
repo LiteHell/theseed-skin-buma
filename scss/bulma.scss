@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import "../node_modules/bulma/sass";
-@import "./bulma-fix.scss";
-@import "./mobile-navbar-dropdown.scss";
-// @import "dark-mode.scss";
+@use "../node_modules/bulma/sass";
+@use "./bulma-fix.scss";
+@use "./dark-mode.scss";
