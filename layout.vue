@@ -12,6 +12,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
+                    <span></span>
                 </a>
             </div>
             <div :class="bulma({ 'navbar-menu': true, 'is-active': isNavbarActive })" id="mainNavbar">
