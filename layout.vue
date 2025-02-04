@@ -69,13 +69,10 @@
                         </nuxt-link>
 
                         <template v-if="$store.state.session.menus.length">
-                            <nuxt-link
-                                v-for="m in $store.state.session.menus"
-                                :to="m.l"
-                                v-bind:key="m.l"
-                                :class="bulma('navbar-item')"
-                                v-text="m.t"
-                            />
+                            <nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" :class="bulma('navbar-item')"
+                                ><span :class="bulma('icon')"> <buma-font-awesome-icon icon="fa-regular fa-heart"></buma-font-awesome-icon> </span
+                                >&nbsp; {{ m.t }}</nuxt-link
+                            >
                         </template>
                     </b-dropdown>
                 </div>
