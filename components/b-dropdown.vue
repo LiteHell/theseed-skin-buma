@@ -6,7 +6,7 @@
             </span>&nbsp;
             {{ label }}
         </a>
-        <div :class="bulma({'navbar-dropdown': true, 'is-right': rightDropdown})" :style="dropdownStyle">
+        <div v-show="showDropdown" :class="bulma({'navbar-dropdown': true, 'is-right': rightDropdown})">
             <slot></slot>
         </div>
     </div>
@@ -17,26 +17,32 @@ import bulma from '../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
-  components: { FontAwesomeIcon },
-    props: {
-        icon: String,
-        label: String,
-        rightDropdown: Boolean
+    components: {
+        FontAwesomeIcon
     },
-    data () {
+    props: {
+        icon: {
+            type: String,
+            default: ''
+        },
+        label: {
+            type: String,
+            required: true
+        },
+        rightDropdown: {
+            type: Boolean,
+            default: false
+        },
+    },
+    data() {
         return {
-            dropdownStyle: {
-                display: 'none'
-            },
+            showDropdown: false,
             screenResizeTimeout: null
         };
     },
     methods: {
         toggleNavbar() {
-            if (this.dropdownStyle.display === 'none')
-                this.dropdownStyle.display = '';
-            else
-                this.dropdownStyle.display = 'none';
+            this.showDropdown = !this.showDropdown;
         },
         handleResize() {
             if (this.screenResizeTimeout)
@@ -45,22 +51,16 @@ export default {
         },
         toggleBySize() {
             const windowWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-            if (windowWidth < 1024) {
-                this.dropdownStyle.display = 'none';
-            } else {
-                this.dropdownStyle.display = '';
-            }
+            this.showDropdown = windowWidth < 1024 ? false : true;
         },
         bulma
     },
-    ready: function () {
-        if (process.browser)
-            window.addEventListener('resize', this.handleResize);
+    mounted() {
+        window.addEventListener('resize', this.handleResize);
         this.toggleBySize();
     },
-    beforeDestroy: function () {
-        if (process.browser)
-            window.addEventListener('resize', this.handleResize);
+    beforeUnmount() {
+        window.removeEventListener('resize', this.handleResize);
     }
-}
+};
 </script>
