@@ -20,20 +20,20 @@
                             placeholder="검색"
                         />
                         <span :class="bulma('icon is-small is-left has-text-primary')">
-                            <buma-font-awesome-icon icon="fa-solid fa-search"></buma-font-awesome-icon>
+                            <font-awesome-icon icon="fas fa-search" />
                         </span>
                     </div>
                     <div :class="bulma('control')">
                         <a href="#" :class="bulma('button is-primary is-outlined')" @click.prevent="gotodoc">
                             <span :class="bulma('icon')">
-                            <buma-font-awesome-icon icon="fa-solid fa-search"></buma-font-awesome-icon>
+                            <font-awesome-icon icon="fas fa-search" />
                             </span>
                         </a>
                     </div>
                     <div :class="bulma('control')">
                         <a href="#" :class="bulma('button is-primary is-outlined')" @click.prevent="random">
                             <span :class="bulma('icon')">
-                            <buma-font-awesome-icon icon="fa-solid fa-random"></buma-font-awesome-icon>
+                            <font-awesome-icon icon="fas fa-random" />
                             </span>
                         </a>
                     </div>
@@ -66,10 +66,10 @@
 <script>
 import AutocompleteMixin from '~/mixins/autocomplete';
 import bulma from '../src/bulma';
-import bumaFontAwesomeIcon from './buma-font-awesome-icon.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
-    components: {bumaFontAwesomeIcon},
+    components: { FontAwesomeIcon },
     mixins: [AutocompleteMixin],
     methods: {
         gotodoc() {
