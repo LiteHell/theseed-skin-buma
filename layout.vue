@@ -34,6 +34,10 @@
                             <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-frown" /> </span>&nbsp;
                             고립된 문서
                         </nuxt-link>
+                        <nuxt-link :class="bulma('navbar-item')" to="/OrphanedCategories">
+                            <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-frown" /> </span>&nbsp;
+                            고립된 분류
+                        </nuxt-link>
                         <nuxt-link :class="bulma('navbar-item')" to="/UncategorizedPages">
                             <span :class="bulma('icon')">
                                 <font-awesome-icon icon="far fa-question-circle" /> </span
