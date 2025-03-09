@@ -110,7 +110,7 @@
                                 >&nbsp; 내 토론 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_edit_request($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-chart-bar" /> </span
+                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-chart-area" /> </span
                                 >&nbsp; 내 편집 요청 기여 목록
                             </nuxt-link>
                             <nuxt-link to="/member/starred_documents" :class="bulma('navbar-item')">
