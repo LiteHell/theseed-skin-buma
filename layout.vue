@@ -102,15 +102,15 @@
                             </nuxt-link>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-chart-line" /> </span
+                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-alt" /> </span
                                 >&nbsp; 내 문서 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-chart-bar" /> </span
+                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-contract" /> </span
                                 >&nbsp; 내 토론 기여 목록
                             </nuxt-link>
                             <nuxt-link :to="contribution_link_edit_request($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-chart-area" /> </span
+                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-signature" /> </span
                                 >&nbsp; 내 편집 요청 기여 목록
                             </nuxt-link>
                             <nuxt-link to="/member/starred_documents" :class="bulma('navbar-item')">
