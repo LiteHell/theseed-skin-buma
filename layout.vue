@@ -131,18 +131,20 @@
                                 <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-wrench" /> </span
                                 >&nbsp; 스킨 설정
                             </a>
-                            <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-alt" /> </span
-                                >&nbsp; 내 문서 기여 목록
-                            </nuxt-link>
-                            <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-contract" /> </span
-                                >&nbsp; 내 토론 기여 목록
-                            </nuxt-link>
-                            <nuxt-link :to="contribution_link_edit_request($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-signature" /> </span
-                                >&nbsp; 내 편집 요청 기여 목록
-                            </nuxt-link>
+                            <template v-if="$store.state.session.account.uuid">
+                                <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
+                                    <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-alt" /> </span
+                                    >&nbsp; 내 문서 기여 목록
+                                </nuxt-link>
+                                <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
+                                    <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-contract" /> </span
+                                    >&nbsp; 내 토론 기여 목록
+                                </nuxt-link>
+                                <nuxt-link :to="contribution_link_edit_request($store.state.session.account.uuid)" :class="bulma('navbar-item')">
+                                    <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-signature" /> </span
+                                    >&nbsp; 내 편집 요청 기여 목록
+                                </nuxt-link>
+                            </template>
                             <div :class="bulma('navbar-divider')"></div>
                             <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
                                 <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-sign-in-alt" /> </span
