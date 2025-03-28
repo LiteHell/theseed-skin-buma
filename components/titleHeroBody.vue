@@ -25,7 +25,7 @@
 
 <style lang="css" scoped>
 .namespace {
-    color: #555555;
+    color: #545454;
 }
 </style>
 
