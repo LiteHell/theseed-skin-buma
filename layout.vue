@@ -175,20 +175,7 @@
                 })
             "
         >
-            <div :class="bulma('hero-body')">
-                <div :class="bulma('container')">
-                    <h1 :class="bulma('title')" v-text="$store.state.page.title" />
-                    <h2 :class="bulma('subtitle')">
-                        <span v-if="$store.state.page.viewName === 'wiki' && $store.state.page.data.date">
-                            <local-date :date="$store.state.page.data.date" />에 마지막으로 수정됐습니다.
-                        </span>
-
-                        <span v-else-if="$store.state.page.viewName === 'notfound'"> 존재하지 않는 문서입니다. 직접 자유롭게 기여해보세요! </span>
-
-                        <span v-else> Powered by the seed engine </span>
-                    </h2>
-                </div>
-            </div>
+            <TitleHeroBody />
             <div :class="bulma('hero-foot')">
                 <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
                     <div :class="bulma('container')">
@@ -392,6 +379,7 @@ import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
 import skinLicense from './components/skinLicense';
 import bulma from './src/bulma';
+import TitleHeroBody from './components/titleHeroBody.vue';
 
 library.add(fas, far);
 
@@ -404,7 +392,8 @@ export default {
         BNotification,
         JumpButtons,
         BDropdown,
-        skinLicense
+        skinLicense,
+        TitleHeroBody
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
