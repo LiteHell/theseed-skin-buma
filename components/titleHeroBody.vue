@@ -1,5 +1,5 @@
 <template>
-    <b-hero>
+    <b-hero-body>
         <slot name="title">
             <template v-if="$store.state.page.data.document && $store.state.page.viewName !== 'error'">
                 <span v-if="$store.state.page.data.document.forceShowNamespace !== false" class="namespace">
@@ -20,7 +20,7 @@
 
             <span v-else> Powered by the seed engine </span>
         </slot>
-    </b-hero>
+    </b-hero-body>
 </template>
 
 <style lang="css" scoped>
@@ -30,13 +30,13 @@
 </style>
 
 <script>
-import BHero from './b-hero.vue';
+import BHeroBody from './b-heroBody.vue';
 import Common from '~/mixins/common';
 
 export default {
     mixins: [Common],
     components: {
-        BHero
+        BHero: BHeroBody
     }
 }
 </script>
