@@ -5,6 +5,8 @@ import Layout from '../layout.vue';
 import { createStore } from 'vuex';
 import documentStoreState from './storeStates/documentStore.json';
 import { createRouter, createWebHistory } from 'vue-router';
+import Nuxt from './nuxtMock/nuxt.vue';
+import NuxtLink from './nuxtMock/nuxt-link.vue';
 
 describe('Buma skin', () => {
     it('renders document without error', () => {
@@ -22,7 +24,8 @@ describe('Buma skin', () => {
         render(
             Layout, {
                 global: {
-                    plugins: [store, router]
+                    plugins: [store, router],
+                    components: {Nuxt, NuxtLink}
                 }
             }
         )
