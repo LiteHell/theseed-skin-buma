@@ -5,10 +5,15 @@ This is a third-party skin for the seed engine, based on [bulma](https://bulma.i
 Special thanks to [gdl-888](https://github.com/gdl-888) for porting to Vue.js.
 
 ## Build
-You need [Yarn](https://yarnpkg.com/) to build this skin.
+You need [pnpm](https://pnpm.io/) to build this skin.
 ```bash
-yarn
-yarn build
+pnpm i
+pnpm build
+```
+
+After building, you should all the dev dependencies by this command
+```bash
+pnpm i --production
 ```
 
 ## Formatting
