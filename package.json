@@ -4,9 +4,11 @@
   "description": "Frontend skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && postcss ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
-    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && postcss ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
-    "build": "yarn build-modular-bulma && yarn build-layout-css"
+    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
+    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
+    "build": "yarn build-modular-bulma && yarn build-layout-css",
+    "test": "vitest",
+    "build-and-test": "yarn build && yarn test"
   },
   "repository": {
     "type": "git",
@@ -19,13 +21,21 @@
   },
   "homepage": "https://github.com/litehell/theseed-skin-buma#readme",
   "devDependencies": {
+    "@testing-library/vue": "^8.1.0",
+    "@vitejs/plugin-vue": "^5.2.3",
     "cssnano": "^5.1.7",
+    "jsdom": "^26.0.0",
     "postcss": "^8.4.13",
     "postcss-cli": "^9.1.0",
     "postcss-modules": "^4.3.1",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "vitest": "^3.0.9",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vue-template-compiler": "^2.7.16",
+    "vuex": "^4.1.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -33,5 +43,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "bulma": "1.0.3"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
