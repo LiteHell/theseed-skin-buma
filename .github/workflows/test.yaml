@@ -12,12 +12,14 @@ jobs:
 
             - name: Install Node
               uses: actions/setup-node@v2
-        
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+
             - name: Install dependencies
-              uses: borales/actions-yarn@v4
-              with:
-                cmd: install # will run `yarn install` command
+              run:
+                pnpm install --frozen-lockfile
           
             - name: Run test
               run:
-                yarn build-and-test run
+                pnpm build-and-test run

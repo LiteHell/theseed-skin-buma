@@ -6,9 +6,9 @@
   "scripts": {
     "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
     "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
-    "build": "yarn build-modular-bulma && yarn build-layout-css",
+    "build": "pnpm build-modular-bulma && pnpm build-layout-css",
     "test": "vitest",
-    "build-and-test": "yarn build && yarn test"
+    "build-and-test": "pnpm build && pnpm test"
   },
   "repository": {
     "type": "git",
@@ -44,5 +44,5 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "bulma": "1.0.3"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "pnpm@10.5.2"
 }
