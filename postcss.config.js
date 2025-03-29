@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = (ctx) => ({
+module.exports = (ctx) => (ctx.env === 'BUILD' ? {
     plugins: [
         ctx.file.basename === 'bulma.css' &&
             require('postcss-modules')({
@@ -12,4 +12,4 @@ module.exports = (ctx) => ({
             preset: 'default'
         })
     ]
-});
+}: {});

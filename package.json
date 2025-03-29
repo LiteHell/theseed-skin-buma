@@ -4,8 +4,8 @@
   "description": "Frontend skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && postcss --config postcss.bulma.config.js ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
-    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && postcss --config postcss.bulma.config.js ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
+    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
+    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
     "build": "yarn build-modular-bulma && yarn build-layout-css",
     "test": "vitest",
     "build-and-test": "yarn build && yarn test"
