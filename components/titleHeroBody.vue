@@ -25,7 +25,7 @@
 
 <style lang="css" scoped>
 .namespace {
-    color: #545454;
+    opacity: 70%;
 }
 </style>
 
