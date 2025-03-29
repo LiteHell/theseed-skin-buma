@@ -1,7 +1,6 @@
 # theseed-skin-buma
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[버그를 발견하셨거나 직접 스킨을 수정하고 싶으신가요? 질문이나 요구사항이 있으신가요?](./CONTRIBUTING.md)
+
 This is a third-party skin for the seed engine, based on [bulma](https://bulma.io).
 Special thanks to [gdl-888](https://github.com/gdl-888) for porting to Vue.js.
 
