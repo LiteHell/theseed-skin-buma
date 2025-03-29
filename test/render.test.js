@@ -8,4 +8,9 @@ describe('Buma skin', () => {
     it('renders document without error', () => {
         renderWithMockedStoreAndRouter(Layout, documentStoreState)
     })
+
+    it('has navbar', () => {
+        const { getByTestId } = renderWithMockedStoreAndRouter(Layout, documentStoreState)
+        getByTestId('main-navbar');
+    })
 })

@@ -8,6 +8,12 @@ export default {
         },
         contribution_link_edit_request(uuid) {
             return `/contribution/${uuid}/edit_request`
+        },
+        user_doc(name) {
+            return `사용자:${name}`
+        },
+        doc_action_link(name, prefix) {
+            return `/${encodeURIComponent(prefix)}/${encodeURIComponent(name)}`
         }
     }
 }

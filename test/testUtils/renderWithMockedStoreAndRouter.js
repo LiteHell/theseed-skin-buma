@@ -4,6 +4,7 @@ import { createStore } from 'vuex';
 import { createRouter, createWebHistory } from 'vue-router';
 import Nuxt from '../nuxtMock/nuxt.vue';
 import NuxtLink from '../nuxtMock/nuxt-link.vue';
+import { createVfm } from 'vue-final-modal';
 
 export default function renderWithMockedStoreAndRouter (component, storeState) {
     const store = createStore({
@@ -15,9 +16,10 @@ export default function renderWithMockedStoreAndRouter (component, storeState) {
         history: createWebHistory(),
         routes: [{}]
     });
+    const vfm = createVfm();
     return render(component, {
         global: {
-            plugins: [store, router],
+            plugins: [store, router, vfm],
             components: { Nuxt, NuxtLink }
         }
     });
