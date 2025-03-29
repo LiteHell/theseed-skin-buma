@@ -1,160 +1,7 @@
 <template>
     <div class="buma">
         <div class="top-anchor"></div>
-        <nav :class="bulma('nav navbar')" role="navigation" aria-label="main navigation">
-            <div :class="bulma('navbar-brand')">
-                <nuxt-link to="/" :class="bulma('navbar-item')"
-                    ><img :src="$store.state.config['wiki.logo_url']" v-if="$store.state.config['wiki.logo_url']" />{{
-                        $store.state.config['wiki.site_name']
-                    }}</nuxt-link
-                >
-                <a :class="bulma({ 'navbar-burger': true, 'is-active': isNavbarActive })" @click.prevent="toggleNavbarBurger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-            </div>
-            <div :class="bulma({ 'navbar-menu': true, 'is-active': isNavbarActive })" id="mainNavbar">
-                <div :class="bulma('navbar-start')">
-                    <nuxt-link to="/RecentChanges" :class="bulma('navbar-item')">
-                        <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-binoculars" /> </span>&nbsp;
-                        최근 변경
-                    </nuxt-link>
-                    <nuxt-link to="/RecentDiscuss" :class="bulma('navbar-item')">
-                        <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-comments" /> </span>&nbsp;
-                        최근 토론
-                    </nuxt-link>
-                    <b-dropdown icon="fas fa-cogs" label="도구">
-                        <nuxt-link :class="bulma('navbar-item')" to="/NeededPages">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-beer" /> </span>&nbsp;
-                            작성이 필요한 문서
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/OrphanedPages">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-frown" /> </span>&nbsp;
-                            고립된 문서
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/OrphanedCategories">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-frown" /> </span>&nbsp;
-                            고립된 분류
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/UncategorizedPages">
-                            <span :class="bulma('icon')">
-                                <font-awesome-icon icon="far fa-question-circle" /> </span
-                            >&nbsp; 분류가 되지 않은 문서
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/OldPages">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-pause" /> </span>&nbsp;
-                            편집된 지 오래된 문서
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/ShortestPages">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-thumbs-down" /> </span
-                            >&nbsp; 내용이 짧은 문서
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/LongestPages">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-thumbs-up" /> </span
-                            >&nbsp; 내용이 긴 문서
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/BlockHistory">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-ban" /> </span>&nbsp; 차단
-                            내역
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/RandomPage">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-random" /> </span>&nbsp;
-                            RandomPage
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/Upload">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-cloud-upload-alt" /> </span
-                            >&nbsp; 파일 올리기
-                        </nuxt-link>
-                        <nuxt-link :class="bulma('navbar-item')" to="/License">
-                            <span :class="bulma('icon')"> <font-awesome-icon icon="far fa-copyright" /> </span
-                            >&nbsp; 라이선스
-                        </nuxt-link>
-
-                        <template v-if="$store.state.session.menus.length">
-                            <nuxt-link v-for="m in $store.state.session.menus" :to="m.l" v-bind:key="m.l" :class="bulma('navbar-item')"
-                                ><span :class="bulma('icon')"> <font-awesome-icon icon="far fa-heart" /> </span
-                                >&nbsp; {{ m.t }}</nuxt-link
-                            >
-                        </template>
-                    </b-dropdown>
-                </div>
-                <div :class="bulma('navbar-end')">
-                    <div :class="bulma('navbar-item is-hidden-touch')">
-                        <search-form />
-                    </div>
-                    <template v-if="$store.state.session.account.type === 1">
-                        <b-dropdown right-dropdown icon="fas fa-user" :label="$store.state.session.account.name">
-                            <a href="#" @click.prevent="openSettingModal" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-wrench" /> </span
-                                >&nbsp; 스킨 설정
-                            </a>
-                            <nuxt-link to="/member/mypage" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <font-awesome-icon icon="far fa-user-circle" /> </span
-                                >&nbsp; 내 정보
-                            </nuxt-link>
-                            <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'w')" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')">
-                                    <font-awesome-icon icon="far fa-sticky-note" /> </span
-                                >&nbsp; 내 사용자 문서
-                            </nuxt-link>
-                            <div :class="bulma('navbar-divider')"></div>
-                            <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-alt" /> </span
-                                >&nbsp; 내 문서 기여 목록
-                            </nuxt-link>
-                            <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-contract" /> </span
-                                >&nbsp; 내 토론 기여 목록
-                            </nuxt-link>
-                            <nuxt-link :to="contribution_link_edit_request($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-signature" /> </span
-                                >&nbsp; 내 편집 요청 기여 목록
-                            </nuxt-link>
-                            <nuxt-link to="/member/starred_documents" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-bookmark" /> </span
-                                >&nbsp; 별찜한 문서
-                            </nuxt-link>
-                            <div :class="bulma('navbar-divider')"></div>
-                            <nuxt-link :to="{ path: '/member/logout', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-sign-out-alt" /> </span
-                                >&nbsp; 로그아웃
-                            </nuxt-link>
-                        </b-dropdown>
-                    </template>
-
-                    <template v-else>
-                        <b-dropdown right-dropdown icon="fas fa-user-secret" label="익명">
-                            <a href="#" @click.prevent="openSettingModal" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-wrench" /> </span
-                                >&nbsp; 스킨 설정
-                            </a>
-                            <template v-if="$store.state.session.account.uuid">
-                                <nuxt-link :to="contribution_link($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                    <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-alt" /> </span
-                                    >&nbsp; 내 문서 기여 목록
-                                </nuxt-link>
-                                <nuxt-link :to="contribution_link_discuss($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                    <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-contract" /> </span
-                                    >&nbsp; 내 토론 기여 목록
-                                </nuxt-link>
-                                <nuxt-link :to="contribution_link_edit_request($store.state.session.account.uuid)" :class="bulma('navbar-item')">
-                                    <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-file-signature" /> </span
-                                    >&nbsp; 내 편집 요청 기여 목록
-                                </nuxt-link>
-                            </template>
-                            <div :class="bulma('navbar-divider')"></div>
-                            <nuxt-link :to="{ path: '/member/login', query: { redirect: $route.fullPath } }" :class="bulma('navbar-item')">
-                                <span :class="bulma('icon')"> <font-awesome-icon icon="fas fa-sign-in-alt" /> </span
-                                >&nbsp; 로그인
-                            </nuxt-link>
-                        </b-dropdown>
-                    </template>
-                </div>
-            </div>
-        </nav>
+        <Navbar />
         <nav class="mobile-search-navbar" :class="bulma('nav navbar is-hidden-desktop')">
             <div :class="bulma('navbar-brand')">
                 <div :class="bulma('navbar-item')">
@@ -358,7 +205,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import Common from '~/mixins/common';
-import SettingModal from './components/settingModal';
 import LocalDate from '~/components/localDate';
 import SearchForm from './components/searchForm';
 import BNotification from './components/b-notification';
@@ -368,6 +214,7 @@ import skinLicense from './components/skinLicense';
 import bulma from './src/bulma';
 import TitleHeroBody from './components/titleHeroBody.vue';
 import BumaFooter from './components/footer.vue';
+import Navbar from './components/navbar/navbar.vue';
 
 library.add(fas, far);
 
@@ -382,15 +229,11 @@ export default {
         BDropdown,
         skinLicense,
         TitleHeroBody,
-        BumaFooter
+        BumaFooter,
+        Navbar
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
-    },
-    data: function () {
-        return {
-            isNavbarActive: false
-        };
     },
     watch: {
         '$store.state.currentTheme'(newValue) {
@@ -416,12 +259,6 @@ export default {
                 default:
                     break;
             }
-        },
-        toggleNavbarBurger() {
-            this.isNavbarActive = !this.isNavbarActive;
-        },
-        openSettingModal() {
-            this.$vfm.show({ component: SettingModal });
         },
         bulma
     },

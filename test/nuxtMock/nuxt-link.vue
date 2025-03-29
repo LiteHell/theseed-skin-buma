@@ -1,5 +1,8 @@
 <template>
-    <a :href="href" :class="className"></a>
+    <a :href="href" :class="className">
+        <slot>
+        </slot>
+    </a>
 </template>
 
 <script setup>
