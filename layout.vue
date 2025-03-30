@@ -166,10 +166,7 @@
                 </b-notification>
 
                 <b-notification
-                    v-if="
-                        $store.state.session.user_document_discuss &&
-                        $store.state.localConfig['wiki.hide_user_document_discuss'] !== $store.state.session.user_document_discuss
-                    "
+                    v-if="hasUnreadUserDiscussion"
                     :class="bulma('is-link')"
                 >
                     <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'discuss')">사용자 토론</nuxt-link>이 있습니다.
@@ -230,6 +227,12 @@ export default {
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
+    },
+    computed: {
+        hasUnreadUserDiscussion() {
+            return this.$store.state.session.user_document_discuss &&
+                this.$store.state.localConfig['wiki.hide_user_document_discuss'] !== this.$store.state.session.user_document_discuss;
+        }
     },
     watch: {
         '$store.state.currentTheme'(newValue) {
