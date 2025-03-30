@@ -2,13 +2,7 @@
     <div class="buma">
         <div class="top-anchor"></div>
         <Navbar />
-        <nav class="mobile-search-navbar" :class="bulma('nav navbar is-hidden-desktop')">
-            <div :class="bulma('navbar-brand')">
-                <div :class="bulma('navbar-item')">
-                    <search-form />
-                </div>
-            </div>
-        </nav>
+        <MobileSearchNavbar />
         <section
             id="wiki-main-title"
             :class="
@@ -215,6 +209,7 @@ import bulma from './src/bulma';
 import TitleHeroBody from './components/titleHeroBody.vue';
 import BumaFooter from './components/footer.vue';
 import Navbar from './components/navbar/navbar.vue';
+import MobileSearchNavbar from './components/navbar/mobileSearchNavbar.vue';
 
 library.add(fas, far);
 
@@ -230,7 +225,8 @@ export default {
         skinLicense,
         TitleHeroBody,
         BumaFooter,
-        Navbar
+        Navbar,
+        MobileSearchNavbar
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
