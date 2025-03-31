@@ -8,11 +8,7 @@
             :class="
                 bulma({
                     hero: true,
-                    [$store.state.page.viewName === 'error' || $store.state.page.title === '오류'
-                        ? 'is-danger'
-                        : $store.state.page.viewName === 'notfound'
-                        ? 'is-warning'
-                        : 'is-primary']: true
+                    [heroColor]: true
                 })
             "
         >
@@ -94,6 +90,13 @@ export default {
         hasUnreadUserDiscussion() {
             return this.$store.state.session.user_document_discuss &&
                 this.$store.state.localConfig['wiki.hide_user_document_discuss'] !== this.$store.state.session.user_document_discuss;
+        },
+        heroColor() {
+            return this.$store.state.page.viewName === 'error' || this.$store.state.page.title === '오류'
+                        ? 'is-danger'
+                        : this.$store.state.page.viewName === 'notfound'
+                        ? 'is-warning'
+                        : 'is-primary'
         }
     },
     watch: {
