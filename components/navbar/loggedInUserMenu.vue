@@ -33,7 +33,8 @@ export default {
     },
     components: {
         BDropdown,
-        FontAwesomeIcon
+        FontAwesomeIcon,
+        SettingModalLink
     },
     methods: {
         bulma
