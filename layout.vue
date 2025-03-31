@@ -17,147 +17,7 @@
             "
         >
             <TitleHeroBody />
-            <div :class="bulma('hero-foot')">
-                <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
-                    <div :class="bulma('container')">
-                        <ul v-if="$store.state.page.data.document">
-                            <li
-                                v-bind:class="
-                                    bulma({ 'is-active': $store.state.page.viewName === 'wiki' || $store.state.page.viewName === 'notfound' }, true)
-                                "
-                            >
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'w')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-eye" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 읽기</span>
-                                </nuxt-link>
-                            </li>
-                            <li
-                                v-bind:class="
-                                    bulma(
-                                        {
-                                            'is-active':
-                                                $store.state.page.viewName === 'edit' ||
-                                                $store.state.page.viewName === 'edit_request' ||
-                                                $store.state.page.viewName === 'edit_edit_request'
-                                        },
-                                        true
-                                    )
-                                "
-                            >
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'edit')" class="edit-anchor">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-edit" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 편집</span>
-                                </nuxt-link>
-                            </li>
-                            <li
-                                v-bind:class="
-                                    bulma({ 'is-active': ['thread', 'thread_list', 'thread_list_close'].includes($store.state.page.viewName) }, true)
-                                "
-                            >
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'discuss')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="far fa-comments" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 토론</span>
-                                </nuxt-link>
-                            </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'move' }, true)">
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'move')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-arrow-right" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 이동</span>
-                                </nuxt-link>
-                            </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'delete' }, true)">
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'delete')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="far fa-trash-alt" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 삭제</span>
-                                </nuxt-link>
-                            </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'backlink' }, true)">
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'backlink')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-random" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 역링크</span>
-                                </nuxt-link>
-                            </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'history' }, true)">
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'history')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-history" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 역사</span>
-                                </nuxt-link>
-                            </li>
-                            <li v-bind:class="bulma({ 'is-active': $store.state.page.viewName === 'acl' }, true)">
-                                <nuxt-link :to="doc_action_link($store.state.page.data.document, 'acl')">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-key" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> ACL</span>
-                                </nuxt-link>
-                            </li>
-
-                            <li
-                                v-if="$store.state.page.viewName === 'wiki'"
-                                class="star-tab"
-                                v-bind:class="{ starred: $store.state.page.data.starred }"
-                            >
-                                <nuxt-link
-                                    v-if="$store.state.page.data.starred"
-                                    :to="doc_action_link($store.state.page.data.document, 'member/unstar')"
-                                >
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-star" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 별찜 해제 (</span
-                                    ><span class="star-count">{{ $store.state.page.data.star_count }}</span
-                                    ><span class="wiki-article-menu-text">)</span>
-                                </nuxt-link>
-                                <nuxt-link
-                                    v-else-if="$store.state.page.data.star_count >= 0"
-                                    :to="doc_action_link($store.state.page.data.document, 'member/star')"
-                                >
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-star" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 별찜 (</span
-                                    ><span class="star-count">{{ $store.state.page.data.star_count }}</span
-                                    ><span class="wiki-article-menu-text">)</span>
-                                </nuxt-link>
-                            </li>
-
-                            <li v-if="$store.state.page.data.user">
-                                <nuxt-link :to="contribution_link($store.state.page.data.user.uuid)">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-chart-line" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 기여 목록</span>
-                                </nuxt-link>
-                            </li>
-                        </ul>
-
-                        <ul v-else>
-                            <li :class="bulma('is-active', true)">
-                                <a href="#">
-                                    <span :class="bulma('icon')">
-                                        <font-awesome-icon icon="fas fa-cogs" />
-                                    </span>
-                                    <span class="wiki-article-menu-text"> 특수 문서</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+            <HeroFoot />
         </section>
         <section :class="bulma('section')">
             <div :class="bulma('container')">
@@ -207,6 +67,7 @@ import TitleHeroBody from './components/titleHeroBody.vue';
 import BumaFooter from './components/footer.vue';
 import Navbar from './components/navbar/navbar.vue';
 import MobileSearchNavbar from './components/navbar/mobileSearchNavbar.vue';
+import HeroFoot from './components/heroFoot/heroFoot.vue';
 
 library.add(fas, far);
 
@@ -223,7 +84,8 @@ export default {
         TitleHeroBody,
         BumaFooter,
         Navbar,
-        MobileSearchNavbar
+        MobileSearchNavbar,
+        HeroFoot
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
