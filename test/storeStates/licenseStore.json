@@ -10,7 +10,10 @@
         "menus": []
     },
     "page": {
-        "viewName": "license"
+        "viewName": "license",
+        "data": {
+            
+        }
     },
     "localConfig": {
         

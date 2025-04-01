@@ -39,7 +39,7 @@ export default {
     },
     computed: {
         hasDocument() {
-            return !!this.$store.state.page?.data?.document;
+            return !!this.$store.state.page.data?.document;
         }
     }
 }
