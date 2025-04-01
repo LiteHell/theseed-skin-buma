@@ -27,7 +27,7 @@
 </style>
 
 <script>
-import BHeroBody from './b-heroBody.vue';
+import BHeroBody from '../b-heroBody.vue';
 import Common from '~/mixins/common';
 import localDate from '~/components/localDate.vue';
 

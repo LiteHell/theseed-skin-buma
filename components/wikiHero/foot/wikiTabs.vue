@@ -25,7 +25,7 @@
 
 <script>
 import Common from '~/mixins/common';
-import bulma from '../../src/bulma';
+import bulma from '../../../src/bulma';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-regular-svg-icons';

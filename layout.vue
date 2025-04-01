@@ -3,18 +3,7 @@
         <div class="top-anchor"></div>
         <Navbar />
         <MobileSearchNavbar />
-        <section
-            id="wiki-main-title"
-            :class="
-                bulma({
-                    hero: true,
-                    [heroColor]: true
-                })
-            "
-        >
-            <TitleHeroBody />
-            <HeroFoot />
-        </section>
+        <WikiHero />
         <section :class="bulma('section')">
             <div :class="bulma('container')">
                 <b-notification v-if="$store.state.config['wiki.sitenotice']" color="is-warning">
@@ -59,11 +48,10 @@ import JumpButtons from './components/jumpButtons';
 import BDropdown from './components/b-dropdown';
 import skinLicense from './components/skinLicense';
 import bulma from './src/bulma';
-import TitleHeroBody from './components/titleHeroBody.vue';
 import BumaFooter from './components/footer.vue';
 import Navbar from './components/navbar/navbar.vue';
 import MobileSearchNavbar from './components/navbar/mobileSearchNavbar.vue';
-import HeroFoot from './components/heroFoot/heroFoot.vue';
+import WikiHero from './components/wikiHero/wikiHero.vue';
 
 library.add(fas, far);
 
@@ -77,11 +65,10 @@ export default {
         JumpButtons,
         BDropdown,
         skinLicense,
-        TitleHeroBody,
         BumaFooter,
         Navbar,
         MobileSearchNavbar,
-        HeroFoot
+        WikiHero
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
@@ -90,13 +77,6 @@ export default {
         hasUnreadUserDiscussion() {
             return this.$store.state.session.user_document_discuss &&
                 this.$store.state.localConfig['wiki.hide_user_document_discuss'] !== this.$store.state.session.user_document_discuss;
-        },
-        heroColor() {
-            return this.$store.state.page.viewName === 'error' || this.$store.state.page.title === '오류'
-                        ? 'is-danger'
-                        : this.$store.state.page.viewName === 'notfound'
-                        ? 'is-warning'
-                        : 'is-primary'
         }
     },
     watch: {

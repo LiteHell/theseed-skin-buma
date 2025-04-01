@@ -22,7 +22,7 @@
 
 <script>
 import WikiTabs from './wikiTabs.vue';
-import bulma from '../../src/bulma';
+import bulma from '../../../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 

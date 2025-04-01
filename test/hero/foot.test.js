@@ -1,10 +1,10 @@
 /// <reference types="vitest" />
 import { describe, it } from 'vitest';
-import documentStoreState from './storeStates/documentStore.json';
-import licenseStoreState from './storeStates/licenseStore.json';
-import renderWithMockedStoreAndRouter from './testUtils/renderWithMockedStoreAndRouter';
+import documentStoreState from '../storeStates/documentStore.json';
+import licenseStoreState from '../storeStates/licenseStore.json';
+import renderWithMockedStoreAndRouter from '../testUtils/renderWithMockedStoreAndRouter';
 import { expect } from 'vitest';
-import HeroFoot from '../components/heroFoot/heroFoot.vue';
+import HeroFoot from '../../components/wikiHero/foot/foot';
 
 describe('Wiki document hero foot tabs', () => {
     it('are visible on document', () => {
