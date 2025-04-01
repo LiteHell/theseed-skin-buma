@@ -6,7 +6,7 @@
                     <span :class="bulma('icon')">
                         <FontAwesomeIcon :icon="faStar" />
                     </span>
-                    <span class="wiki-article-menu-text"> 별찜 (</span><span class="star-count">{{
+                    <span class="wiki-article-menu-text"> {{ menu.starred ? '별찜 해제' : '별찜'}} (</span><span class="star-count">{{
                         menu.starCount }}</span><span class="wiki-article-menu-text">)</span>
                 </nuxt-link>
             </li>

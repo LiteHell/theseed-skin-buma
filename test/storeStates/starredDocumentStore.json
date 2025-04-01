@@ -1,0 +1,26 @@
+{
+    "config": {
+        "wiki.logo_url": "https://picsum.photos/64/64"
+    },
+    "session": {
+        "account": {
+            "type": 0,
+            "uuid": "example"
+        },
+        "menus": []
+    },
+    "page": {
+        "viewName": "wiki",
+        "data": {
+            "date": 12345,
+            "document": {
+                
+            },
+            "starred": true,
+            "star_count": 123
+        } 
+    },
+    "localConfig": {
+        
+    }
+}
