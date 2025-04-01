@@ -10,13 +10,7 @@
         "menus": []
     },
     "page": {
-        "viewName": "wiki",
-        "data": {
-            "date": 12345,
-            "document": {
-                
-            }
-        } 
+        "viewName": "license"
     },
     "localConfig": {
         

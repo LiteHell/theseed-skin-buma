@@ -9,7 +9,7 @@
                     <li :class="bulma('is-active', true)">
                         <a href="#">
                             <span :class="bulma('icon')">
-                                <font-awesome-icon icon="fas fa-cogs" />
+                                <FontAwesomeIcon :icon="faCogs" />
                             </span>
                             <span class="wiki-article-menu-text"> 특수 문서</span>
                         </a>
@@ -24,8 +24,12 @@
 import WikiTabs from './wikiTabs.vue';
 import bulma from '../../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faCogs } from '@fortawesome/free-solid-svg-icons';
 
 export default {
+    created() {
+        this.faCogs = faCogs;
+    },
     components: {
         WikiTabs,
         FontAwesomeIcon
@@ -35,7 +39,7 @@ export default {
     },
     computed: {
         hasDocument() {
-            return !!this.$store.state.page.data.document;
+            return !!this.$store.state.page?.data?.document;
         }
     }
 }

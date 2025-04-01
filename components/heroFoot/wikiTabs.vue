@@ -4,7 +4,7 @@
             <li v-if="menu.starTab" class="star-tab" v-bind:class="{ starred: menu.starred }">
                 <nuxt-link :to="menu.starred ? menu.unstarLink : menu.starLink">
                     <span :class="bulma('icon')">
-                        <font-awesome-icon icon="fas fa-star" />
+                        <FontAwesomeIcon :icon="faStar" />
                     </span>
                     <span class="wiki-article-menu-text"> 별찜 (</span><span class="star-count">{{
                         menu.starCount }}</span><span class="wiki-article-menu-text">)</span>
@@ -13,7 +13,7 @@
             <li v-else v-bind:class="bulma({ 'is-active': menu.active }, true)">
                 <nuxt-link :to="menu.href">
                     <span :class="bulma('icon')">
-                        <font-awesome-icon :icon="menu.icon" />
+                        <FontAwesomeIcon :icon="menu.icon" />
                     </span>
                     <span class="wiki-article-menu-text"> {{ menu.text }}</span>
                 </nuxt-link>
@@ -35,10 +35,18 @@ import { faRandom } from '@fortawesome/free-solid-svg-icons';
 import { faHistory } from '@fortawesome/free-solid-svg-icons';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default {
     mixins: [Common],
     methods: { bulma },
+    created() {
+        this.faStar = faStar;
+    },
+    components: {
+        FontAwesomeIcon
+    },
     computed: {
         menus() {
             const viewName = this.$store.state.page.viewName;

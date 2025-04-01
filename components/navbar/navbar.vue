@@ -12,7 +12,7 @@
                     <span :class="bulma('icon')"> <font-awesome-icon :icon="faComments" /> </span>&nbsp;
                     최근 토론
                 </nuxt-link>
-                <b-dropdown icon="fas fa-cogs" label="도구">
+                <b-dropdown :icon="faCogs" label="도구">
                     <nuxt-link :class="bulma('navbar-item')" :to="menu.href" v-for="menu in toolMenus" :key="menu.href">
                         <span :class="bulma('icon')"><font-awesome-icon :icon="menu.icon" /></span>
                         {{  menu.text }}
@@ -43,6 +43,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import SearchForm from '../searchForm.vue';
 import { faBinoculars, faComments } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons/faHeart';
+import { faCogs } from '@fortawesome/free-solid-svg-icons';
 
 let isNavbarActive = ref(false);
 const toggleNavbarBurger = () => isNavbarActive = !isNavbarActive;
