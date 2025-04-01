@@ -38,7 +38,7 @@ import fixedToolMenus from './fixedToolMenus';
 import LoggedInUserMenu from './loggedInUserMenu.vue';
 import AnonymousUserMenu from './anonymousUserMenu.vue';
 import { useStore } from 'vuex';
-import BDropdown from '../b-dropdown';
+import BDropdown from '../bulma/b-dropdown';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import SearchForm from '../searchForm.vue';
 import { faBinoculars, faComments } from '@fortawesome/free-solid-svg-icons';

@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import BDropdown from '../b-dropdown';
+import BDropdown from '../bulma/b-dropdown';
 import Common from '~/mixins/common';
 import bulma from '../../src/bulma';
 import SettingModalLink from './settingModalLink.vue';
