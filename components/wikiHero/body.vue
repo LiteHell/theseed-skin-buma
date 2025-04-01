@@ -1,7 +1,7 @@
 <template>
     <b-hero-body>
         <template #title>
-            <template v-if="$store.state.page.data.document && $store.state.page.viewName !== 'error'">
+            <template v-if="(!!$store.state.page.data?.document) && $store.state.page.viewName !== 'error'">
                 <span v-if="$store.state.page.data.document.forceShowNamespace !== false" class="namespace">{{ $store.state.page.data.document.namespace }}:</span>{{ $store.state.page.data.document.title }}
             </template>
             <template v-else>
@@ -27,7 +27,7 @@
 </style>
 
 <script>
-import BHeroBody from './b-heroBody.vue';
+import BHeroBody from '../bulma/b-heroBody.vue';
 import Common from '~/mixins/common';
 import localDate from '~/components/localDate.vue';
 

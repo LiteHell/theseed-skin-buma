@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import bulma from '../src/bulma';
+import bulma from '../../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
@@ -22,7 +22,6 @@ export default {
     },
     props: {
         icon: {
-            type: String,
             default: ''
         },
         label: {

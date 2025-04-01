@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import bulma from '../src/bulma'
+import bulma from '../../src/bulma'
 
 export default {
     methods: {

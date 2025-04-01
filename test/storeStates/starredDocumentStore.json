@@ -15,7 +15,9 @@
             "date": 12345,
             "document": {
                 
-            }
+            },
+            "starred": true,
+            "star_count": 123
         } 
     },
     "localConfig": {
