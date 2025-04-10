@@ -46,7 +46,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons/faHeart';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 
 let isNavbarActive = ref(false);
-const toggleNavbarBurger = () => isNavbarActive = !isNavbarActive;
+const toggleNavbarBurger = () => isNavbarActive.value = !isNavbarActive.value;
 const store = useStore();
 
 const toolMenus = computed(() => fixedToolMenus.concat((store.state.session.menus ?? []).map(i => ({
