@@ -17,3 +17,7 @@
         width: 100%;
     }
 }
+
+:where([data-sonner-toast][data-styled=true]) {
+    padding: 16px !important;
+}
