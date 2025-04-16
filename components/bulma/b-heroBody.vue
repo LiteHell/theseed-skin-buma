@@ -11,12 +11,6 @@
     </div>
 </template>
 
-<script>
-import bulma from '../../src/bulma'
-
-export default {
-    methods: {
-        bulma
-    }
-}
+<script setup>
+import bulma from '../../src/bulma';
 </script>

@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import SettingModal from '../settingModal.vue';
+import settingModal from '../settingModal.vue';
 
 export default {
     props: {
-        'class': String
+        class: String
     },
     methods: {
         openSettingModal() {
-            this.$vfm.show({ component: SettingModal });
+            this.$vfm.show({ component: settingModal });
         }
     }
-}
+};
 </script>

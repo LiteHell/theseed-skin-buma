@@ -2,8 +2,7 @@
     <div :class="bulma('hero-foot')">
         <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
             <div :class="bulma('container')">
-                <WikiTabs v-if="hasDocument">
-                </WikiTabs>
+                <wikiTabs v-if="hasDocument" />
 
                 <ul v-else>
                     <li :class="bulma('is-active', true)">
@@ -20,27 +19,16 @@
     </div>
 </template>
 
-<script>
-import WikiTabs from './wikiTabs.vue';
-import bulma from '../../../src/bulma';
+<script setup>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+import bulma from '../../src/bulma';
+import wikiTabs from './wikiTabs.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-    created() {
-        this.faCogs = faCogs;
-    },
-    components: {
-        WikiTabs,
-        FontAwesomeIcon
-    },
-    methods: {
-        bulma
-    },
-    computed: {
-        hasDocument() {
-            return !!this.$store.state.page.data?.document;
-        }
-    }
-}
+const store = useStore();
+const hasDocument = computed(() => {
+    return !!store.state.page.data?.document;
+});
 </script>

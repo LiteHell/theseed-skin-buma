@@ -3,12 +3,12 @@
         <ul>
             <li @click="goUp">
                 <div class="jump-up" :class="bulma('icon')" title="위로 이동">
-                    <font-awesome-icon icon="fas fa-arrow-up" />
+                    <FontAwesomeIcon :icon="faArrowUp" />
                 </div>
             </li>
             <li @click="goDown">
                 <div class="jump-down" :class="bulma('icon')" title="아래로 이동">
-                    <font-awesome-icon icon="fas fa-arrow-down" />
+                    <FontAwesomeIcon :icon="faArrowDown" />
                 </div>
             </li>
         </ul>
@@ -51,22 +51,11 @@
 }
 </style>
 
-<script>
+<script setup>
 import bulma from '../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-    components: {
-        FontAwesomeIcon
-    },
-    methods: {
-        goUp() {
-            document.querySelector('.top-anchor').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        },
-        goDown() {
-            document.querySelector('footer').scrollIntoView({ behavior: 'smooth', block: 'end' });
-        },
-        bulma
-    }
-};
+const goUp = () => document.querySelector('.top-anchor').scrollIntoView({ behavior: 'smooth', block: 'start' });
+const goDown = () => document.querySelector('footer').scrollIntoView({ behavior: 'smooth', block: 'end' });
 </script>

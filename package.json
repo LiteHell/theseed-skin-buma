@@ -4,8 +4,8 @@
   "description": "Frontend skin for the seed engine",
   "main": "index.js",
   "scripts": {
-    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
-    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
+    "build-modular-bulma": "sass ./scss/bulma.scss ./css/bulma.css && cross-env NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/bulma.css > ./css/bulma.min.css && rimraf ./css/bulma.css",
+    "build-layout-css": "sass ./scss/layout.scss ./css/layout.css && cross-env NODE_ENV=BUILD postcss --config postcss.bulma.config.js ./css/layout.css > ./css/layout.min.css && rimraf ./css/layout.css",
     "build": "pnpm build-modular-bulma && pnpm build-layout-css",
     "test": "vitest",
     "build-and-test": "pnpm build && pnpm test"

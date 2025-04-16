@@ -2,11 +2,11 @@
     <div :class="bulma('navbar-item has-dropdown is-hoverable')">
         <a href="#" :class="bulma('navbar-link')" @click.prevent="toggleNavbar">
             <span v-if="icon" :class="bulma('icon')">
-                <font-awesome-icon :icon="icon" />
-            </span>&nbsp;
+                <FontAwesomeIcon :icon="icon" /> </span
+            >&nbsp;
             {{ label }}
         </a>
-        <div v-show="showDropdown" :class="bulma({'navbar-dropdown': true, 'is-right': rightDropdown})">
+        <div v-show="showDropdown" :class="bulma({ 'navbar-dropdown': true, 'is-right': rightDropdown })">
             <slot></slot>
         </div>
     </div>
@@ -31,7 +31,7 @@ export default {
         rightDropdown: {
             type: Boolean,
             default: false
-        },
+        }
     },
     data() {
         return {
@@ -44,8 +44,7 @@ export default {
             this.showDropdown = !this.showDropdown;
         },
         handleResize() {
-            if (this.screenResizeTimeout)
-                clearTimeout(this.screenResizeTimeout);
+            if (this.screenResizeTimeout) clearTimeout(this.screenResizeTimeout);
             this.screenResizeTimeout = setTimeout(this.toggleBySize, 100);
         },
         toggleBySize() {
