@@ -1,9 +1,8 @@
 <template>
-
     <nav class="mobile-search-navbar" :class="bulma('nav navbar is-hidden-desktop')">
         <div :class="bulma('navbar-brand')">
             <div :class="bulma('navbar-item')">
-                <search-form />
+                <searchForm />
             </div>
         </div>
     </nav>

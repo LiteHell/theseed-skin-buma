@@ -4,7 +4,7 @@ import documentStoreState from '../storeStates/documentStore.json';
 import licenseStoreState from '../storeStates/licenseStore.json';
 import renderWithMockedStoreAndRouter from '../testUtils/renderWithMockedStoreAndRouter';
 import { expect } from 'vitest';
-import HeroFoot from '../../components/wikiHero/foot/foot';
+import HeroFoot from '../../components/wikiHero/foot';
 import starredDocumentState from '../storeStates/starredDocumentStore.json';
 import userDocumentState from '../storeStates/userDocumentStore.json';
 

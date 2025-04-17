@@ -1,5 +1,5 @@
-import { faBeer, faPause, faBan, faRandom, faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
-import { faFrown, faQuestionCircle, faThumbsDown, faThumbsUp, faCopyright } from '@fortawesome/free-regular-svg-icons'
+import { faBeer, faPause, faBan, faRandom, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFrown, faQuestionCircle, faThumbsDown, faThumbsUp, faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const toolMenus = [
     { href: '/NeededPages', icon: faBeer, text: '작성이 필요한 문서' },

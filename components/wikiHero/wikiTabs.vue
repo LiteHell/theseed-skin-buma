@@ -1,31 +1,31 @@
 <template>
     <ul>
         <template v-for="menu in menus">
-            <li v-if="menu.starTab" class="star-tab" v-bind:class="{ starred: menu.starred }">
-                <nuxt-link :to="menu.starred ? menu.unstarLink : menu.starLink">
+            <li v-if="menu.starTab" class="star-tab" :class="{ starred: menu.starred }">
+                <nuxtLink :to="menu.starred ? menu.unstarLink : menu.starLink">
                     <span :class="bulma('icon')">
                         <FontAwesomeIcon :icon="faStar" />
                     </span>
-                    <span class="wiki-article-menu-text"> {{ menu.starred ? '별찜 해제' : '별찜'}} (</span><span class="star-count">{{
-                        menu.starCount }}</span><span class="wiki-article-menu-text">)</span>
-                </nuxt-link>
+                    <span class="wiki-article-menu-text"> {{ menu.starred ? '별찜 해제' : '별찜' }} (</span
+                    ><span class="star-count">{{ menu.starCount }}</span
+                    ><span class="wiki-article-menu-text">)</span>
+                </nuxtLink>
             </li>
-            <li v-else v-bind:class="bulma({ 'is-active': menu.active }, true)">
-                <nuxt-link :to="menu.href">
+            <li v-else :class="bulma({ 'is-active': menu.active }, true)">
+                <nuxtLink :to="menu.href">
                     <span :class="bulma('icon')">
                         <FontAwesomeIcon :icon="menu.icon" />
                     </span>
                     <span class="wiki-article-menu-text"> {{ menu.text }}</span>
-                </nuxt-link>
+                </nuxtLink>
             </li>
         </template>
-
     </ul>
 </template>
 
 <script>
-import Common from '~/mixins/common';
-import bulma from '../../../src/bulma';
+import common from '~/mixins/common';
+import bulma from '../../src/bulma';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-regular-svg-icons';
@@ -39,8 +39,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-    mixins: [Common],
-    methods: { bulma },
+    mixins: [common],
+    methods: {
+        bulma
+    },
     created() {
         this.faStar = faStar;
     },
@@ -99,19 +101,17 @@ export default {
                     href: this.doc_action_link(document, 'acl'),
                     icon: faKey,
                     text: 'ACL'
-                },
+                }
             ];
 
             if (viewName === 'wiki')
-                menus.push(
-                    {
-                        starTab: true,
-                        starred: this.$store.state.page.data.starred,
-                        starCount: this.$store.state.page.data.star_count,
-                        starLink: this.doc_action_link(document, 'member/star'),
-                        unstarLink: this.doc_action_link(document, 'member/unstar')
-                    }
-                )
+                menus.push({
+                    starTab: true,
+                    starred: this.$store.state.page.data.starred,
+                    starCount: this.$store.state.page.data.star_count,
+                    starLink: this.doc_action_link(document, 'member/star'),
+                    unstarLink: this.doc_action_link(document, 'member/unstar')
+                });
 
             if (this.$store.state.page.data.user)
                 menus.push({
@@ -119,10 +119,10 @@ export default {
                     href: this.contribution_link(this.$store.state.page.data.user.uuid),
                     icon: faChartLine,
                     text: '기여 목록'
-                })
+                });
 
             return menus;
         }
     }
-}
+};
 </script>

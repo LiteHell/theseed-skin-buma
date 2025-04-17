@@ -2,7 +2,7 @@
 import { describe, it } from 'vitest';
 import documentStoreState from './storeStates/documentStore.json';
 import renderWithMockedStoreAndRouter from './testUtils/renderWithMockedStoreAndRouter';
-import Navbar from '../components/navbar/navbar.vue';
+import Navbar from '../components/navbar/index.vue';
 import tools from '../components/navbar/fixedToolMenus';
 import { expect } from 'vitest';
 import { fireEvent, waitFor } from '@testing-library/vue';

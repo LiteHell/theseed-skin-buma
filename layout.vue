@@ -1,32 +1,29 @@
 <template>
     <div class="buma">
         <div class="top-anchor"></div>
-        <Navbar />
-        <MobileSearchNavbar />
-        <WikiHero />
+        <navbar />
+        <mobileSearchNavbar />
+        <wikiHero />
         <section :class="bulma('section')">
             <div :class="bulma('container')">
-                <b-notification v-if="$store.state.config['wiki.sitenotice']" color="is-warning">
-                    <span v-html="$store.state.config['wiki.sitenotice']" />
-                </b-notification>
+                <bNotification v-if="$store.state.config['wiki.sitenotice']" color="is-warning">
+                    <span v-html="$store.state.config['wiki.sitenotice']"></span>
+                </bNotification>
 
-                <b-notification
-                    v-if="hasUnreadUserDiscussion"
-                    :class="bulma('is-link')"
-                >
-                    <nuxt-link :to="doc_action_link(user_doc($store.state.session.account.name), 'discuss')">사용자 토론</nuxt-link>이 있습니다.
+                <bNotification v-if="hasUnreadUserDiscussion" :class="bulma('is-link')">
+                    <nuxtLink :to="doc_action_link(user_doc($store.state.session.account.name), 'discuss')">사용자 토론</nuxtLink>이 있습니다.
                     확인해주세요.
-                </b-notification>
+                </bNotification>
 
                 <div class="wiki-article" @dblclick="doBehaviorWhenDblClick">
                     <nuxt />
 
-                    <skin-license v-if="$store.state.page.viewName === 'license'"></skin-license>
+                    <skinLicense v-if="$store.state.page.viewName === 'license'"></skinLicense>
                 </div>
             </div>
         </section>
-        <BumaFooter />
-        <jump-buttons />
+        <bumaFooter />
+        <jumpButtons />
     </div>
 </template>
 
@@ -36,47 +33,36 @@
 </style>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import Common from '~/mixins/common';
-import LocalDate from '~/components/localDate';
-import SearchForm from './components/searchForm';
-import BNotification from './components/bulma/b-notification';
-import JumpButtons from './components/jumpButtons';
-import BDropdown from './components/bulma/b-dropdown';
-import skinLicense from './components/skinLicense';
+import common from '~/mixins/common';
 import bulma from './src/bulma';
-import BumaFooter from './components/footer.vue';
-import Navbar from './components/navbar/navbar.vue';
-import MobileSearchNavbar from './components/navbar/mobileSearchNavbar.vue';
-import WikiHero from './components/wikiHero/wikiHero.vue';
-
-library.add(fas, far);
+import navbar from './components/navbar';
+import mobileSearchNavbar from './components/navbar/mobileSearchNavbar.vue';
+import wikiHero from './components/wikiHero';
+import bNotification from './components/bulma/b-notification.vue';
+import jumpButtons from './components/jumpButtons.vue';
+import skinLicense from './components/skinLicense.vue';
+import bumaFooter from './components/footer.vue';
 
 export default {
-    mixins: [Common],
+    mixins: [common],
     components: {
-        FontAwesomeIcon,
-        LocalDate,
-        SearchForm,
-        BNotification,
-        JumpButtons,
-        BDropdown,
+        navbar,
+        mobileSearchNavbar,
+        wikiHero,
+        bNotification,
+        jumpButtons,
         skinLicense,
-        BumaFooter,
-        Navbar,
-        MobileSearchNavbar,
-        WikiHero
+        bumaFooter
     },
     loadingBarColor(isDark) {
         return isDark ? 'white' : 'black';
     },
     computed: {
         hasUnreadUserDiscussion() {
-            return this.$store.state.session.user_document_discuss &&
-                this.$store.state.localConfig['wiki.hide_user_document_discuss'] !== this.$store.state.session.user_document_discuss;
+            return (
+                this.$store.state.session.user_document_discuss &&
+                this.$store.state.localConfig['wiki.hide_user_document_discuss'] !== this.$store.state.session.user_document_discuss
+            );
         }
     },
     watch: {

@@ -16,5 +16,5 @@
 </template>
 
 <script setup>
-import bulma from '../src/bulma'
+import bulma from '../src/bulma';
 </script>
