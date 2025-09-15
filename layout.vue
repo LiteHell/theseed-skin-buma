@@ -4,13 +4,13 @@
         <navbar />
         <mobileSearchNavbar />
         <wikiHero />
-        <section :class="bulma('section')">
-            <div :class="bulma('container')">
+        <section class="section">
+            <div class="container">
                 <bNotification v-if="$store.state.config['wiki.sitenotice']" color="is-warning">
                     <span v-html="$store.state.config['wiki.sitenotice']"></span>
                 </bNotification>
 
-                <bNotification v-if="hasUnreadUserDiscussion" :class="bulma('is-link')">
+                <bNotification v-if="hasUnreadUserDiscussion" class="is-link">
                     <nuxtLink :to="doc_action_link(user_doc($store.state.session.account.name), 'discuss')">사용자 토론</nuxtLink>이 있습니다.
                     확인해주세요.
                 </bNotification>
@@ -27,14 +27,13 @@
     </div>
 </template>
 
-<style>
-@import './css/bulma.min.css';
-@import './css/layout.min.css';
+<style lang="scss">
+@use './scss/bulma.scss';
+@use './scss/layout.scss';
 </style>
 
 <script>
 import common from '~/mixins/common';
-import bulma from './src/bulma';
 import navbar from './components/navbar';
 import mobileSearchNavbar from './components/navbar/mobileSearchNavbar.vue';
 import wikiHero from './components/wikiHero';
@@ -89,8 +88,7 @@ export default {
                 default:
                     break;
             }
-        },
-        bulma
+        }
     },
     mounted() {
         this.changeTheme(this.$store.state.currentTheme);

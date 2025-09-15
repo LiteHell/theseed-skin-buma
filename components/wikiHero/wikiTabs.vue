@@ -3,7 +3,7 @@
         <template v-for="menu in menus">
             <li v-if="menu.starTab" class="star-tab" :class="{ starred: menu.starred }">
                 <nuxtLink :to="menu.starred ? menu.unstarLink : menu.starLink">
-                    <span :class="bulma('icon')">
+                    <span class="icon">
                         <FontAwesomeIcon :icon="faStar" />
                     </span>
                     <span class="wiki-article-menu-text"> {{ menu.starred ? '별찜 해제' : '별찜' }} (</span
@@ -11,9 +11,9 @@
                     ><span class="wiki-article-menu-text">)</span>
                 </nuxtLink>
             </li>
-            <li v-else :class="bulma({ 'is-active': menu.active }, true)">
+            <li v-else :class="{ 'is-active': menu.active }, true">
                 <nuxtLink :to="menu.href">
-                    <span :class="bulma('icon')">
+                    <span class="icon">
                         <FontAwesomeIcon :icon="menu.icon" />
                     </span>
                     <span class="wiki-article-menu-text"> {{ menu.text }}</span>
@@ -25,7 +25,6 @@
 
 <script>
 import common from '~/mixins/common';
-import bulma from '../../src/bulma';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-regular-svg-icons';
@@ -40,9 +39,6 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default {
     mixins: [common],
-    methods: {
-        bulma
-    },
     created() {
         this.faStar = faStar;
     },

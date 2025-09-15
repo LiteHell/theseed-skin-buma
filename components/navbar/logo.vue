@@ -1,12 +1,12 @@
 <template>
-    <div :class="bulma('navbar-brand')">
-        <nuxtLink to="/" :class="bulma('navbar-item')"
+    <div class="navbar-brand">
+        <nuxtLink to="/" class="navbar-item"
             ><img :src="$store.state.config['wiki.logo_url']" v-if="$store.state.config['wiki.logo_url']" />{{
                 $store.state.config['wiki.site_name']
             }}</nuxtLink
         >
         <a
-            :class="bulma({ 'navbar-burger': true, 'is-active': isNavbarActive })"
+            :class="{ 'navbar-burger': true, 'is-active': isNavbarActive }"
             @click.prevent="toggleNavbarBurger"
             data-testid="navbar-activation-button-on-mobile"
         >
@@ -19,7 +19,5 @@
 </template>
 
 <script setup>
-import bulma from '../../src/bulma';
-
 const { isNavbarActive, toggleNavbarBurger } = defineProps(['isNavbarActive', 'toggleNavbarBurger']);
 </script>

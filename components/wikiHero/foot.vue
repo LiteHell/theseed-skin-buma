@@ -1,13 +1,13 @@
 <template>
-    <div :class="bulma('hero-foot')">
-        <nav :class="bulma('tabs is-left is-boxed')" id="wiki-article-menu">
-            <div :class="bulma('container')">
+    <div class="hero-foot">
+        <nav class="tabs is-left is-boxed" id="wiki-article-menu">
+            <div class="container">
                 <wikiTabs v-if="hasDocument" />
 
                 <ul v-else>
-                    <li :class="bulma('is-active', true)">
+                    <li class="is-active">
                         <a href="#">
-                            <span :class="bulma('icon')">
+                            <span class="icon">
                                 <FontAwesomeIcon :icon="faCogs" />
                             </span>
                             <span class="wiki-article-menu-text"> 특수 문서</span>
@@ -22,7 +22,6 @@
 <script setup>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-import bulma from '../../src/bulma';
 import wikiTabs from './wikiTabs.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';

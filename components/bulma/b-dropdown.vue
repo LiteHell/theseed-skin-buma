@@ -1,19 +1,18 @@
 <template>
-    <div :class="bulma('navbar-item has-dropdown is-hoverable')">
-        <a href="#" :class="bulma('navbar-link')" @click.prevent="toggleNavbar">
-            <span v-if="icon" :class="bulma('icon')">
+    <div class="navbar-item has-dropdown is-hoverable">
+        <a href="#" class="navbar-link" @click.prevent="toggleNavbar">
+            <span v-if="icon" class="icon">
                 <FontAwesomeIcon :icon="icon" /> </span
             >&nbsp;
             {{ label }}
         </a>
-        <div v-show="showDropdown" :class="bulma({ 'navbar-dropdown': true, 'is-right': rightDropdown })">
+        <div v-show="showDropdown" :class="{ 'navbar-dropdown': true, 'is-right': rightDropdown }">
             <slot></slot>
         </div>
     </div>
 </template>
 
 <script>
-import bulma from '../../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
@@ -50,8 +49,7 @@ export default {
         toggleBySize() {
             const windowWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
             this.showDropdown = windowWidth < 1024 ? false : true;
-        },
-        bulma
+        }
     },
     mounted() {
         window.addEventListener('resize', this.handleResize);

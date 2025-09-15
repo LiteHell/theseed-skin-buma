@@ -1,4 +1,25 @@
-:global(#wiki-main-title) {
+:root {
+    // --brand-color-1
+    // --brand-color-2
+    // --brand-bright-color-1
+    // --brand-bright-color-2
+    --light-text-color: var(--bulma-body-color);
+    --dark-text-color: var(--bulma-body-color);
+    --text-color: var(--bulma-body-color);
+    --text-secondary-color: var(--bulma-text-strong);
+    --light-link-color: var(--bulma-link-text);
+    --dark-link-color: var(--bulma-link-text);
+    --link-color: var(--bulma-link-text);
+    --light-article-background-color: var(--bulma-body-background-color);
+    --dark-article-background-color: var(--bulma-body-background-color);
+    --article-background-color: var(--bulma-body-background-color);
+    // --article-padding-x: ;
+    // --article-padding-y: ;
+    // --toast-area-offset-x: ;
+    // --toast-area-offset-y: ;
+}
+
+#wiki-main-title {
     --bulma-hero-color-l: 100%;
 }
 
@@ -10,7 +31,7 @@
     margin-bottom: 1rem;
 }
 
-:global(.mobile-search-navbar) .navbar-brand {
+.mobile-search-navbar .navbar-brand {
     &,
     & .navbar-item,
     & .navbar-item > * {

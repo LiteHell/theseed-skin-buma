@@ -1,7 +1,7 @@
-:global(body.theseed-dark-mode) {
+body.theseed-dark-mode {
     color-scheme: dark;
 
-    :global(#wiki-main-title) {
+    #wiki-main-title {
         --bulma-hero-color-l: 6%;
     }
 }

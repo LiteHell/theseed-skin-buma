@@ -1,12 +1,7 @@
 <template>
     <section
         id="wiki-main-title"
-        :class="
-            bulma({
-                hero: true,
-                [heroColor]: true
-            })
-        "
+        :class="{ hero: true, [heroColor]: true }"
     >
         <heroBody />
         <heroFoot />
@@ -16,7 +11,6 @@
 <script setup>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-import bulma from '../../src/bulma';
 import heroBody from './body';
 import heroFoot from './foot';
 

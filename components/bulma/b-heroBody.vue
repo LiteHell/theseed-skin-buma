@@ -1,16 +1,12 @@
 <template>
-    <div :class="bulma('hero-body')">
-        <div :class="bulma('container')">
-            <h1 :class="bulma('title')">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
                 <slot name="title"></slot>
             </h1>
-            <h2 :class="bulma('subtitle')">
+            <h2 class="subtitle">
                 <slot name="subtitle"></slot>
             </h2>
         </div>
     </div>
 </template>
-
-<script setup>
-import bulma from '../../src/bulma';
-</script>

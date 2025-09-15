@@ -1,13 +1,11 @@
 <template>
-    <div v-if="!destroyed" :class="bulma(['notification', color, light ? 'is-light' : null])">
-        <button v-if="deleteButton" @click="deleteMyself" :class="bulma('delete')"></button>
+    <div v-if="!destroyed" :class="['notification', color, light ? 'is-light' : null]">
+        <button v-if="deleteButton" @click="deleteMyself" class="delete"></button>
         <slot></slot>
     </div>
 </template>
 
 <script>
-import bulma from '../../src/bulma';
-
 export default {
     props: {
         deleteButton: {
@@ -31,8 +29,7 @@ export default {
     methods: {
         deleteMyself() {
             this.destroyed = true;
-        },
-        bulma
+        }
     }
 };
 </script>

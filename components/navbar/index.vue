@@ -1,23 +1,23 @@
 <template>
-    <nav :class="bulma('nav navbar')" role="navigation" aria-label="main navigation">
+    <nav class="nav navbar" role="navigation" aria-label="main navigation">
         <logo :is-navbar-active="isNavbarActive" :toggle-navbar-burger="toggleNavbarBurger" />
-        <div :class="bulma({ 'navbar-menu': true, 'is-active': isNavbarActive })" id="mainNavbar" data-testid="main-navbar">
-            <div :class="bulma('navbar-start')">
-                <nuxtLink to="/RecentChanges" :class="bulma('navbar-item')">
-                    <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faBinoculars" /> </span>&nbsp; 최근 변경
+        <div :class="{ 'navbar-menu': true, 'is-active': isNavbarActive }" id="mainNavbar" data-testid="main-navbar">
+            <div class="navbar-start">
+                <nuxtLink to="/RecentChanges" class="navbar-item">
+                    <span class="icon"> <FontAwesomeIcon :icon="faBinoculars" /> </span>&nbsp; 최근 변경
                 </nuxtLink>
-                <nuxtLink to="/RecentDiscuss" :class="bulma('navbar-item')">
-                    <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faComments" /> </span>&nbsp; 최근 토론
+                <nuxtLink to="/RecentDiscuss" class="navbar-item">
+                    <span class="icon"> <FontAwesomeIcon :icon="faComments" /> </span>&nbsp; 최근 토론
                 </nuxtLink>
                 <bDropdown :icon="faCogs" label="도구">
-                    <nuxtLink :class="bulma('navbar-item')" :to="menu.href" v-for="menu in toolMenus" :key="menu.href">
-                        <span :class="bulma('icon')"><FontAwesomeIcon :icon="menu.icon" /></span>
+                    <nuxtLink class="navbar-item" :to="menu.href" v-for="menu in toolMenus" :key="menu.href">
+                        <span class="icon"><FontAwesomeIcon :icon="menu.icon" /></span>
                         &nbsp;{{ menu.text }}
                     </nuxtLink>
                 </bDropdown>
             </div>
-            <div :class="bulma('navbar-end')">
-                <div :class="bulma('navbar-item is-hidden-touch')">
+            <div class="navbar-end">
+                <div class="navbar-item is-hidden-touch">
                     <searchForm />
                 </div>
                 <loggedInUserMenu v-if="isLoggedIn" />
@@ -30,7 +30,6 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useStore } from 'vuex';
-import bulma from '../../src/bulma';
 import logo from './logo.vue';
 import bDropdown from '../bulma/b-dropdown.vue';
 import searchForm from '../searchForm.vue';

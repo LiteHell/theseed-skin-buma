@@ -1,7 +1,7 @@
 <template>
-    <footer :class="bulma('footer')">
-        <div :class="bulma('container')">
-            <div :class="bulma('content has-text-centered')">
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
                 <p>
                     <span v-html="$store.state.config['wiki.copyright_text']" />
                     <span v-html="$store.state.config['wiki.footer_text']" />
@@ -15,6 +15,6 @@
     </footer>
 </template>
 
-<script setup>
-import bulma from '../src/bulma';
+<script>
+export default {}
 </script>

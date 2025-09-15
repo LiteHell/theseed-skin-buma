@@ -2,12 +2,12 @@
     <div v-if="$store.state.localConfig['buma.enableJumpButtons'] !== 'no'" class="jump-buttons">
         <ul>
             <li @click="goUp">
-                <div class="jump-up" :class="bulma('icon')" title="위로 이동">
+                <div class="jump-up icon" title="위로 이동">
                     <FontAwesomeIcon :icon="faArrowUp" />
                 </div>
             </li>
             <li @click="goDown">
-                <div class="jump-down" :class="bulma('icon')" title="아래로 이동">
+                <div class="jump-down icon" title="아래로 이동">
                     <FontAwesomeIcon :icon="faArrowDown" />
                 </div>
             </li>
@@ -52,7 +52,6 @@
 </style>
 
 <script setup>
-import bulma from '../src/bulma';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 

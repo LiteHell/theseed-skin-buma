@@ -1,7 +1,7 @@
 <template>
-    <nav class="mobile-search-navbar" :class="bulma('nav navbar is-hidden-desktop')">
-        <div :class="bulma('navbar-brand')">
-            <div :class="bulma('navbar-item')">
+    <nav class="mobile-search-navbar nav navbar is-hidden-desktop">
+        <div class="navbar-brand">
+            <div class="navbar-item">
                 <searchForm />
             </div>
         </div>
@@ -9,6 +9,5 @@
 </template>
 
 <script setup>
-import bulma from '../../src/bulma';
 import searchForm from '../searchForm.vue';
 </script>

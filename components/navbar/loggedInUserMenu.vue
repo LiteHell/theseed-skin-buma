@@ -1,23 +1,22 @@
 <template>
     <bDropdown right-dropdown :icon="faUser" :label="name">
-        <settingModalLink :class="bulma('navbar-item')">
-            <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faWrench" /> </span>&nbsp; 스킨 설정
+        <settingModalLink class="navbar-item">
+            <span class="icon"> <FontAwesomeIcon :icon="faWrench" /> </span>&nbsp; 스킨 설정
         </settingModalLink>
         <template v-for="(submenus, i) in menus">
-            <nuxt-link :to="submenu.href" :class="bulma('navbar-item')" v-for="submenu in submenus">
-                <span :class="bulma('icon')">
+            <nuxt-link :to="submenu.href" class="navbar-item" v-for="submenu in submenus">
+                <span class="icon">
                     <FontAwesomeIcon :icon="submenu.icon" />
                 </span>
                 &nbsp;{{ submenu.text }}
             </nuxt-link>
-            <div :class="bulma('navbar-divider')" v-if="i !== menus.length - 1"></div>
+            <div class="navbar-divider" v-if="i !== menus.length - 1"></div>
         </template>
     </bDropdown>
 </template>
 
 <script>
 import common from '~/mixins/common';
-import bulma from '../../src/bulma';
 import bDropdown from '../bulma/b-dropdown.vue';
 import settingModalLink from './settingModalLink.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -34,9 +33,6 @@ export default {
         bDropdown,
         FontAwesomeIcon,
         settingModalLink
-    },
-    methods: {
-        bulma
     },
     computed: {
         name() {
