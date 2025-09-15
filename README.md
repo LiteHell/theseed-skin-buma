@@ -1,20 +1,16 @@
 # theseed-skin-buma
-[버그를 발견하셨거나 직접 스킨을 수정하고 싶으신가요? 질문이나 요구사항이 있으신가요?](./CONTRIBUTING.md)
-
 This is a third-party skin for the seed engine, based on [bulma](https://bulma.io).
-Special thanks to [gdl-888](https://github.com/gdl-888) for porting to Vue.js.
+
+Special thanks to [gdl-blue](https://github.com/gdl-blue) for porting to Vue.js.
 
 ## Build
-You need [pnpm](https://pnpm.io/) to build this skin.
-```bash
-pnpm i
-pnpm build
-```
-
-After building, you should all the dev dependencies by this command
+You need [pnpm](https://pnpm.io/) to install production dependencies.
 ```bash
 pnpm i --production
 ```
+
+## Contribution
+[버그를 발견하셨거나 직접 스킨을 수정하고 싶으신가요? 질문이나 요구사항이 있으신가요?](./CONTRIBUTING.md)
 
 ## Formatting
 This project uses [prettier](https://prettier.io) for formatting. It convenient to use Visual Studio Code with [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)

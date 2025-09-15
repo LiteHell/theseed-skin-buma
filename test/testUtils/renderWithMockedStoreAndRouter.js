@@ -1,10 +1,9 @@
 /// <reference types="vitest" />
 import { render } from '@testing-library/vue';
 import { createStore } from 'vuex';
-import { createRouter, createWebHistory } from 'vue-router';
-import Nuxt from '../nuxtMock/nuxt.vue';
-import NuxtLink from '../nuxtMock/nuxt-link.vue';
+import { createRouter, createWebHistory, RouterLink, RouterView } from 'vue-router';
 import { createVfm } from 'vue-final-modal';
+import View from '../theseedMock/view/test.vue';
 
 export default function renderWithMockedStoreAndRouter (component, storeState) {
     const store = createStore({
@@ -14,13 +13,15 @@ export default function renderWithMockedStoreAndRouter (component, storeState) {
     });
     const router = createRouter({
         history: createWebHistory(),
-        routes: [{}]
+        routes: [   
+            { path: '/:pathMatch(.*)*', component: View },
+        ]
     });
     const vfm = createVfm();
     return render(component, {
         global: {
             plugins: [store, router, vfm],
-            components: { Nuxt, NuxtLink }
+            components: { Nuxt: RouterView, NuxtLink: RouterLink }
         }
     });
 };
