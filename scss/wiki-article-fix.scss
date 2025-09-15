@@ -81,4 +81,25 @@
     sub {
         font-size: 75%;
     }
+
+    .delete {
+        background-color: unset;
+        border: unset;
+        border-radius: unset;
+        cursor: unset;
+        display: block;
+        font-size: unset;
+        height: unset;
+        outline: unset;
+        position: unset;
+        width: unset;
+        max-height: unset;
+        max-width: unset;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .delete::before, .delete::after {
+        content: none;
+    }
 }
