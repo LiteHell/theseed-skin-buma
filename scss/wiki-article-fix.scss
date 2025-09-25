@@ -7,27 +7,25 @@
 .wiki-article {
     word-break: break-all;
     min-height: 30rem;
-    td, th {
-        vertical-align: middle;
+
+    blockquote, dd, dl, dt, fieldset, figure, hr, iframe, legend, li, ol, p, textarea, ul {
+        padding: revert;
+        margin: revert;
     }
-    
+
+    td, th {
+        vertical-align: revert;
+    }
+
     ul {
-        padding-inline-start: 40px;
-        list-style: disc outside;
-        ul {
-            list-style: circle outside;
-            ul {
-                list-style: square outside;
-            }
-        }
+        list-style: revert;
     }
 
     img {
-        height: inherit;
+        height: revert;
     }
 
     strong {
-        font-weight: bold;
         color: inherit;
     }
 
@@ -37,7 +35,9 @@
     h4,
     h5,
     h6 {
-        font-weight: 600;
+        padding: revert;
+        margin: revert;
+        font-weight: bold;
     }
 
     h1 {
@@ -67,19 +67,6 @@
     pre {
         white-space: pre;
         word-wrap: normal;
-    }
-
-    ol {
-        list-style-position: outside;
-    }
-
-    ol:not([type]) {
-        list-style-type: decimal;
-    }
-
-    sup,
-    sub {
-        font-size: 75%;
     }
 
     .delete {
