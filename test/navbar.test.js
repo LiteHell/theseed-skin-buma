@@ -66,9 +66,7 @@ describe('Navbar', () => {
         getByText('스킨 설정');
         getByText('내 정보');
         getByText('내 사용자 문서');
-        getByText('내 문서 기여 목록');
-        getByText('내 토론 기여 목록');
-        getByText('내 편집 요청 기여 목록');
+        getByText('내 기여 목록');
         getByText('별찜한 문서');
         getByText('로그아웃');
     })
@@ -76,9 +74,7 @@ describe('Navbar', () => {
     it('Displays menu well for annoymous users', () => {
         const { getByText } = renderWithMockedStoreAndRouter(Navbar, documentStoreState);
         getByText('스킨 설정');
-        getByText('내 문서 기여 목록');
-        getByText('내 토론 기여 목록');
-        getByText('내 편집 요청 기여 목록');
+        getByText('내 기여 목록');
         getByText('로그인');
     })
 
