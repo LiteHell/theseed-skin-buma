@@ -5,13 +5,7 @@
         </settingModalLink>
         <template v-if="uuid">
             <nuxtLink :to="contribution_link(uuid)" :class="bulma('navbar-item')">
-                <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faFileAlt" /> </span>&nbsp; 내 문서 기여 목록
-            </nuxtLink>
-            <nuxtLink :to="contribution_link_discuss(uuid)" :class="bulma('navbar-item')">
-                <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faFileContract" /> </span>&nbsp; 내 토론 기여 목록
-            </nuxtLink>
-            <nuxtLink :to="contribution_link_edit_request(uuid)" :class="bulma('navbar-item')">
-                <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faFileSignature" /> </span>&nbsp; 내 편집 요청 기여 목록
+                <span :class="bulma('icon')"> <FontAwesomeIcon :icon="faFileAlt" /> </span>&nbsp; 내 기여 목록
             </nuxtLink>
         </template>
         <div :class="bulma('navbar-divider')"></div>

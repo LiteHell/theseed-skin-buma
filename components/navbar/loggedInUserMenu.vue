@@ -62,17 +62,7 @@ export default {
                     {
                         href: this.contribution_link(uuid),
                         icon: faFileAlt,
-                        text: '내 문서 기여 목록'
-                    },
-                    {
-                        href: this.contribution_link_discuss(uuid),
-                        icon: faFileContract,
-                        text: '내 토론 기여 목록'
-                    },
-                    {
-                        href: this.contribution_link_edit_request(uuid),
-                        icon: faFileSignature,
-                        text: '내 편집 요청 기여 목록'
+                        text: '내 기여 목록'
                     },
                     {
                         href: '/member/starred_documents',
