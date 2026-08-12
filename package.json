@@ -26,7 +26,7 @@
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.15",
     "jsdom": "^26.1.0",
-    "postcss": "^8.5.19",
+    "postcss": "^8.5.23",
     "postcss-cli": "^9.1.0",
     "postcss-modules": "^4.3.1",
     "prettier": "^2.8.8",
